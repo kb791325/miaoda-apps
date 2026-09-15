@@ -1,0 +1,98 @@
+{
+  "id": "product_inventory_bitable_writer_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "商品库存表写入实例v2",
+  "description": "基于飞书多维表格的商品库存数据写入管理实例，支持库存数据查询与批量新增操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "TtUqb0FwVaSq7ssq6vacWbMCn9c",
+    "tableID": "tblKI0DzkrXRYjpt",
+    "fields": [
+      {
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldSKUCode",
+        "name": "SKU编码",
+        "readable": true
+      },
+      {
+        "id": "fldProductName",
+        "name": "商品名称",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "服饰",
+          "数码",
+          "食品",
+          "家居",
+          "美妆",
+          "其他"
+        ],
+        "id": "fldProductCategory",
+        "name": "商品分类",
+        "readable": true,
+        "type": 3
+      },
+      {
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fldCurrentStock",
+        "name": "当前库存"
+      },
+      {
+        "bizType": "Number",
+        "id": "fldSafeStock",
+        "name": "安全库存",
+        "readable": true,
+        "type": 2,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fld7DaysSales",
+        "name": "近7天销量"
+      },
+      {
+        "bizType": "Number",
+        "id": "fld7DaysReturns",
+        "name": "近7天退货量",
+        "readable": true,
+        "type": 2,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldReplenishmentSuggestion",
+        "name": "补货建议",
+        "readable": true,
+        "type": 1
+      },
+      {
+        "bizType": "Text",
+        "id": "fldRemark",
+        "name": "备注",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      }
+    ]
+  },
+  "createdAt": 1789099029595,
+  "updatedAt": 1789099029595,
+  "createdBy": 7673423658517318587
+}

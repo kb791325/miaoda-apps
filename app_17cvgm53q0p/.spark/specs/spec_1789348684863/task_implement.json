@@ -1,0 +1,97 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "登录修复与多方式登录模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill，确认项目编码规范与既有 auth 模块边界",
+        "为 app_user 表新增飞书绑定字段并建立唯一索引（可空，存妙搭平台用户 ID 字符串），同步前后端接口类型定义（shared/auth.ts）",
+        "服务端改造账号密码登录：按用户名或手机号任一匹配，手机号在用户新建/编辑时做格式与应用层唯一性校验",
+        "服务端新增飞书登录与飞书绑定两个公开接口：基于请求上下文中的平台用户身份匹配已绑定账号签发会话；未绑定时返回约定错误码，绑定接口校验账号密码后写入绑定关系并签发会话，重复绑定返回冲突",
+        "前端修复登录后闪退：401 清理登录态改为认证状态驱动并由路由守卫回到登录页，会话校验失败区分过期与网络错误并给出提示，登录相关接口排除在 401 跳转之外",
+        "改造登录页：账号输入支持用户名/手机号，新增飞书登录入口与加载/错误反馈，飞书身份未绑定时内联绑定表单完成绑定并自动登录，非飞书环境提示改用账号密码登录",
+        "用户管理页扩展：用户列表展示飞书绑定状态列，新建/编辑表单手机号校验提示与重复占用提示"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5"
+      ],
+      "write_scope": [
+        "server/modules/auth/**",
+        "server/database/schema.ts",
+        "shared/auth.ts",
+        "client/src/pages/Login/**",
+        "client/src/pages/UserManagement/**",
+        "client/src/hooks/use-auth.tsx",
+        "client/src/api/auth.ts",
+        "client/src/api/index.ts"
+      ],
+      "read_scope": [
+        "server/modules/auth/auth.service.ts",
+        "server/modules/auth/auth.controller.ts",
+        "server/modules/auth/app-auth.guard.ts",
+        "server/database/schema.ts",
+        "shared/auth.ts",
+        "client/src/hooks/use-auth.tsx",
+        "client/src/api/index.ts",
+        "client/src/pages/Login/LoginPage.tsx",
+        "client/src/pages/UserManagement/UserManagementPage.tsx",
+        "client/src/app.tsx",
+        "AGENTS.md"
+      ],
+      "acceptance": "用户名/手机号两种方式均可真实登录并停留工作台，飞书登录与绑定接口真实调用返回会话或约定错误码，用户列表接口返回飞书绑定状态",
+      "dependencies": [],
+      "beginTime": 1789349117800,
+      "endTime": 1789350013180
+    },
+    {
+      "id": 2,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill，按规范派发验收",
+        "架构与入口检查：对照既有应用结构确认登录页 /login 与入口工作台 / 可用；入口不可用（白屏/未就绪/404）时停止全部验收，仅记录阻塞问题",
+        "核心验收目标1：登录后稳定性 —— 账号密码登录成功后停留工作台、待办内容正常渲染且刷新页面后仍保持登录态，全程不被弹回登录页",
+        "核心验收目标2：手机号登录 —— 使用已设置手机号的账号以手机号+密码登录进入工作台，密码错误时登录页展示错误提示且不跳转",
+        "核心验收目标3：飞书登录链路 —— 点击飞书登录后出现应用内可判定结果（直接进入工作台 / 出现绑定表单且提交用户名密码后绑定成功进入工作台 / 明确提示改用账号密码登录），不白屏不闪退",
+        "非核心降级范围：发布态真实飞书身份识别的端到端验证（沙箱预览态平台账号接口不可用属已知限制）、手机号测试数据的预置依赖管理员配置"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.3",
+        "3.1",
+        "3.2",
+        "3.5"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        ".spark/specs/spec_1789348684863/spec.md",
+        "AGENTS.md"
+      ],
+      "acceptance": "三个核心验收目标在浏览器内验证通过或明确记录阻塞原因，验收结论产出",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1789350013338,
+      "endTime": 1789350388076
+    }
+  ]
+}

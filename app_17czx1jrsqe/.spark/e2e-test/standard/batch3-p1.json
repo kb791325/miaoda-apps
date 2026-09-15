@@ -1,0 +1,7 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"登录-张伟登录成功并进入工作台"},
+  {"id":2,"priority":"p0","description":"公海客资-标记无效流程：点一条记录的'标记无效'→选原因确认→无效客资列表能看到该记录"},
+  {"id":3,"priority":"p0","description":"公海筛选-调入时间/创建人筛选生效，高级筛选可展开收起"},
+  {"id":4,"priority":"p0","description":"邀约管理-列表有数据、新建邀约成功、详情弹窗可打开"},
+  {"id":5,"priority":"p0","description":"面试管理-列表有数据、填写评价弹窗可打开、详情时间线展示多轮次"}
+]}

@@ -1,0 +1,43 @@
+{
+  "id": "admission_poster_generation_1",
+  "pluginKey": "@official-plugins/ai-image-to-image",
+  "pluginVersion": "1.0.23",
+  "name": "招生宣传图片生成",
+  "description": "基于用户上传的1-3张参考图，结合招生内容标题与正文描述，生成风格与主体匹配的暖调招生宣传图片，比例3:4，无文字无字母无符号。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "reference_images": {
+        "type": "array",
+        "format": "plugin-image-url",
+        "description": "1-3张招生相关的参考图片",
+        "items": {
+          "type": "string"
+        }
+      },
+      "admission_title": {
+        "type": "string",
+        "description": "招生内容标题"
+      },
+      "admission_content": {
+        "type": "string",
+        "description": "招生内容正文描述"
+      }
+    },
+    "required": [
+      "reference_images",
+      "admission_title",
+      "admission_content"
+    ]
+  },
+  "formValue": {
+    "referenceImages": "{{input.reference_images}}",
+    "watermark": false,
+    "prompt": "请基于提供的参考图片，结合以下招生信息生成招生宣传图片：\n招生标题：{{input.admission_title}}\n招生内容：{{input.admission_content}}\n\n生成要求：\n1. 整体风格与参考图片的主体风格和元素保持一致\n2. 色调为暖色调，营造温暖、活力、积极的氛围\n3. 图片中不得包含任何文字、字母、符号或数字\n4. 主体元素突出，适合作为招生宣传使用\n5. 画面和谐美观，视觉舒适度高",
+    "ratio": "3:4"
+  },
+  "createdAt": 1788491975959,
+  "updatedAt": 1788491975959,
+  "createdBy": 7673423658517318587
+}

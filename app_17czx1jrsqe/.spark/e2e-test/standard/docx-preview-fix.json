@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"导航到简历库，搜索DOCX，对[QA]DOCX预览验证点预览简历，弹窗内渲染出docx文字内容，页面不崩溃"},{"id":2,"priority":"p0","description":"关闭DOCX预览弹窗，页面不崩溃；再打开同样的DOCX预览，仍正常渲染"},{"id":3,"priority":"p0","description":"打开李华JL76620的PDF预览，确认PDF正常渲染"},{"id":4,"priority":"p1","description":"连续打开关闭DOCX预览3次，页面不崩溃不白屏"},{"id":5,"priority":"p1","description":"PDF和DOCX交替打开预览，均不白屏不崩溃"}]}

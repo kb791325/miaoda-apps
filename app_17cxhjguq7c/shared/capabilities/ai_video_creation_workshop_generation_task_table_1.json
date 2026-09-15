@@ -1,0 +1,17 @@
+{
+  "id": "ai_video_creation_workshop_generation_task_table_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "AI视频创作工坊-生成任务表",
+  "description": "飞书多维表格生成任务表插件实例，支持任务CRUD与状态流转数据读写，包含searchRecords、getRecord、batchAddRecords、batchUpdateRecords、deleteRecords、aggregateQuery全部6个Action",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Bc9tbZLinanss7sszYAcKHfdnvf",
+    "tableID": "tblUq2H10IZgQZKr",
+    "fields": []
+  },
+  "createdAt": 1787797396637,
+  "updatedAt": 1787797396637,
+  "createdBy": 7673423658517318587
+}

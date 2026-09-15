@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"打开资产盘点看板(/inventory-dashboard)，确认盘点矩阵、时间线组件正常渲染，无Error Boundary报错"}]}

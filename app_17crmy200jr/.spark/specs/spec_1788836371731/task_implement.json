@@ -1,0 +1,185 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "代码架构设计：新增模块骨架搭建",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 了解项目编码规范",
+        "新增 Sidebar 导航菜单项：供应商管理、IT 报修工单、许可证管理",
+        "新增前端路由：/suppliers、/work-orders、/licenses 及占位页面",
+        "创建服务端模块骨架：supplier、work-order、license 模块（含 module/controller/service 占位）",
+        "在 app.module 中注册新模块",
+        "创建 shared 类型定义：supplier、work-order、license 的 DTO 类型"
+      ],
+      "requirements": [],
+      "write_scope": [
+        "client/src/components/Layout.tsx",
+        "client/src/app.tsx",
+        "client/src/pages/Suppliers/**",
+        "client/src/pages/WorkOrders/**",
+        "client/src/pages/Licenses/**",
+        "server/modules/supplier/**",
+        "server/modules/work-order/**",
+        "server/modules/license/**",
+        "shared/supplier.ts",
+        "shared/work-order.ts",
+        "shared/license.ts",
+        "server/app.module.ts"
+      ],
+      "read_scope": [
+        "client/src/components/Layout.tsx",
+        "client/src/app.tsx",
+        "server/app.module.ts",
+        "shared/",
+        "AGENTS.md"
+      ],
+      "acceptance": "导航菜单新增3项可点击跳转至对应占位页面，服务端启动无编译错误",
+      "dependencies": [],
+      "beginTime": 1788836581091,
+      "endTime": 1788836787175
+    },
+    {
+      "id": 2,
+      "name": "数据库表创建：供应商/工单/许可证/许可证分配",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 中数据库相关规范",
+        "创建 supplier 表（供应商名称、联系人、电话、邮箱、地址、主营品类、备注）",
+        "创建 work_order 表（工单号、报修人、问题类型、紧急程度、描述、状态、处理人、解决方案、满意度等）",
+        "创建 license 表（许可证名称、软件类型、密钥、授权方式、总座位数、采购信息、到期日期、供应商关联）",
+        "创建 license_assignment 表（许可证关联、分配人、绑定设备、分配日期、状态）",
+        "为 supplier 表插入3-5条演示供应商数据",
+        "为 license 表插入3-5条演示许可证数据"
+      ],
+      "dependencies": [
+        1
+      ],
+      "write_scope": [
+        "server/database/schema.ts"
+      ],
+      "read_scope": [
+        "server/database/schema.ts"
+      ],
+      "acceptance": "执行 migrate 后4张新表创建成功，seed 数据可查询",
+      "requirements": [],
+      "beginTime": 1788836787334,
+      "endTime": 1788837058307
+    },
+    {
+      "id": 3,
+      "name": "供应商管理模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现供应商后端 Service + Controller：CRUD、分页搜索",
+        "实现供应商列表页面：搜索栏、数据表格、分页",
+        "实现新增/编辑供应商弹窗：表单校验、提交刷新"
+      ],
+      "dependencies": [
+        2
+      ],
+      "write_scope": [
+        "server/modules/supplier/**",
+        "client/src/pages/Suppliers/**",
+        "client/src/api/suppliers.ts"
+      ],
+      "read_scope": [
+        "shared/supplier.ts",
+        "server/database/schema.ts"
+      ],
+      "acceptance": "供应商列表可查询展示，新增/编辑/删除操作落库可回查",
+      "requirements": [],
+      "beginTime": 1788837058478,
+      "endTime": 1788837900229
+    },
+    {
+      "id": 4,
+      "name": "IT 报修工单模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现工单后端 Service + Controller：CRUD、筛选分页、状态流转、工单号自动生成",
+        "实现工单列表页面：状态/紧急程度/问题类型筛选栏、数据表格、工单号等宽字体展示",
+        "实现新增工单弹窗：报修表单（问题类型、紧急程度、描述、关联资产、附件上传）",
+        "实现工单详情侧滑面板：完整信息展示、处理人分配、解决方案填写、满意度评价、状态流转按钮"
+      ],
+      "dependencies": [
+        2
+      ],
+      "write_scope": [
+        "server/modules/work-order/**",
+        "client/src/pages/WorkOrders/**",
+        "client/src/api/work-orders.ts"
+      ],
+      "read_scope": [
+        "shared/work-order.ts",
+        "server/database/schema.ts",
+        "client/src/components/FileUpload/"
+      ],
+      "acceptance": "工单可新增提交、列表可查询筛选、状态流转落库可回查",
+      "requirements": [],
+      "beginTime": 1788837058478,
+      "endTime": 1788837900229
+    },
+    {
+      "id": 5,
+      "name": "许可证管理模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现许可证后端 Service + Controller：许可证 CRUD、座位分配/回收、已分配数统计",
+        "实现许可证列表页面：搜索栏、数据表格（含座位数、已分配数、剩余数、到期日期高亮）、供应商关联",
+        "实现新增/编辑许可证弹窗：表单含供应商下拉选择、授权方式选择、到期日期",
+        "实现许可证详情侧滑面板：基本信息、座位分配记录列表、分配/回收操作按钮"
+      ],
+      "dependencies": [
+        2,
+        3
+      ],
+      "write_scope": [
+        "server/modules/license/**",
+        "client/src/pages/Licenses/**",
+        "client/src/api/licenses.ts"
+      ],
+      "read_scope": [
+        "shared/license.ts",
+        "server/database/schema.ts"
+      ],
+      "acceptance": "许可证可新增、座位可分配/回收、分配数统计准确、到期日期预警可展示",
+      "requirements": [],
+      "beginTime": 1788837900420,
+      "endTime": 1788838783256
+    },
+    {
+      "id": 6,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：确认左侧导航新增3个菜单项可点击跳转、路由正确、页面无白屏",
+        "核心验收目标1：供应商管理 —— 列表展示3+条供应商数据，新增供应商提交后列表刷新可见，编辑后数据更新",
+        "核心验收目标2：IT 报修工单 —— 提交报修工单后列表可见，工单号格式正确，状态流转操作后状态变更可确认",
+        "核心验收目标3：许可证管理 —— 许可证列表展示到期日期，分配座位后已分配数更新，回收座位后状态变更",
+        "非核心降级范围：附件上传展示效果、到期日期颜色精确度、满意度评价交互细节"
+      ],
+      "dependencies": [
+        3,
+        4,
+        5
+      ],
+      "write_scope": [],
+      "read_scope": [],
+      "acceptance": "核心验收目标全部通过，3个新模块功能闭环可用",
+      "requirements": [],
+      "beginTime": 1788838783404,
+      "endTime": 1788839131231
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "id": "feishu_multitable_crud_analysis_33",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fld5nIWGPP",
+        "name": "到账状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "待确认",
+          "已到账",
+          "部分到账",
+          "有差异"
+        ]
+      },
+      {
+        "id": "fldE5S6v5K",
+        "name": "返点形式",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "现金返还",
+          "账户赠款",
+          "服务费抵扣"
+        ]
+      },
+      {
+        "id": "fld0wAO0po",
+        "name": "基数消耗",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldrzHhhzw",
+        "name": "投放端口",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "巨量千川",
+          "巨量AD",
+          "快手磁力",
+          "小红书",
+          "腾讯广告",
+          "百度",
+          "其他"
+        ]
+      },
+      {
+        "id": "fld3sZrmEr",
+        "name": "返点周期",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "月度",
+          "季度",
+          "年度"
+        ]
+      },
+      {
+        "id": "fldZwyk0s0",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldVC9aGsn",
+        "name": "HF编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld0mmtLRZ",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldwJQ9CxP",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldGDE4Z75",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldVf3pi5c",
+        "name": "到账时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldQflxwoV",
+        "name": "平台对账单",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldAveKC3U",
+        "name": "返点比例",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldeEErZCJ",
+        "name": "周期月份",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldrDTKq2r",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldcnHco5z",
+        "name": "负责人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldrW7eEzu",
+        "name": "返点金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldXrnFv6z",
+        "name": "实际到账金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      }
+    ],
+    "tableID": "tblfbX5LBRKgM2MX",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

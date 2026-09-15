@@ -1,0 +1,5 @@
+{"cases": [
+  {"id": 1, "priority": "p0", "description": "打开开户申请列表 /sub/adOpen，点击第一条记录进入详情页，切换到审批流程Tab，断言审批时间线至少渲染3个节点（如草稿→待审批→审批中→已通过等）"},
+  {"id": 2, "priority": "p0", "description": "打开采购订单列表 /sub/purchaseOrder，点击第一条记录进入详情页，切换到审批流程Tab，断言审批时间线至少渲染3个节点"},
+  {"id": 3, "priority": "p0", "description": "打开视频订单列表 /sub/videoOrder，点击第一条记录进入详情页，切换到审批流程Tab，断言审批时间线至少渲染3个节点"}
+]}

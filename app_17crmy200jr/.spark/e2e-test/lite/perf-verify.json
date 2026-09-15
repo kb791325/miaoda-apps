@@ -1,0 +1,7 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"首页Dashboard（/）：页面正常渲染，包含统计卡片和图表区域"},
+  {"id":2,"priority":"p0","description":"固定资产列表（/fixed-assets）：列表正常渲染，包含搜索栏、表格数据行或空状态"},
+  {"id":3,"priority":"p0","description":"资产预约列表（/asset-reservations）：页面正常渲染，包含筛选栏和预约列表"},
+  {"id":4,"priority":"p0","description":"审计日志（/audit-logs）：页面正常渲染，包含统计卡片和日志表格"},
+  {"id":5,"priority":"p0","description":"附件管理（/attachments）：页面正常渲染，包含筛选区和附件列表"}
+]}

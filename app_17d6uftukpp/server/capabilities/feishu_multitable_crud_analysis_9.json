@@ -1,0 +1,118 @@
+{
+  "id": "feishu_multitable_crud_analysis_9",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldcXazEZL",
+        "name": "设置分类",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "公海设置",
+          "线索设置",
+          "客户设置",
+          "预警设置",
+          "税点设置",
+          "其他"
+        ]
+      },
+      {
+        "id": "fld5pjnOGn",
+        "name": "设置值",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldpeTYpiy",
+        "name": "说明",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldLHsYpBi",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld4Q1vpYN",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld6vpLzMG",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldyGzEf7u",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld4FkPT8p",
+        "name": "设置编号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldVAv6wTR",
+        "name": "设置项",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldRlhVwi2",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldV5S3HDP",
+        "name": "状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "启用",
+          "停用"
+        ]
+      }
+    ],
+    "tableID": "tblPPqjHCuTduHI0",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788312389402,
+  "updatedAt": 1788312389402,
+  "createdBy": 7673423658517318587
+}

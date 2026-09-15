@@ -1,0 +1,114 @@
+{
+  "id": "data_review_bitable_writer_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "数据复盘表写入实例v2",
+  "description": "飞书多维表格数据复盘表数据写入与查询实例，支持搜索记录、批量新增和批量更新操作，包含统计日期、售后工单量等核心业务字段",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "TtUqb0FwVaSq7ssq6vacWbMCn9c",
+    "tableID": "tbl4b64Oq3aPN4zQ",
+    "fields": [
+      {
+        "writeable": true,
+        "id": "fld1",
+        "name": "统计日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true
+      },
+      {
+        "id": "fld2",
+        "name": "售后工单量",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "id": "fld3",
+        "name": "紧急工单量",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "id": "fld4",
+        "name": "退款单数",
+        "type": 2,
+        "bizType": "Number"
+      },
+      {
+        "id": "fld5",
+        "name": "退款金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "name": "TOP问题类型",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld6"
+      },
+      {
+        "name": "平均响应时长",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true,
+        "id": "fld7"
+      },
+      {
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true,
+        "id": "fld8",
+        "name": "平均解决时长"
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "id": "fld9",
+        "name": "差评数",
+        "type": 2,
+        "bizType": "Number"
+      },
+      {
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true,
+        "id": "fld10",
+        "name": "负面情绪数",
+        "type": 2
+      },
+      {
+        "id": "fld11",
+        "name": "咨询总量",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld12",
+        "name": "备注",
+        "type": 1
+      }
+    ]
+  },
+  "createdAt": 1789099042873,
+  "updatedAt": 1789099042873,
+  "createdBy": 7673423658517318587
+}

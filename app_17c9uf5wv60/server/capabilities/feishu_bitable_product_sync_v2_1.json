@@ -1,0 +1,74 @@
+{
+  "id": "feishu_bitable_product_sync_v2_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格商品同步V2",
+  "description": "用于商品数据同步的飞书多维表格插件实例，包含商品编码、商品名称、品类、单位、安全库存、参考单价6个字段，支持完整的CRUD和聚合查询操作。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "CLtnbD9DMa9uUhs38dxcI7hbnoH",
+    "tableID": "tblPcqlUtAb6Pnbs",
+    "fields": [
+      {
+        "id": "fld1",
+        "name": "商品编码",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld2",
+        "name": "商品名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld3",
+        "name": "品类",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "电子产品",
+          "服装鞋帽",
+          "食品饮料",
+          "家居用品",
+          "美妆个护",
+          "运动户外"
+        ],
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "id": "fld4",
+        "name": "单位",
+        "type": 1,
+        "bizType": "Text"
+      },
+      {
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true,
+        "id": "fld5",
+        "name": "安全库存"
+      },
+      {
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true,
+        "id": "fld6",
+        "name": "参考单价"
+      }
+    ]
+  },
+  "createdAt": 1787363967825,
+  "updatedAt": 1787363967825,
+  "createdBy": 7673423658517318587
+}

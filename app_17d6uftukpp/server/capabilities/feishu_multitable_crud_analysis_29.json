@@ -1,0 +1,130 @@
+{
+  "id": "feishu_multitable_crud_analysis_29",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldYwuAGbE",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldAseOMrZ",
+        "name": "发生时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldmV8JAgh",
+        "name": "关联单据",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld82gQ7bR",
+        "name": "LS编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldp3c1SYZ",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldgjmtoMG",
+        "name": "收支方向",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "收入",
+          "支出"
+        ]
+      },
+      {
+        "id": "fldJj3RBO9",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldPujT5uc",
+        "name": "业务类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "充值",
+          "消耗",
+          "退款",
+          "赠款",
+          "扣减",
+          "退币",
+          "后返",
+          "垫款",
+          "调账",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldZrp3H1N",
+        "name": "账户余额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldQ6IU6i2",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld8N5cmPv",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldIRKoFGR",
+        "name": "金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      }
+    ],
+    "tableID": "tblfSm5nyPi7b9Y9",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

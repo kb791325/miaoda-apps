@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "priority": "p0",
+      "description": "登录页输入用户名 e2e_test_tmp 密码 test123456 提交登录，进入用户管理页（/users 或侧边栏「用户管理」），断言：账号列表表格中同时存在用户名为 admin、e2e_test_tmp、e2e_test_del 的三行"
+    },
+    {
+      "id": 2,
+      "priority": "p1",
+      "description": "切换到 e2e_test_tmp 会话：若当前不在登录页，点击侧边栏底部用户下拉菜单中的「退出登录」，在确认弹窗点击确认按钮回到登录页；在登录页用输入框填写用户名 e2e_test_tmp、密码 test123456 并点击登录按钮（禁止点击飞书登录）；进入用户管理页，断言：e2e_test_tmp 行的操作栏不存在「删除」按钮，且 admin 行的操作栏存在「删除」按钮"
+    },
+    {
+      "id": 3,
+      "priority": "p1",
+      "description": "点击 e2e_test_del 行的「删除」按钮，断言：弹出对话框包含「删除账号」标题及「[E2E_TEST]删除对象」文案；点击「取消」按钮，断言：对话框关闭且列表中 e2e_test_del 行仍然存在"
+    },
+    {
+      "id": 4,
+      "priority": "p1",
+      "description": "点击 e2e_test_del 行的「删除」按钮，在对话框中点击「确认删除」，断言：DELETE /api/auth/users/ 开头的请求响应码为 200，且刷新后列表中不再存在 e2e_test_del 行（admin 与 e2e_test_tmp 行仍在）"
+    },
+    {
+      "id": 5,
+      "priority": "p1",
+      "description": "保持 e2e_test_tmp 会话，点击 admin 行的「删除」按钮，在对话框中点击「确认删除」，断言：DELETE /api/auth/users/ 开头的请求响应码为 400，且列表中 admin 行仍然存在"
+    }
+  ]
+}

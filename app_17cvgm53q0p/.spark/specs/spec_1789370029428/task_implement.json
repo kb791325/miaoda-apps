@@ -1,0 +1,70 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "销售漏斗可视化样式重设计（销售进度标签）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "配置当前页面路由和导航布局检查",
+        "重设漏斗 series：同色系由浅到深渐变、已成交绿色，层宽按数量比例映射且逐层不增宽、居中对称",
+        "阶段名称移至层左侧展示，数量大号字体层内居中，保证文字背景对比度",
+        "悬停高亮该层，tooltip 展示该层客户数量与较上一阶段转化率",
+        "新增底部横排居中图例，漏斗整体居中并调整图表高度适中",
+        "保留空数据/加载/失败重试状态与头部客户总数、成交率展示"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5"
+      ],
+      "write_scope": [
+        "client/src/pages/Dashboard/SalesFunnelChart.tsx",
+        "client/src/pages/Dashboard/chart-palette.ts"
+      ],
+      "read_scope": [
+        "client/src/pages/Dashboard/SalesFunnelChart.tsx",
+        "client/src/pages/Dashboard/chart-palette.ts",
+        "client/src/pages/Customers/CustomersPage.tsx",
+        "shared/customer.ts"
+      ],
+      "acceptance": "客户页销售进度标签与首页工作台漏斗以新样式渲染：渐变层色且已成交绿色、层宽逐层收窄对称、左侧阶段名+层内大号数量、底部图例齐全，悬停出现数量与转化率提示",
+      "dependencies": [],
+      "beginTime": 1789370222017,
+      "endTime": 1789370545549
+    },
+    {
+      "id": 2,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：入口为客户管理页销售进度标签，入口不可用时停止验收仅记录阻塞问题",
+        "核心验收目标1：销售进度标签漏斗 —— 渐变层色与已成交绿色、左侧阶段名、层内大号数量、底部图例均可见且层宽逐层不增宽",
+        "核心验收目标2：悬停非首层漏斗层 —— 该层高亮且 tooltip 展示该层客户数量与较上一阶段转化率",
+        "非核心降级范围：像素级布局细节与配色主观偏好"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5"
+      ],
+      "read_scope": [
+        ".spark/specs/spec_1789370029428/spec.md",
+        "client/src/pages/Dashboard/SalesFunnelChart.tsx"
+      ],
+      "acceptance": "销售进度标签漏斗新样式完整呈现且悬停转化率提示可用，空态/加载/重试状态正常",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1789370545816,
+      "endTime": 1789371211400
+    }
+  ]
+}

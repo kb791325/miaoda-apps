@@ -1,0 +1,240 @@
+{
+  "id": "feishu_multitable_crud_analysis_31",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldEQaHsLK",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldKnguP6P",
+        "name": "TK编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldM6Agb8r",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldefEwW50",
+        "name": "申请人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldDQbbuDt",
+        "name": "财务操作人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldppvDHtR",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldOLYPLuX",
+        "name": "退款类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "账户余额退款",
+          "合同退款",
+          "保证金退还",
+          "押金退还",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldBfYiGA6",
+        "name": "退款金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldIMfL1wi",
+        "name": "收款账户名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldpdmB3wg",
+        "name": "审批意见",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldjnsA7KG",
+        "name": "退款凭证",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldFqjRnZ0",
+        "name": "退款状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "草稿",
+          "待审批",
+          "审批中",
+          "已驳回",
+          "待退款",
+          "退款中",
+          "已退款",
+          "已取消"
+        ]
+      },
+      {
+        "id": "fldhDRwy9r",
+        "name": "申请时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldhmlUHVO",
+        "name": "收款账号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldZQvQzB3",
+        "name": "银行流水号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldcnM3Eq1",
+        "name": "收款银行",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldNgBA24Q",
+        "name": "详细说明",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldMBk05iX",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldpozxzX4",
+        "name": "审批时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldl7a56mJ",
+        "name": "退款时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldcU8W9G2",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldiYOw6JK",
+        "name": "审批人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldTbDjJHj",
+        "name": "退款方式",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "原路退回",
+          "银行转账",
+          "其他"
+        ]
+      },
+      {
+        "id": "flds8mKDag",
+        "name": "退款原因",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "客户终止合作",
+          "余额退还",
+          "多收款退回",
+          "服务未完成",
+          "投诉退款",
+          "其他"
+        ]
+      }
+    ],
+    "tableID": "tblB3n4yRmpmmGVq",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

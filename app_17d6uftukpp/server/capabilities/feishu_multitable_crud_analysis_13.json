@@ -1,0 +1,196 @@
+{
+  "id": "feishu_multitable_crud_analysis_13",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldtfrGY9P",
+        "name": "姓名",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldgb7LzHY",
+        "name": "LX编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld1doGli3",
+        "name": "性别",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "男",
+          "女"
+        ]
+      },
+      {
+        "id": "fldis5mvAt",
+        "name": "微信",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldsuJgP7H",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldfiovzDc",
+        "name": "沟通偏好",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "电话",
+          "微信",
+          "邮件",
+          "飞书",
+          "当面"
+        ]
+      },
+      {
+        "id": "fldocwCRdq",
+        "name": "是否主要联系人",
+        "type": 7,
+        "bizType": "Checkbox",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldJCQkRVI",
+        "name": "职位",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldyZI4GcS",
+        "name": "手机号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldPlbhpcT",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld55ZnFMG",
+        "name": "个人备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldSIkKVcp",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldjZH1Fh3",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldHRCtk3n",
+        "name": "决策角色",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "决策人",
+          "影响人",
+          "执行人",
+          "对接人",
+          "财务对接"
+        ]
+      },
+      {
+        "id": "fldqgMNZCM",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldE8lNDnk",
+        "name": "QQ",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldY26ZZ4Z",
+        "name": "生日",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldSQ8av0c",
+        "name": "邮箱",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldDEfYRaz",
+        "name": "所属客户",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fldbabky2R",
+        "name": "关联客户ID",
+        "readable": true,
+        "writeable": true,
+        "type": 1
+      }
+    ],
+    "tableID": "tblvQmR3SbMaUmJi",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788399346015,
+  "createdBy": 7673423658517318587
+}

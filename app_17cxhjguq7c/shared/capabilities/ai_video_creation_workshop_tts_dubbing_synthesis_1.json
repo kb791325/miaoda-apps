@@ -1,0 +1,41 @@
+{
+  "id": "ai_video_creation_workshop_tts_dubbing_synthesis_1",
+  "pluginKey": "@official-plugins/ai-speech-synthesis",
+  "pluginVersion": "1.0.13",
+  "name": "AI视频创作工坊-TTS配音合成",
+  "description": "基于输入的分镜脚本台词文本、音色与语速参数，合成对应的语音音频，输出可播放的音频地址，用于生成任务详情页的TTS配音试听功能。支持温柔女声、活力女声、沉稳男声、青年男声、磁性旁白、可爱童声等多种中文音色选择。",
+  "icon": "",
+  "paramsSchema": {
+    "properties": {
+      "script_text": {
+        "type": "string",
+        "description": "分镜脚本台词文本，最多支持3000个字符"
+      },
+      "voice_type": {
+        "type": "string",
+        "description": "音色选择，可选值：zh_female_qingxinnvsheng_mars_bigtts（女声）、zh_male_qingshuangnanda_mars_bigtts（男声），支持扩展覆盖温柔女声、活力女声、沉稳男声、青年男声、磁性旁白、可爱童声等中文音色"
+      },
+      "speed_ratio": {
+        "description": "语速选择，可选值：1.0（正常）、1.2（快1.2倍）、1.5（快1.5倍）、2.0（快2倍）、0.8（慢0.8倍）、0.5（慢0.5倍）、0.2（慢0.2倍）",
+        "type": "string"
+      },
+      "volume_ratio": {
+        "type": "string",
+        "description": "音量选择，可选值：1.0（正常）、1.2（高1.2倍）、1.5（高1.5倍）、2.0（高2倍）、0.8（低0.8倍）、0.5（低0.5倍）"
+      }
+    },
+    "required": [
+      "script_text"
+    ],
+    "type": "object"
+  },
+  "formValue": {
+    "volumeRatio": "{{input.volume_ratio}}",
+    "text": "{{input.script_text}}",
+    "voiceType": "{{input.voice_type}}",
+    "speedRatio": "{{input.speed_ratio}}"
+  },
+  "createdAt": 1787801088486,
+  "updatedAt": 1787801088486,
+  "createdBy": 7673423658517318587
+}

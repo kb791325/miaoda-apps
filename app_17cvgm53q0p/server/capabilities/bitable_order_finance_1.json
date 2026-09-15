@@ -1,0 +1,58 @@
+{
+  "id": "bitable_order_finance_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "订单表财务字段同步实例",
+  "description": "用于服务端更新订单表的财务汇总字段，支持按订单号查询记录和批量更新财务字段",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblmZOhwiqkVmpEY",
+    "fields": [
+      {
+        "writeable": true,
+        "bizType": "Text",
+        "id": "",
+        "name": "订单号",
+        "readable": true,
+        "type": 1
+      },
+      {
+        "id": "",
+        "name": "费用总金额",
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number"
+      },
+      {
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "",
+        "name": "成本总金额"
+      },
+      {
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "",
+        "name": "利润"
+      },
+      {
+        "bizType": "Number",
+        "id": "",
+        "name": "订单总金额",
+        "readable": true,
+        "type": 2,
+        "writeable": true
+      }
+    ]
+  },
+  "createdAt": 1789114805748,
+  "updatedAt": 1789114805748,
+  "createdBy": 7673423658517318587
+}

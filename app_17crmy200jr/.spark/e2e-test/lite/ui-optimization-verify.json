@@ -1,0 +1,7 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"AssetScan扫码页：摄像头居中、扫描线动画可见、资产卡片显示、借出/归还按钮可见、扫码历史记录呈卡片布局"},
+  {"id":2,"priority":"p0","description":"ReservationListPage预约列表：统计卡片含图标和颜色、快速筛选标签（全部/待审批/已批准/已借出）可见且active态为蓝色、状态标签颜色区分（待审批=橙色、已批准=蓝色、已借出=紫色）"},
+  {"id":3,"priority":"p0","description":"ReservationCreatePage预约创建页：表单分组（资产信息/预约信息/借出信息）标题可见、资产搜索框存在、日期选择器存在、提交按钮全宽"},
+  {"id":4,"priority":"p0","description":"AuditLogListPage审计列表（路由/audit-logs）：统计卡片含图标、操作类型标签颜色区分（CREATE=绿色、UPDATE=蓝色、DELETE=红色）、详情按钮为图标按钮"},
+  {"id":5,"priority":"p0","description":"AttachmentManagePage附件管理：统计卡片含图标、文件类型快捷筛选标签（全部/图片/文档/其他）可见、文件表格含类型图标"}
+]}

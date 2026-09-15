@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"导航到 /monitoring 页面，确认监控仪表盘页面正常渲染，包含性能概览卡片、图表区域等核心组件"},{"id":2,"priority":"p0","description":"确认 /dashboard 首页正常渲染，不受监控模块影响"},{"id":3,"priority":"p1","description":"确认 /expenses 支出管理页面正常渲染"},{"id":4,"priority":"p1","description":"确认 /fixed-assets 固定资产页面正常渲染"}]}

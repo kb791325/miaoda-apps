@@ -1,0 +1,87 @@
+{
+  "id": "feishu_bitable_product_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格商品数据同步",
+  "description": "实现商品数据与飞书多维表格的双向同步，支持增删改查操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "CLtnbD9DMa9uUhs38dxcI7hbnoH",
+    "tableID": "tblPcqlUtAb6Pnbs",
+    "fields": [
+      {
+        "id": "fldProductId",
+        "name": "商品ID",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "name": "商品名称",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldProductName"
+      },
+      {
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fldProductPrice",
+        "name": "商品价格"
+      },
+      {
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fldProductStock",
+        "name": "库存数量"
+      },
+      {
+        "bizType": "Text",
+        "id": "fldProductCategory",
+        "name": "商品分类",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "上架",
+          "下架",
+          "预售"
+        ],
+        "id": "fldProductStatus",
+        "name": "商品状态",
+        "readable": true,
+        "type": 3
+      },
+      {
+        "readable": true,
+        "type": 5,
+        "writeable": false,
+        "bizType": "DateTime",
+        "id": "fldCreateTime",
+        "name": "创建时间"
+      },
+      {
+        "bizType": "DateTime",
+        "id": "fldUpdateTime",
+        "name": "更新时间",
+        "readable": true,
+        "type": 5,
+        "writeable": true
+      }
+    ]
+  },
+  "createdAt": 1787306176998,
+  "updatedAt": 1787306176998,
+  "createdBy": 7673423658517318587
+}

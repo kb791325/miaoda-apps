@@ -1,0 +1,17 @@
+{
+  "id": "ai_video_workshop_storyboard_library_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "AI视频创作工坊-分镜脚本库表",
+  "description": "分镜脚本库页面的脚本CRUD数据读写，支持searchRecords、getRecord、batchAddRecords、batchUpdateRecords、deleteRecords、aggregateQuery全部6个Action",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Bc9tbZLinanss7sszYAcKHfdnvf",
+    "tableID": "tbljD0Q556F2aEkY",
+    "fields": []
+  },
+  "createdAt": 1787797398339,
+  "updatedAt": 1787797398339,
+  "createdBy": 7673423658517318587
+}

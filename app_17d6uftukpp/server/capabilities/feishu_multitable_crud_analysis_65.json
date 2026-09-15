@@ -1,0 +1,166 @@
+{
+  "id": "feishu_multitable_crud_analysis_65",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldrkoNB4F",
+        "name": "周期月份",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "flde3mrZyN",
+        "name": "数据来源",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "平台数据",
+          "内部统计",
+          "第三方报告"
+        ]
+      },
+      {
+        "id": "fldW8vuaH6",
+        "name": "二级行业",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "女装",
+          "男装",
+          "美妆",
+          "食品",
+          "3C",
+          "家居",
+          "母婴",
+          "运动",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldOcjcUms",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldRLFQUDx",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldMPgjPf6",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldYX1zlm1",
+        "name": "转化率",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldqvd57GH",
+        "name": "统计周期",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "月度",
+          "季度",
+          "年度"
+        ]
+      },
+      {
+        "id": "flde2Y76AQ",
+        "name": "一级行业",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "电商",
+          "教育",
+          "金融",
+          "医疗",
+          "游戏",
+          "旅游",
+          "房产",
+          "汽车",
+          "美妆",
+          "服饰",
+          "食品",
+          "3C",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldOrEJNJA",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldJyLXdAp",
+        "name": "ROI编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldMxDRrzn",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldVHW2AfD",
+        "name": "平均ROI",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldxqWC073",
+        "name": "平均消耗",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      }
+    ],
+    "tableID": "tblzE3uZSWZMgweA",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

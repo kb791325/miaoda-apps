@@ -1,0 +1,7 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"固定资产详情页（/fixed-assets/:id）：资产详情弹窗显示QR码区域、附件管理区域（上传+列表）"},
+  {"id":2,"priority":"p0","description":"资产预约详情页（/asset-reservations/:id）：页面底部显示附件管理区域（上传+列表）"},
+  {"id":3,"priority":"p0","description":"支出管理编辑弹窗：表单底部显示附件管理区域（上传+列表）"},
+  {"id":4,"priority":"p0","description":"操作审计日志页（/audit-logs）：统计卡片、操作类型彩色标签、详情按钮正常渲染"},
+  {"id":5,"priority":"p0","description":"侧边栏导航：资产预约、附件管理、操作审计日志菜单项全部存在且可点击"}
+]}

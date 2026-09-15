@@ -1,0 +1,49 @@
+name: Code Quality
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  code-review:
+    name: Automated Code Review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check code changes
+        run: |
+          echo "Checking code changes..."
+          git diff --name-only origin/main...HEAD
+
+      - name: Check for console.log
+        run: |
+          if grep -r "console.log" --include="*.ts" --include="*.tsx" server/ client/src/; then
+            echo "::warning::Found console.log statements"
+          fi
+
+      - name: Check for TODO/FIXME
+        run: |
+          if grep -r "TODO\|FIXME\|HACK" --include="*.ts" --include="*.tsx" server/ client/src/; then
+            echo "::warning::Found TODO/FIXME/HACK comments"
+          fi
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run npm audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Check for hardcoded secrets
+        run: |
+          if grep -rE "(password|secret|token|api_key)\s*[:=]\s*['\"][^'\"]+['\"]" \
+            --include="*.ts" --include="*.tsx" --include="*.js" \
+            server/ client/src/ | grep -v ".env" | grep -v "process.env"; then
+            echo "::error::Possible hardcoded secrets found"
+            exit 1
+          fi

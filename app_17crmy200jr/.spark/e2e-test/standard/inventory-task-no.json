@@ -1,0 +1,7 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"打开盘点执行页，页面标题「资产盘点执行」显示，任务列表区域存在"},
+  {"id":2,"priority":"p0","description":"点击「创建盘点任务」按钮，弹窗出现且无「任务名称」输入框"},
+  {"id":3,"priority":"p1","description":"创建弹窗显示「任务编号」预览卡片，含 CK-XXXX-XXXX 格式提示"},
+  {"id":4,"priority":"p1","description":"切换盘点月份后，任务编号预览中的年月部分随之变化"},
+  {"id":5,"priority":"p1","description":"固定资产管理页、Dashboard页、支出管理页标题统一，间距美观"}
+]}

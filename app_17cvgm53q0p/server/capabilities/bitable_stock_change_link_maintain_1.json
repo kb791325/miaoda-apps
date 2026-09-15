@@ -1,0 +1,59 @@
+{
+  "id": "bitable_stock_change_link_maintain_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "库存变动表关联字段维护实例",
+  "description": "用于服务端为库存变动记录补写关联字段，支持读取库存变动记录判断关联字段是否为空，并为缺失的记录补写「关联订单」或「关联发货单」链接",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": false,
+        "id": "",
+        "name": "变动编号"
+      },
+      {
+        "readable": true,
+        "writeable": false,
+        "enumValues": [],
+        "id": "",
+        "name": "变动类型",
+        "type": 3,
+        "bizType": "SingleSelect"
+      },
+      {
+        "id": "",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true,
+        "id": "",
+        "name": "关联订单",
+        "type": 18
+      },
+      {
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true,
+        "id": "",
+        "name": "关联发货单",
+        "type": 18
+      }
+    ],
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblUUaJHu1meaomM"
+  },
+  "createdAt": 1789034071192,
+  "updatedAt": 1789034071192,
+  "createdBy": 7673423658517318587
+}

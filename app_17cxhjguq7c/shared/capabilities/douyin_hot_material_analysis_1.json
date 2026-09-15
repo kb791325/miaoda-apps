@@ -1,0 +1,128 @@
+{
+  "id": "douyin_hot_material_analysis_1",
+  "pluginKey": "@official-plugins/ai-text-to-json",
+  "pluginVersion": "1.0.24",
+  "name": "抖音爆款素材拆解分析",
+  "description": "输入抖音视频链接与文案，结构化输出五维评分、综合评级、钩子分析、画面描述、BGM建议、标签、视频标题、作者信息、估算数据、内容类型、情绪标签等拆解信息，用于爆款素材库\"仅输入抖音链接即可全自动拆解填充\"功能",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "video_content": {
+        "description": "视频文案内容",
+        "type": "string"
+      },
+      "video_url": {
+        "type": "string",
+        "description": "抖音视频链接"
+      }
+    },
+    "required": [
+      "video_url",
+      "video_content"
+    ]
+  },
+  "formValue": {
+    "prompt": "你是专业的抖音爆款内容分析专家，拥有丰富的短视频运营经验和内容拆解能力。请对以下抖音视频进行专业拆解分析：\n\n视频链接：{{input.video_url}}\n视频文案：{{input.video_content}}\n\n请严格按照给定的JSON结构输出分析结果，所有评分均为0-100的整数，评分等级分为S/A/B/C/D五级（S为最高，综合评分90+为S，80-89为A，70-79为B，60-69为C，60以下为D）。\n\n新增字段要求：\n1. video_title：根据视频链接和文案内容推断出的视频标题，准确反映视频核心主题\n2. author_name：从视频信息中提取的抖音作者昵称\n3. like_count：基于内容质量、平台热度等维度估算的视频点赞数，为非负整数\n4. comment_count：基于互动潜力等维度估算的视频评论数，为非负整数\n5. share_count：基于传播潜力等维度估算的视频分享数，为非负整数\n6. content_type：从知识科普/产品推广/剧情故事/生活vlog/搞笑娱乐/情感共鸣/影视剪辑/好物分享中选择最匹配的内容类型\n7. emotion_tags：提取3-5个最能代表视频情感调性的标签，如治愈/搞笑/紧张/感动/励志等\n\n原有字段分析要求：\n1. 五维评分需结合抖音平台算法规则和内容实际表现综合评定\n2. 钩子分析需明确指出视频开头3秒吸引用户停留的核心设计点\n3. 画面描述需提炼视频的核心视觉元素、拍摄手法和呈现风格\n4. BGM建议需结合视频内容调性给出具体的音乐风格或参考方向\n5. 标签需提取5-8个最相关的抖音热门话题标签，不带#号\n\n所有字段必须按要求填写，不得遗漏，输出格式严格为JSON，无其他额外内容。",
+    "jsonStructure": [
+      {
+        "paramDescription": "完播力评分，0-100整数",
+        "paramType": "Number",
+        "name": "completion_rate_score"
+      },
+      {
+        "name": "interaction_potential_score",
+        "paramDescription": "互动潜力评分，0-100整数",
+        "paramType": "Number"
+      },
+      {
+        "paramDescription": "内容质量评分，0-100整数",
+        "paramType": "Number",
+        "name": "content_quality_score"
+      },
+      {
+        "name": "platform_adaptation_score",
+        "paramDescription": "平台适配评分，0-100整数",
+        "paramType": "Number"
+      },
+      {
+        "paramType": "Number",
+        "name": "spread_potential_score",
+        "paramDescription": "传播潜力评分，0-100整数"
+      },
+      {
+        "name": "comprehensive_score",
+        "paramDescription": "综合评分，0-100整数，为五维评分的加权平均值",
+        "paramType": "Number"
+      },
+      {
+        "paramType": "String",
+        "name": "score_level",
+        "paramDescription": "评分等级，取值为S/A/B/C/D"
+      },
+      {
+        "paramDescription": "钩子分析，描述视频开头吸引用户停留的核心设计",
+        "paramType": "String",
+        "name": "hook_analysis"
+      },
+      {
+        "paramDescription": "画面描述，提炼视频核心视觉元素、拍摄手法和呈现风格",
+        "paramType": "String",
+        "name": "screen_description"
+      },
+      {
+        "paramDescription": "BGM建议，给出适配视频内容的音乐风格或参考方向",
+        "paramType": "String",
+        "name": "bgm_suggestion"
+      },
+      {
+        "paramType": "Array",
+        "name": "tags",
+        "paramDescription": "相关标签列表，5-8个最相关的抖音热门话题标签，不带#号，items schema: {tag: string(标签内容)}"
+      },
+      {
+        "name": "video_title",
+        "paramDescription": "根据链接与文案推断的视频标题",
+        "paramType": "String"
+      },
+      {
+        "name": "author_name",
+        "paramDescription": "抖音作者昵称",
+        "paramType": "String"
+      },
+      {
+        "name": "like_count",
+        "paramDescription": "估算点赞数，非负整数",
+        "paramType": "Number"
+      },
+      {
+        "paramDescription": "估算评论数，非负整数",
+        "paramType": "Number",
+        "name": "comment_count"
+      },
+      {
+        "paramType": "Number",
+        "name": "share_count",
+        "paramDescription": "估算分享数，非负整数"
+      },
+      {
+        "name": "content_type",
+        "paramDescription": "内容类型，只能从知识科普/产品推广/剧情故事/生活vlog/搞笑娱乐/情感共鸣/影视剪辑/好物分享中选择",
+        "paramType": "String"
+      },
+      {
+        "name": "emotion_tags",
+        "paramDescription": "情绪标签列表，3-5个情绪标签，可选值如治愈/搞笑/紧张/感动/励志等，items schema: {tag: string(标签内容)}",
+        "paramType": "Array"
+      }
+    ],
+    "modelID": "2015",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    }
+  },
+  "createdAt": 1787795731274,
+  "updatedAt": 1787803449102,
+  "createdBy": 7673423658517318587
+}

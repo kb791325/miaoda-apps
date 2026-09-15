@@ -1,0 +1,420 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "代码架构设计",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与项目现有结构",
+        "全局路由配置：注册所有 31 个页面路由（工作台 + 10 模块各三页），含动态参数 :id",
+        "Sidebar 导航 Layout：左侧固定导航栏，含 Logo「牧唐数智一体化」+ 11 个导航项 + 底部用户信息区",
+        "shared 类型定义：编写全部 10 个业务模块的 TypeScript interface（ICustomer/IAdProject/IVideoProject/IContract/IFinanceRecord/IEmployee/IAdminAsset/ITask/ISystemUser/ISupportTicket）及 IBaseRecord",
+        "通用组件目录骨架：创建 client/components/common/ 下的 ListPage/DetailPage/FormPage 占位组件及 useBitableData hook 占位",
+        "全局样式与主题配置：商务蓝主色调、CSS 变量、Tailwind 配置"
+      ],
+      "requirements": [],
+      "write_scope": [
+        "client/App.tsx",
+        "client/routes.tsx",
+        "client/components/layout/Sidebar.tsx",
+        "client/components/layout/AppLayout.tsx",
+        "shared/types.ts",
+        "client/components/common/ListPage.tsx",
+        "client/components/common/DetailPage.tsx",
+        "client/components/common/FormPage.tsx",
+        "client/hooks/useBitableData.ts",
+        "tailwind.config.ts"
+      ],
+      "read_scope": [
+        "AGENTS.md",
+        "server/app.module.ts"
+      ],
+      "acceptance": "所有路由可访问对应占位页面，导航栏正常切换，shared 类型文件编译通过",
+      "dependencies": [],
+      "beginTime": 1788431246408,
+      "endTime": 1788431362823
+    },
+    {
+      "id": 2,
+      "name": "插件实例创建与调用封装",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 plugin-guide skill",
+        "调用 plugin_instance 工具创建 mt-bitable 实例（feishu-bitable 插件），配置 appToken 指向「牧唐数智一体化系统」多维表格",
+        "调用 get_plugin_ai_json 获取运行时投影并输出 Schema 摘录卡",
+        "按投影编写 useBitableData hook：封装 searchRecords（分页查询）、getRecord（单条读取）、batchAddRecords（新建）、batchUpdateRecords（更新）四个核心方法",
+        "验证插件调用代码可编译通过"
+      ],
+      "requirements": [],
+      "write_scope": [
+        "client/hooks/useBitableData.ts",
+        "server/capabilities/mt-bitable.json"
+      ],
+      "read_scope": [
+        "AGENTS.md",
+        ".agent/skills/steering/nestjs-react-fullstack/skills/plugin-guide/references/table.md"
+      ],
+      "acceptance": "useBitableData hook 封装完成，四个核心方法签名正确且可编译",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788431362991,
+      "endTime": 1788431473029
+    },
+    {
+      "id": 3,
+      "name": "通用 CRUD 组件开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "通用 ListPage 组件：表格渲染（shadcn Table）、顶部工具栏（搜索框 + 筛选下拉/Tab + 新建按钮）、分页、加载骨架屏、空状态引导、错误提示与重试",
+        "通用 DetailPage 组件：左右分栏（主信息卡 + 侧卡元信息）、顶部操作栏（编辑按钮 + 返回按钮）、加载骨架屏",
+        "通用 FormPage 组件：表单渲染（Input/Select/DatePicker/Textarea）、必填校验、编辑预填、提交后 toast 反馈 + 返回列表、取消按钮",
+        "通用 useBitableData hook 完善：接入 ListPage/DetailPage/FormPage 的数据流（列表查询、详情读取、新建/编辑提交）",
+        "编写通用字段配置类型定义：FieldConfig 接口（字段名、标签、类型、必填、选项列表等）"
+      ],
+      "requirements": [],
+      "write_scope": [
+        "client/components/common/ListPage.tsx",
+        "client/components/common/DetailPage.tsx",
+        "client/components/common/FormPage.tsx",
+        "client/hooks/useBitableData.ts",
+        "shared/field-config.ts"
+      ],
+      "read_scope": [
+        "shared/types.ts",
+        "client/hooks/useBitableData.ts",
+        "AGENTS.md"
+      ],
+      "acceptance": "通用 ListPage/DetailPage/FormPage 组件可独立渲染，通过字段配置驱动，数据流通过 useBitableData hook 连通",
+      "dependencies": [
+        2
+      ],
+      "beginTime": 1788431473190,
+      "endTime": 1788431522344
+    },
+    {
+      "id": 4,
+      "name": "工作台页面开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "KPI 指标卡区域：调用 useBitableData 分别查询客户/广告/视频/合同/财务/任务表，程序内统计计数/求和，渲染 6 个指标卡（客户总数、进行中广告数、进行中视频数、本月合同额、本月收入/支出、待办任务数）",
+        "图表区域：合同金额趋势折线图（echarts，按月份聚合合同金额）、广告/视频项目状态分布环形图（echarts，按状态分组计数）",
+        "待办任务列表：查询任务表筛选未完成任务，按优先级排序取 TOP 5，点击跳转任务详情",
+        "快捷入口卡片：新建客户/新建合同/新建任务三个卡片，点击跳转对应表单页"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5"
+      ],
+      "write_scope": [
+        "client/pages/WorkbenchPage.tsx",
+        "client/components/workbench/KpiCard.tsx",
+        "client/components/workbench/ChartSection.tsx",
+        "client/components/workbench/TodoList.tsx",
+        "client/components/workbench/QuickEntry.tsx"
+      ],
+      "read_scope": [
+        "shared/types.ts",
+        "client/hooks/useBitableData.ts",
+        "client/components/common/ListPage.tsx"
+      ],
+      "acceptance": "工作台页面渲染完整，KPI 指标卡数据来自插件查询而非硬编码，图表正确展示，待办任务可点击跳转",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788431522514,
+      "endTime": 1788431629070
+    },
+    {
+      "id": 5,
+      "name": "客户管理与合同业务模块开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "客户字段配置：客户名称/行业/联系人/电话/客户等级/跟进状态/所属销售",
+        "客户列表页：组装通用 ListPage，工具栏含搜索框+等级筛选+新建按钮，表格列按客户字段配置",
+        "客户详情页与表单页：组装通用 DetailPage/FormPage，编辑模式预填，提交后刷新列表",
+        "合同字段配置：合同编号/关联客户/合同金额/签订日期/到期日期/合同状态",
+        "合同列表页：组装通用 ListPage，工具栏含搜索框+状态 Tab 切换（全部/草稿/审批中/生效/到期）+新建按钮",
+        "合同详情页与表单页：组装通用 DetailPage/FormPage，关联客户字段使用客户选择器"
+      ],
+      "requirements": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "write_scope": [
+        "client/pages/CustomerListPage.tsx",
+        "client/pages/CustomerDetailPage.tsx",
+        "client/pages/CustomerFormPage.tsx",
+        "client/pages/ContractListPage.tsx",
+        "client/pages/ContractDetailPage.tsx",
+        "client/pages/ContractFormPage.tsx",
+        "client/config/fields/customer.ts",
+        "client/config/fields/contract.ts"
+      ],
+      "read_scope": [
+        "shared/types.ts",
+        "client/components/common/ListPage.tsx",
+        "client/components/common/DetailPage.tsx",
+        "client/components/common/FormPage.tsx",
+        "client/hooks/useBitableData.ts"
+      ],
+      "acceptance": "客户和合同模块的列表/详情/表单页均可正常渲染，数据通过插件真实读写飞书多维表格",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788431522514,
+      "endTime": 1788431629070
+    },
+    {
+      "id": 6,
+      "name": "广告业务与视频业务模块开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "广告项目字段配置：项目编号/关联客户/广告类型/投放渠道/预算金额/排期/项目状态",
+        "广告项目列表页：组装通用 ListPage，工具栏含搜索框+状态筛选+新建按钮",
+        "广告项目详情页与表单页：组装通用 DetailPage/FormPage，关联客户使用客户选择器",
+        "视频项目字段配置：项目编号/关联客户/视频类型/导演/制作周期/预算/交付状态",
+        "视频项目列表页：组装通用 ListPage，工具栏含搜索框+交付状态筛选+新建按钮",
+        "视频项目详情页与表单页：组装通用 DetailPage/FormPage"
+      ],
+      "requirements": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "4.1",
+        "4.2",
+        "4.3"
+      ],
+      "write_scope": [
+        "client/pages/AdProjectListPage.tsx",
+        "client/pages/AdProjectDetailPage.tsx",
+        "client/pages/AdProjectFormPage.tsx",
+        "client/pages/VideoProjectListPage.tsx",
+        "client/pages/VideoProjectDetailPage.tsx",
+        "client/pages/VideoProjectFormPage.tsx",
+        "client/config/fields/ad-project.ts",
+        "client/config/fields/video-project.ts"
+      ],
+      "read_scope": [
+        "shared/types.ts",
+        "client/components/common/ListPage.tsx",
+        "client/components/common/DetailPage.tsx",
+        "client/components/common/FormPage.tsx",
+        "client/hooks/useBitableData.ts"
+      ],
+      "acceptance": "广告和视频模块的列表/详情/表单页均可正常渲染，数据通过插件真实读写飞书多维表格",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788431522514,
+      "endTime": 1788431629070
+    },
+    {
+      "id": 7,
+      "name": "财务管理与人资管理模块开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "财务字段配置：单据编号/类型（收入/支出）/关联合同/金额/收支日期/经手人/凭证说明",
+        "财务列表页：组装通用 ListPage，顶部汇总栏（收入/支出/净额前端计算），工具栏含搜索框+类型筛选+新建按钮",
+        "财务详情页与表单页：组装通用 DetailPage/FormPage，关联合同使用合同选择器",
+        "人资字段配置：姓名/部门/岗位/入职日期/在职状态/联系方式",
+        "人资列表页：组装通用 ListPage，工具栏含搜索框+在职状态筛选+新建按钮",
+        "人资详情页与表单页：组装通用 DetailPage/FormPage"
+      ],
+      "requirements": [
+        "6.1",
+        "6.2",
+        "6.3",
+        "7.1",
+        "7.2"
+      ],
+      "write_scope": [
+        "client/pages/FinanceListPage.tsx",
+        "client/pages/FinanceDetailPage.tsx",
+        "client/pages/FinanceFormPage.tsx",
+        "client/pages/HrListPage.tsx",
+        "client/pages/HrDetailPage.tsx",
+        "client/pages/HrFormPage.tsx",
+        "client/config/fields/finance.ts",
+        "client/config/fields/hr.ts"
+      ],
+      "read_scope": [
+        "shared/types.ts",
+        "client/components/common/ListPage.tsx",
+        "client/components/common/DetailPage.tsx",
+        "client/components/common/FormPage.tsx",
+        "client/hooks/useBitableData.ts"
+      ],
+      "acceptance": "财务和人资模块的列表/详情/表单页均可正常渲染，财务列表页顶部汇总栏正确计算，数据通过插件真实读写飞书多维表格",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788431522514,
+      "endTime": 1788431629070
+    },
+    {
+      "id": 8,
+      "name": "行政管理与任务中心模块开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "行政字段配置：名称/类别/负责人/日期/状态",
+        "行政列表页：组装通用 ListPage，工具栏含搜索框+类别筛选+新建按钮",
+        "行政详情页与表单页：组装通用 DetailPage/FormPage",
+        "任务字段配置：任务标题/负责人/优先级/截止日期/关联模块/任务状态",
+        "任务列表页：组装通用 ListPage，工具栏含搜索框+状态 Tab（待处理/进行中/已完成）+优先级筛选+新建按钮，操作列含「标记完成」按钮（弹确认后调插件更新状态）",
+        "任务详情页与表单页：组装通用 DetailPage/FormPage"
+      ],
+      "requirements": [
+        "8.1",
+        "8.2",
+        "9.1",
+        "9.2",
+        "9.3",
+        "9.4"
+      ],
+      "write_scope": [
+        "client/pages/AdminListPage.tsx",
+        "client/pages/AdminDetailPage.tsx",
+        "client/pages/AdminFormPage.tsx",
+        "client/pages/TaskListPage.tsx",
+        "client/pages/TaskDetailPage.tsx",
+        "client/pages/TaskFormPage.tsx",
+        "client/config/fields/admin.ts",
+        "client/config/fields/task.ts"
+      ],
+      "read_scope": [
+        "shared/types.ts",
+        "client/components/common/ListPage.tsx",
+        "client/components/common/DetailPage.tsx",
+        "client/components/common/FormPage.tsx",
+        "client/hooks/useBitableData.ts"
+      ],
+      "acceptance": "行政和任务模块的列表/详情/表单页均可正常渲染，任务「标记完成」操作可正确更新状态，数据通过插件真实读写飞书多维表格",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788431522514,
+      "endTime": 1788431629070
+    },
+    {
+      "id": 9,
+      "name": "系统管理与业务支持模块开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "系统用户字段配置：用户姓名/角色/所属部门/账号状态",
+        "系统管理列表页：组装通用 ListPage，工具栏含搜索框+角色筛选+新建按钮，操作列含「启用/禁用」按钮（弹确认后调插件更新账号状态）",
+        "系统管理详情页与表单页：组装通用 DetailPage/FormPage",
+        "工单字段配置：工单编号/提交人/问题类型/问题描述/处理人/处理状态",
+        "业务支持列表页：组装通用 ListPage，工具栏含搜索框+状态筛选+新建按钮，操作列含「受理/关闭」按钮（调插件更新状态）",
+        "业务支持详情页与表单页：组装通用 DetailPage/FormPage"
+      ],
+      "requirements": [
+        "10.1",
+        "10.2",
+        "10.3",
+        "11.1",
+        "11.2",
+        "11.3"
+      ],
+      "write_scope": [
+        "client/pages/SystemListPage.tsx",
+        "client/pages/SystemDetailPage.tsx",
+        "client/pages/SystemFormPage.tsx",
+        "client/pages/SupportListPage.tsx",
+        "client/pages/SupportDetailPage.tsx",
+        "client/pages/SupportFormPage.tsx",
+        "client/config/fields/system.ts",
+        "client/config/fields/support.ts"
+      ],
+      "read_scope": [
+        "shared/types.ts",
+        "client/components/common/ListPage.tsx",
+        "client/components/common/DetailPage.tsx",
+        "client/components/common/FormPage.tsx",
+        "client/hooks/useBitableData.ts"
+      ],
+      "acceptance": "系统管理和业务支持模块的列表/详情/表单页均可正常渲染，启用/禁用和受理/关闭操作可正确更新状态，数据通过插件真实读写飞书多维表格",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788431522514,
+      "endTime": 1788431629070
+    },
+    {
+      "id": 10,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：验证全局路由、导航 Layout、shared 类型是否按代码架构设计任务的结构实现，工作台首页可正常访问",
+        "核心验收目标1：工作台页面 —— KPI 指标卡数据来自插件查询（非硬编码），图表正确渲染，待办任务可点击跳转",
+        "核心验收目标2：客户管理模块全流程 —— 新建客户 → 列表刷新可见 → 点击查看详情 → 编辑客户 → 列表刷新可见更新",
+        "核心验收目标3：任务中心状态流转 —— 新建任务 → 标记完成 → 状态更新为已完成可在列表确认",
+        "非核心降级范围：AI 内容质量不适用、真实消息送达不适用、复杂数据一致性可降级、图表数据精确值可降级"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "9.1",
+        "9.3"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "AGENTS.md",
+        ".spark/specs/spec_1788430936918/spec.md",
+        "client/routes.tsx",
+        "client/components/layout/AppLayout.tsx"
+      ],
+      "acceptance": "工作台、客户管理、任务中心三个核心流程通过浏览器验收，数据读写均走真实插件调用",
+      "dependencies": [
+        4,
+        5,
+        8
+      ],
+      "beginTime": 1788431629258,
+      "endTime": 1788431876720
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "feishu_multitable_crud_analysis_38",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "flde1t4fv4",
+        "name": "发票状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "未收票",
+          "部分收票",
+          "已收票"
+        ]
+      },
+      {
+        "id": "fldRoCt8bK",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldspOzm08",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldvGRm5Ko",
+        "name": "支出金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldbnVTiVG",
+        "name": "支出类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "媒体采购",
+          "视频外包",
+          "演员费用",
+          "场地费用",
+          "办公费用",
+          "差旅费用",
+          "人力成本",
+          "其他支出"
+        ]
+      },
+      {
+        "id": "fldX7PiljV",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldd4fB9iX",
+        "name": "审批状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "草稿",
+          "待审批",
+          "审批中",
+          "已通过",
+          "已驳回",
+          "已付款"
+        ]
+      },
+      {
+        "id": "fldY20316s",
+        "name": "付款方式",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "银行转账",
+          "支付宝",
+          "微信",
+          "现金"
+        ]
+      },
+      {
+        "id": "fldukvdmCy",
+        "name": "收款方",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldhIDvgXj",
+        "name": "支出时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldWKvdMYQ",
+        "name": "财务确认人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldo90auKU",
+        "name": "ZC编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld7K59D1P",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldcpPXw2n",
+        "name": "审批人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldH3kwtkB",
+        "name": "发票金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldD99QRJm",
+        "name": "所属部门",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ]
+      },
+      {
+        "id": "fldxHvxZtU",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldnFgeVIV",
+        "name": "申请人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      }
+    ],
+    "tableID": "tblATiKYSwAKLmL8",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

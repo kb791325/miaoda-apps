@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"搜索台页面加载成功，搜索框和视频列表正常显示"},{"id":2,"priority":"p0","description":"搜索区存在「一键爆款」亮青色按钮，比普通搜索按钮更醒目"},{"id":3,"priority":"p1","description":"输入关键词点击一键爆款，弹出全屏进度面板，显示6阶段流水线时间线"},{"id":4,"priority":"p1","description":"流水线完成后，进度面板显示完成状态和「前往脚本工坊」按钮"}]}

@@ -1,0 +1,45 @@
+{
+  "id": "short_video_script_generator_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.18",
+  "name": "短视频分镜脚本AI生成器",
+  "description": "根据主题、内容类型、时长要求与参考素材，自动生成专业短视频分镜脚本及视频生成参数建议，适用于AI视频创作工坊的分镜脚本库生成功能。",
+  "icon": "",
+  "paramsSchema": {
+    "properties": {
+      "video_topic": {
+        "description": "短视频核心主题",
+        "type": "string"
+      },
+      "content_type": {
+        "description": "内容类型（如知识科普、产品推广、剧情故事、生活vlog等）",
+        "type": "string"
+      },
+      "duration_requirement": {
+        "type": "string",
+        "description": "总时长要求（如15秒、30秒、1分钟、3分钟等）"
+      },
+      "reference_material": {
+        "type": "string",
+        "description": "参考素材、核心信息或特殊要求（可选）"
+      }
+    },
+    "required": [
+      "video_topic",
+      "content_type",
+      "duration_requirement"
+    ],
+    "type": "object"
+  },
+  "formValue": {
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位资深的短视频内容策划和分镜设计专家，拥有丰富的爆款短视频创作经验。\n\n请根据以下信息生成专业的短视频分镜脚本及视频生成参数建议：\n主题：{{input.video_topic}}\n内容类型：{{input.content_type}}\n总时长要求：{{input.duration_requirement}}\n参考素材/特殊要求：{{input.reference_material}}\n\n输出要求：\n\n### 第一部分：分镜脚本\n按分镜序号逐条输出，每个分镜包含以下字段：\n1. 分镜序号：从1开始的连续数字\n2. 画面描述：详细说明该分镜的具体画面内容、场景、人物动作、道具等\n3. 镜头语言：说明镜头运用方式（如特写、全景、推拉摇移、跟随镜头等）\n4. 台词文案：该分镜对应的旁白、台词或字幕内容\n5. 时长秒：该分镜的持续时间（单位：秒，所有分镜时长总和需符合总时长要求）\n6. BGM建议：推荐的背景音乐类型、风格或参考曲目\n7. 转场效果：该分镜到下一个分镜的转场方式（如淡入淡出、闪切、滑动、缩放等，最后一个分镜可填\"无\"）\n\n### 第二部分：视频生成参数建议\n包含以下内容：\n1. 视频生成模型：推荐适合的视频生成模型名称及版本\n2. 图像生成模型：推荐适合的图像生成模型（若需AI生成画面素材）\n3. TTS音色：推荐适合的语音合成音色类型（如温暖女声、活力男声、卡通音等）\n4. 分辨率推荐：推荐的视频分辨率（如1080x1920竖屏、1920x1080横屏等）\n5. 其他制作建议：补充的后期制作或特效建议\n\n整体要求：\n- 脚本节奏紧凑，符合短视频平台用户观看习惯\n- 内容逻辑清晰，重点突出，有吸引力\n- 分镜设计专业，可直接用于视频拍摄或AI生成\n- 语言简洁明了，易于执行",
+    "modelID": "2015"
+  },
+  "createdAt": 1787795725525,
+  "updatedAt": 1787795725525,
+  "createdBy": 7673423658517318587
+}

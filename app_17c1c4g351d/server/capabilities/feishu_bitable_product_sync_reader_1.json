@@ -1,0 +1,149 @@
+{
+  "id": "feishu_bitable_product_sync_reader_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格商品数据同步读取实例",
+  "description": "从飞书多维表格读取商品数据，用于同步到应用数据库，包含商品基础信息、销售数据、利润指标等字段。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "owner": "请配置多维表格读写身份",
+    "appToken": "LvMIbRkTmajI6OskeOyc3r9JnKg",
+    "tableID": "tblXMiXHXW7zkIBh",
+    "fields": [
+      {
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false,
+        "id": "fldBTYKvHM",
+        "name": "咨询编号"
+      },
+      {
+        "writeable": true,
+        "id": "fldk6Vvetg",
+        "name": "客户昵称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fldQOHz8KN",
+        "name": "联系电话",
+        "readable": true,
+        "writeable": true,
+        "type": 1
+      },
+      {
+        "name": "订单号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fldY8ASWY8"
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "淘宝/天猫",
+          "京东",
+          "抖音",
+          "拼多多",
+          "微信",
+          "电话",
+          "其他"
+        ],
+        "id": "fldt466kBO",
+        "name": "咨询渠道",
+        "type": 3,
+        "bizType": "SingleSelect"
+      },
+      {
+        "writeable": true,
+        "id": "fldkW4Jr9K",
+        "name": "咨询内容",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "bizType": "Checkbox",
+        "id": "fldJvDcdBo",
+        "name": "是否紧急",
+        "type": 7,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldoVpOdda",
+        "name": "实际回复",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "name": "处理客服",
+        "type": 11,
+        "bizType": "User",
+        "id": "fldAF3Gbfw",
+        "readable": true
+      },
+      {
+        "name": "处理状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "待处理",
+          "处理中",
+          "已解决",
+          "已升级"
+        ],
+        "readable": true,
+        "writeable": true,
+        "id": "fldYZll1Vp"
+      },
+      {
+        "name": "咨询时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "id": "fldS9RJQ9u",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "DuplexLink",
+        "readable": false,
+        "writeable": false,
+        "id": "flds1EPzv0",
+        "name": "关联工单",
+        "type": 21
+      },
+      {
+        "writeable": true,
+        "enumValues": [
+          "催发货",
+          "改地址",
+          "退款",
+          "换货",
+          "质量问题",
+          "物流投诉",
+          "使用咨询",
+          "其他"
+        ],
+        "id": "fldomisFXs",
+        "name": "意图识别",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true
+      }
+    ],
+    "tips": "该实例用于读取商品数据，请确保appToken和tableID配置正确，且所有字段在多维表格中已正确创建。"
+  },
+  "createdAt": 1786673856111,
+  "updatedAt": 1786679889257,
+  "createdBy": 7673423658517318587
+}

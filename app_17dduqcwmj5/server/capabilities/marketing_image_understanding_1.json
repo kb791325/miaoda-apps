@@ -1,0 +1,41 @@
+{
+  "id": "marketing_image_understanding_1",
+  "pluginKey": "@official-plugins/ai-image-understanding",
+  "pluginVersion": "1.0.22",
+  "name": "营销材料图片理解",
+  "description": "识别营销图片中的产品、场景、卖点、文字内容、风格特征等关键信息，为招生文案创作提供素材摘要",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "question": {
+        "type": "string",
+        "description": "关于图片的查询问题"
+      },
+      "image": {
+        "format": "plugin-image-url",
+        "description": "待分析的营销图片",
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      }
+    },
+    "required": [
+      "image",
+      "question"
+    ]
+  },
+  "formValue": {
+    "images": "{{input.image}}",
+    "modelID": "2015",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位专业的营销内容分析专家，擅长从各类营销图片中提取有价值的信息，为文案创作提供素材支持。\n\n请根据以下问题对提供的营销图片进行详细分析：\n问题：{{input.question}}\n\n分析维度：\n1. 产品信息：识别图片中展示的核心产品/服务内容、规格、特点\n2. 场景呈现：分析图片营造的使用场景、目标受众、氛围感受\n3. 核心卖点：提炼图片中传递的主要优势、差异化价值、吸引点\n4. 文字内容：提取图片中所有可见的文字信息，包括标题、说明、联系方式、活动信息等\n5. 风格特征：总结图片的整体设计风格、色调、视觉表现手法、受众定位\n\n输出要求：\n- 每个维度的内容清晰明确，客观描述，避免主观臆断\n- 信息提取完整准确，不要遗漏关键内容\n- 语言简洁，条理清晰，方便直接作为文案创作的素材使用\n- 如有不确定的内容，请明确标注"
+  },
+  "createdAt": 1788493991278,
+  "updatedAt": 1788493991278,
+  "createdBy": 7673423658517318587
+}

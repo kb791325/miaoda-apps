@@ -1,0 +1,113 @@
+{
+  "id": "feishu_bitable_in_out_record_sync_v3_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格出入库记录同步插件实例 v3",
+  "description": "把本地出入库记录数据双向同步到飞书多维表格",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "CLtnbD9DMa9uUhs38dxcI7hbnoH",
+    "tableID": "tblOVxelVDUrOTAj",
+    "fields": [
+      {
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld1",
+        "name": "记录编号"
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "入库",
+          "出库",
+          "调拨"
+        ],
+        "id": "fld2",
+        "name": "类型",
+        "type": 3
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "采购入库",
+          "销售退货入库",
+          "调拨入库",
+          "盘盈入库",
+          "其他入库",
+          "销售出库",
+          "采购退货出库",
+          "调拨出库",
+          "盘亏出库",
+          "其他出库"
+        ],
+        "id": "fld3",
+        "name": "类型细分",
+        "type": 3,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fld4",
+        "name": "商品名",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "enumValues": [
+          "上海仓",
+          "北京仓",
+          "广州仓",
+          "成都仓"
+        ],
+        "id": "fld5",
+        "name": "仓库",
+        "type": 3,
+        "readable": true,
+        "writeable": true,
+        "bizType": "SingleSelect"
+      },
+      {
+        "bizType": "Number",
+        "id": "fld6",
+        "name": "数量",
+        "type": 2,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Number",
+        "id": "fld7",
+        "name": "金额",
+        "type": 2,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fld8",
+        "name": "操作人",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 5,
+        "readable": true,
+        "writeable": true,
+        "bizType": "DateTime",
+        "id": "fld9",
+        "name": "操作时间"
+      }
+    ]
+  },
+  "createdAt": 1787366906557,
+  "updatedAt": 1787366906557,
+  "createdBy": 7673423658517318587
+}

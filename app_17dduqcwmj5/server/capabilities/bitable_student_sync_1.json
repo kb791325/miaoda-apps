@@ -1,0 +1,17 @@
+{
+  "id": "bitable_student_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "学员登记表回写",
+  "description": "将应用内学员数据批量新增或更新回写到飞书多维表格学员登记表",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "tblPQnQbQi7ue47N",
+    "fields": [],
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc"
+  },
+  "createdAt": 1788494893545,
+  "updatedAt": 1788494893545,
+  "createdBy": 7673423658517318587
+}

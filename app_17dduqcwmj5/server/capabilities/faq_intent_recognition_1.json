@@ -1,0 +1,52 @@
+{
+  "id": "faq_intent_recognition_1",
+  "pluginKey": "@official-plugins/ai-text-to-json",
+  "pluginVersion": "1.0.26",
+  "name": "FAQ 意图识别",
+  "description": "识别用户咨询问题对应启用中的知识库条目，支持语义匹配，无匹配时返回空",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "question": {
+        "type": "string",
+        "description": "用户输入的咨询问题"
+      },
+      "candidates": {
+        "type": "array",
+        "description": "带编号的知识库候选列表，每个元素格式为「编号. 问题：xxx；相似问：yyy；关键词：zzz」",
+        "items": {
+          "type": "string",
+          "description": "知识库候选条目"
+        }
+      }
+    },
+    "required": [
+      "question",
+      "candidates"
+    ]
+  },
+  "formValue": {
+    "prompt": "你是专业的FAQ意图识别专家，负责将用户咨询问题与知识库候选条目进行精准语义匹配。\n\n用户咨询问题：{{input.question}}\n\n知识库候选列表：\n{{input.candidates}}\n\n匹配规则：\n1. 进行语义匹配，支持用户换说法提问，只要语义相近即为匹配成功\n2. 仅返回匹配度最高的1条候选的编号，未找到匹配则返回0\n3. 严格按照指定JSON结构输出，不得添加任何额外说明内容",
+    "jsonStructure": [
+      {
+        "name": "matchedNo",
+        "paramType": "Number",
+        "paramDescription": "命中的候选编号，未命中返回0"
+      },
+      {
+        "name": "intent",
+        "paramType": "String",
+        "paramDescription": "用户问题的意图简述"
+      }
+    ],
+    "modelID": "2015",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    }
+  },
+  "createdAt": 1788490552420,
+  "updatedAt": 1788490552420,
+  "createdBy": 7673423658517318587
+}

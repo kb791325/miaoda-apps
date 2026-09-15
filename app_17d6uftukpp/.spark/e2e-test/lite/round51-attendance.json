@@ -1,0 +1,9 @@
+{
+  "cases": [
+    { "id": 1, "priority": "p0", "description": "打开考勤页 /sub/attendance，页面加载完成，不显示demo数据（无陈曦/李峻/赵倩/顾岸/周悦/孙沛/王一帆），不显示'数据源暂不可用'taost" },
+    { "id": 2, "priority": "p0", "description": "考勤列表显示至少5条记录，且员工列显示'张浩然'（非demo中的陈曦/李峻等），证明数据来自Base" },
+    { "id": 3, "priority": "p0", "description": "考勤状态列包含多样化状态：正常/迟到/早退/事假/病假/缺勤/加班，迟到早退缺勤有红色标签" },
+    { "id": 4, "priority": "p1", "description": "日期跨09-01到09-10（至少跨多天非单日），与demo数据（仅09-01/09-02/09-03）不同" },
+    { "id": 5, "priority": "p1", "description": "上班打卡时间格式为 yyyy-MM-dd HH:mm，请假/缺勤行打卡时间显示'—'" }
+  ]
+}

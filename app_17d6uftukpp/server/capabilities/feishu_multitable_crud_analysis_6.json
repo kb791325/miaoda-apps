@@ -1,0 +1,398 @@
+{
+  "id": "feishu_multitable_crud_analysis_6",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldOMqxdXv",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldGsBridB",
+        "name": "部门",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ]
+      },
+      {
+        "id": "fldujNODkZ",
+        "name": "基本工资",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldcvdKOyw",
+        "name": "飞书账号",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld37Ty9Ic",
+        "name": "紧急联系人",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldifGVzLE",
+        "name": "出生日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldj9U19dt",
+        "name": "员工类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "全职",
+          "兼职",
+          "实习",
+          "外包",
+          "顾问"
+        ]
+      },
+      {
+        "id": "fldhWMwG7g",
+        "name": "手机号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldzNjjPJ5",
+        "name": "专业",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldFQuOKoA",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldJAnAK1d",
+        "name": "学历",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "高中",
+          "大专",
+          "本科",
+          "硕士",
+          "博士"
+        ]
+      },
+      {
+        "id": "flddDSbkSz",
+        "name": "工号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldDwUqH3E",
+        "name": "毕业院校",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld9gExMuN",
+        "name": "紧急联系电话",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldSVtLXEw",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldorD9IAl",
+        "name": "转正日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldKWsS7Gb",
+        "name": "姓名",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldColT9ps",
+        "name": "离职日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldQPFhc6d",
+        "name": "银行卡号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldrlV1YzA",
+        "name": "绩效工资",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldmjFmHVa",
+        "name": "性别",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "男",
+          "女"
+        ]
+      },
+      {
+        "id": "flddQwyzih",
+        "name": "开户行",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldbMXSCo3",
+        "name": "入职日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld4DG5xxe",
+        "name": "头像",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldnM906iy",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldFvEX9HW",
+        "name": "身份证扫描件",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldBTuKkAz",
+        "name": "员工标签",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "高潜",
+          "核心",
+          "重点培养",
+          "待改进"
+        ]
+      },
+      {
+        "id": "fldMmZCca5",
+        "name": "公积金基数",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldUtDX3hJ",
+        "name": "员工状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "试用期",
+          "正式",
+          "待转正",
+          "调岗中",
+          "待离职",
+          "已离职",
+          "休假中"
+        ]
+      },
+      {
+        "id": "fldFRvEatg",
+        "name": "身份证号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld806KsFx",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldKHSUwG8",
+        "name": "户籍地址",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldYL1mM2d",
+        "name": "邮箱",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldFJNfb0l",
+        "name": "劳动合同",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld1k9kkzQ",
+        "name": "直属上级",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldWmKVu2a",
+        "name": "社保基数",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldrc6Samy",
+        "name": "居住地址",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldMCWp2ov",
+        "name": "岗位",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务",
+          "优化师",
+          "项目经理",
+          "财务",
+          "HR",
+          "行政",
+          "导演",
+          "摄像师",
+          "剪辑师",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldbsbevu8",
+        "name": "职级",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "P1",
+          "P2",
+          "P3",
+          "P4",
+          "P5",
+          "P6",
+          "P7",
+          "M1",
+          "M2",
+          "M3"
+        ]
+      }
+    ],
+    "tableID": "tblbJzyJEyYopTu7",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788312389402,
+  "updatedAt": 1788312389402,
+  "createdBy": 7673423658517318587
+}

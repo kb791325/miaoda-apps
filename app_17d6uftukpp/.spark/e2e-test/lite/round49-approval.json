@@ -1,0 +1,5 @@
+{"cases": [
+  {"id": 1, "priority": "p0", "description": "打开开户申请详情页 /sub/adOpen/任意记录，确认审批流程Tab可见且审批时间线渲染多个节点"},
+  {"id": 2, "priority": "p0", "description": "打开采购订单详情页 /sub/purchaseOrder/任意记录，确认审批流程Tab可见且审批时间线渲染多个节点"},
+  {"id": 3, "priority": "p0", "description": "打开视频订单详情页 /sub/videoOrder/任意记录，确认审批流程Tab可见且审批时间线渲染多个节点"}
+]}

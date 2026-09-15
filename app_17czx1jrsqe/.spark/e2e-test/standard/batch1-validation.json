@@ -1,0 +1,12 @@
+{"cases": [
+  {"id": 1, "priority": "p0", "description": "列显隐-打开客户管理页，点击列设置按钮，取消勾选两列，确认列隐藏"},
+  {"id": 2, "priority": "p0", "description": "列显隐-刷新页面后，隐藏的列仍然保持隐藏状态"},
+  {"id": 3, "priority": "p0", "description": "导出CSV-客户管理页点击导出按钮，触发文件下载"},
+  {"id": 4, "priority": "p0", "description": "公海客资-打开页面，表格显示客资列表数据"},
+  {"id": 5, "priority": "p0", "description": "公海客资-勾选多条，批量领取后状态变为已分配"},
+  {"id": 6, "priority": "p0", "description": "线索管理-打开线索列表，点击查看打开详情抽屉"},
+  {"id": 7, "priority": "p0", "description": "客户管理-点击查看进入客户详情页，显示5个标签页"},
+  {"id": 8, "priority": "p0", "description": "开户管理-打开开户列表，显示申请数据和状态标签"},
+  {"id": 9, "priority": "p0", "description": "合同管理-打开合同列表，行操作含一键提醒和申请提成"},
+  {"id": 10, "priority": "p1", "description": "全局搜索-顶部搜索框输入关键词，显示下拉结果，点击跳转"}
+]}

@@ -1,0 +1,110 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "代码架构设计：课程写操作共享契约与模块边界",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "在 shared/course.ts 新增 CourseFormPayload 表单契约与难度/状态选项常量",
+        "明确实现边界：写接口落在现有 course 模块 service/controller，CourseFormDialog 置于 pages/courses 供列表页与详情页复用，路由与导航不变"
+      ],
+      "requirements": [
+        "1.1",
+        "2.1"
+      ],
+      "write_scope": [
+        "shared/course.ts"
+      ],
+      "read_scope": [
+        "shared/course.ts",
+        "server/modules/course/course.controller.ts",
+        "server/modules/course/course.service.ts",
+        "client/src/pages/courses/CourseListPage.tsx",
+        "client/src/pages/courses/CourseDetailPage.tsx",
+        "client/src/pages/courses/CourseCard.tsx"
+      ],
+      "acceptance": "shared/course.ts 中 CourseFormPayload 与选项常量可被前后端共同引用，现有页面编译不受影响",
+      "dependencies": [],
+      "beginTime": 1788490427145,
+      "endTime": 1788490502090
+    },
+    {
+      "id": 2,
+      "name": "课程新增与修改模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "CourseService 增加 createCourse/updateCourse，对 course_general_table 做 insert/update 并处理学费数值转换与校验",
+        "CourseController 增加 POST 与 PATCH 路由，DTO 必填/非负校验并挂角色控制",
+        "course.api.ts 增加 createCourse/updateCourse 请求方法",
+        "开发 CourseFormDialog 表单弹窗，覆盖创建/编辑两种模式、图片上传、输入校验与结果提示",
+        "并行集成列表页「新增课程」入口与课程卡片编辑入口，提交成功后刷新列表",
+        "集成详情页「编辑课程」入口，保存成功后刷新详情"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "write_scope": [
+        "server/modules/course/**",
+        "client/src/pages/courses/**"
+      ],
+      "read_scope": [
+        "shared/course.ts",
+        "server/modules/course/course.service.ts",
+        "server/modules/course/course.controller.ts",
+        "client/src/pages/courses/course.api.ts",
+        "client/src/components/business-ui/api/files/service.ts",
+        "server/modules/student/student.service.ts"
+      ],
+      "acceptance": "创建课程后 GET /api/courses 可回查到新记录且列表页展示新卡片；编辑保存后详情接口返回更新后的字段值",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788490505995,
+      "endTime": 1788491076515
+    },
+    {
+      "id": 3,
+      "name": "验收测试：课程新增与修改闭环",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：核对写接口落在 course 模块、弹窗组件两页复用；入口为课程列表页 /courses，入口不可用时停止验收仅记录阻塞",
+        "核心验收目标1：课程新增 —— 列表页打开表单填写提交后出现成功提示且列表展示新课程，名称为空提交被阻止并显示错误提示",
+        "核心验收目标2：课程修改 —— 从卡片与详情页打开编辑均预填信息，修改名称或学费保存后列表与详情展示新值",
+        "非核心降级范围：封面图渲染等视觉细节、选项文案质量"
+      ],
+      "requirements": [
+        "1.1",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "client/src/pages/courses/CourseListPage.tsx",
+        "client/src/pages/courses/CourseDetailPage.tsx",
+        "server/modules/course/course.controller.ts"
+      ],
+      "acceptance": "新增与编辑两条核心旅程在浏览器内走通，成功/失败反馈与列表、详情刷新均可判定",
+      "dependencies": [
+        1,
+        2
+      ],
+      "beginTime": 1788491076656,
+      "endTime": 1788491285916
+    }
+  ]
+}

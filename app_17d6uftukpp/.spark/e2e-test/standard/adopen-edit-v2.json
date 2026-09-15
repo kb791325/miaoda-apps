@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"访问 /sub/adOpen 列表页，等待 3 秒，点击第一条记录的编辑按钮，等待 3 秒，截图查看编辑页面的 toast 消息和下拉字段"}]}

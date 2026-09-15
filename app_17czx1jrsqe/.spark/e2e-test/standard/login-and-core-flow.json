@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "priority": "p0",
+      "description": "登录页正常渲染，不白屏，控制台无红色报错"
+    },
+    {
+      "id": 2,
+      "priority": "p0",
+      "description": "空表单登录显示必填校验提示"
+    },
+    {
+      "id": 3,
+      "priority": "p0",
+      "description": "错误密码提示且不跳转"
+    },
+    {
+      "id": 4,
+      "priority": "p0",
+      "description": "admin/admin123 登录成功跳转到工作台，工作台5个指标卡+5个图表+排行榜+目标详情+绩效任务正常显示"
+    },
+    {
+      "id": 5,
+      "priority": "p0",
+      "description": "客户管理/广告业务/财务管理列表页正常加载数据"
+    },
+    {
+      "id": 6,
+      "priority": "p0",
+      "description": "顶部用户下拉显示admin信息，退出登录回到登录页"
+    },
+    {
+      "id": 7,
+      "priority": "p1",
+      "description": "sales1/123456 登录成功，飞书授权登录Tab按钮有响应"
+    },
+    {
+      "id": 8,
+      "priority": "p1",
+      "description": "登录后刷新浏览器保持登录态"
+    }
+  ]
+}

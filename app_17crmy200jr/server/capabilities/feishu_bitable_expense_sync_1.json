@@ -1,0 +1,17 @@
+{
+  "id": "feishu_bitable_expense_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格支出同步实例",
+  "description": "用于行政支出明细数据的双向同步（CRUD）",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "tblXGS0Lt5tmTGgU",
+    "fields": [],
+    "appToken": "GRQMbafkeaKeAjsZvN0c5SoYnYb"
+  },
+  "createdAt": 1787555604396,
+  "updatedAt": 1787555604396,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,58 @@
+{
+  "id": "product_image_info_extraction_1",
+  "pluginKey": "@official-plugins/ai-image-to-json",
+  "pluginVersion": "1.0.18",
+  "name": "商品图片信息提取",
+  "description": "新增商品时识别商品图片并自动填充商品名称、品牌、规格型号、建议销售单价",
+  "icon": "",
+  "paramsSchema": {
+    "properties": {
+      "product_image": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array",
+        "format": "plugin-image-url",
+        "description": "待识别的商品图片（商品包装、标签、说明书照片）"
+      }
+    },
+    "required": [
+      "product_image"
+    ],
+    "type": "object"
+  },
+  "formValue": {
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是专业的商品信息提取专家，请从提供的商品图片（包括包装、标签、说明书等）中准确提取指定的结构化信息。对于识别不到的字段，字符串类型返回空字符串，数字类型返回0，不要编造内容。",
+    "images": "{{input.product_image}}",
+    "jsonStructure": [
+      {
+        "paramType": "String",
+        "name": "product_name",
+        "paramDescription": "图片中可识别出的商品完整名称，识别不到则为空字符串"
+      },
+      {
+        "name": "brand",
+        "paramDescription": "商品品牌名称，识别不到则为空字符串",
+        "paramType": "String"
+      },
+      {
+        "paramDescription": "商品规格或型号标识，识别不到则为空字符串",
+        "paramType": "String",
+        "name": "specification_model"
+      },
+      {
+        "name": "suggested_price",
+        "paramDescription": "从图片中识别出的建议销售单价（数字，单位元，如 2999），若图片中无法识别出价格则输出 0",
+        "paramType": "Number"
+      }
+    ],
+    "modelID": "2015"
+  },
+  "createdAt": 1789099402159,
+  "updatedAt": 1789347825989,
+  "createdBy": 7673423658517318587
+}

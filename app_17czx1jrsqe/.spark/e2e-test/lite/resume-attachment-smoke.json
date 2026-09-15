@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"打开 /hr/resumes 页面，断言页面包含「简历管理」标题，表格加载完成"}]}

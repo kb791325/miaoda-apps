@@ -1,0 +1,227 @@
+{
+  "id": "feishu_multitable_crud_analysis_7",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldOEAfG7p",
+        "name": "购入金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld0ikxu3I",
+        "name": "盘点状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "未盘点",
+          "已盘点",
+          "盘盈",
+          "盘亏"
+        ]
+      },
+      {
+        "id": "fldRVUQoZV",
+        "name": "资产类别",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "电子设备",
+          "办公家具",
+          "拍摄器材",
+          "车辆",
+          "软件",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldZfHAmhp",
+        "name": "购买发票",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldUhMOhSx",
+        "name": "存放地点",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldLeXqwGT",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldrOhwBJt",
+        "name": "保修截止日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld0Bzmkle",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldH7vCVQM",
+        "name": "资产状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "在用",
+          "闲置",
+          "维修中",
+          "已报废",
+          "已丢失",
+          "调拨中"
+        ]
+      },
+      {
+        "id": "fldH9lLBYB",
+        "name": "资产照片",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldpCpmT9S",
+        "name": "使用年限",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldZQZUXtc",
+        "name": "使用人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldn570vlm",
+        "name": "上次盘点日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldCf15lVR",
+        "name": "购入日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld3SM4vNj",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldf3Z4gbN",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldxRwwGTn",
+        "name": "使用部门",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ]
+      },
+      {
+        "id": "fldWhL0FU2",
+        "name": "ZC2编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldw7QOwiA",
+        "name": "资产名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldB18mJRr",
+        "name": "品牌型号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldPiY3rrF",
+        "name": "残值率",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldFHUhalT",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      }
+    ],
+    "tableID": "tblYT4HiVuz25EE2",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788312389402,
+  "updatedAt": 1788312389402,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,109 @@
+{
+  "id": "bitable_student_sync_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "bitable-student-sync-2",
+  "description": "服务端把应用内学员数据回写到学员登记表多维表格数据表，支持批量新增和批量更新记录操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc",
+    "tableID": "tblPQnQbQi7ue47N",
+    "fields": [
+      {
+        "bizType": "Text",
+        "id": "fldStudentName",
+        "name": "学员姓名",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "type": 13,
+        "writeable": true,
+        "bizType": "Phone",
+        "id": "fldPhone",
+        "name": "联系电话"
+      },
+      {
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldWechat",
+        "name": "微信号"
+      },
+      {
+        "bizType": "SingleSelect",
+        "id": "fldSource",
+        "name": "来源渠道",
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "enumValues": []
+      },
+      {
+        "bizType": "DateTime",
+        "id": "fldRegisterDate",
+        "name": "报名日期",
+        "readable": true,
+        "type": 5,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "enumValues": [],
+        "bizType": "SingleSelect",
+        "id": "fldPaymentStatus",
+        "name": "缴费状态"
+      },
+      {
+        "id": "fldPaymentAmount",
+        "name": "缴费金额",
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number"
+      },
+      {
+        "bizType": "SingleSelect",
+        "id": "fldProgress",
+        "name": "学习进度",
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "enumValues": []
+      },
+      {
+        "name": "结业日期",
+        "readable": true,
+        "type": 5,
+        "writeable": true,
+        "bizType": "DateTime",
+        "id": "fldGraduationDate"
+      },
+      {
+        "id": "fldRemark",
+        "name": "备注",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "bizType": "SingleLink",
+        "id": "fldCourse",
+        "name": "报名课程",
+        "readable": true,
+        "type": 18,
+        "writeable": true
+      }
+    ]
+  },
+  "createdAt": 1788496078449,
+  "updatedAt": 1788496078449,
+  "createdBy": 7673423658517318587
+}

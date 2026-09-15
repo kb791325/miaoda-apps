@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"打开 /customer/customers，页面不白屏、不显示「页面出错了」，客户列表正常渲染，表格中至少出现 1 行客户数据"},{"id":2,"priority":"p0","description":"页面顶部显示「客户管理」标题或面包屑，筛选区可见客户名称、一级行业、客户等级、状态筛选字段"},{"id":3,"priority":"p1","description":"页面包含「新建客户」按钮"}]}

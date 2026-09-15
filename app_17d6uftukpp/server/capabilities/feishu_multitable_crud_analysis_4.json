@@ -1,0 +1,303 @@
+{
+  "id": "feishu_multitable_crud_analysis_4",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldcix0Gcm",
+        "name": "合同文件",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldvbSjfJX",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldtO76LR5",
+        "name": "成本金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldA9lqQN3",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldyXFCIGe",
+        "name": "申请提成按钮",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldJx1acN5",
+        "name": "盖章日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld0o6p8bg",
+        "name": "一键提醒按钮",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldEJZPYOl",
+        "name": "提成金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "flde3L87Eg",
+        "name": "合同名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldSI7cVOL",
+        "name": "合同类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "广告投放合同",
+          "视频制作合同",
+          "年度框架合同",
+          "补充协议",
+          "服务合同",
+          "其他"
+        ]
+      },
+      {
+        "id": "fld6sOYNfR",
+        "name": "税率",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldRRLheXz",
+        "name": "合同金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldS3Tdc0U",
+        "name": "补充协议",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldobohoij",
+        "name": "生效日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldfFB109Z",
+        "name": "归档日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldRWMBGiA",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldnziN3Nq",
+        "name": "HT编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldQS2s7wa",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld0I4InBc",
+        "name": "合同状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "草稿",
+          "待审批",
+          "审批中",
+          "已驳回",
+          "待盖章",
+          "已盖章",
+          "已归档",
+          "已终止",
+          "已作废"
+        ]
+      },
+      {
+        "id": "fldNuc75PA",
+        "name": "提交审批按钮",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld8J1UQBh",
+        "name": "签订日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldKic7O39",
+        "name": "审批意见",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldFAYMREX",
+        "name": "审批时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldyYOEMvF",
+        "name": "到期日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld7ILIMp9",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldz5CvjoN",
+        "name": "合同编号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldXOaaUSN",
+        "name": "审批人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldQUQgXlO",
+        "name": "所属部门",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ]
+      },
+      {
+        "id": "fldTSMA3Ow",
+        "name": "提成状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "未申请",
+          "申请中",
+          "已审批",
+          "已发放",
+          "不适用"
+        ]
+      },
+      {
+        "id": "fldGaCUMB1",
+        "name": "所属客户",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fldbYrO6c3",
+        "name": "关联客户ID",
+        "readable": true,
+        "writeable": true,
+        "type": 1
+      }
+    ],
+    "tableID": "tblNVBZhgRN9dSJY",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788312389402,
+  "updatedAt": 1788399346017,
+  "createdBy": 7673423658517318587
+}

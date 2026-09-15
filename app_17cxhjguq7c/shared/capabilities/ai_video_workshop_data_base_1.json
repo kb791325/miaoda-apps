@@ -1,0 +1,17 @@
+{
+  "id": "ai_video_workshop_data_base_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "AI视频创作工坊数据底座",
+  "description": "飞书多维表格全平台数据层，支持爆款素材库、分镜脚本库、生成任务表、视频成品库、提示词模板库、角色资产库6张业务表的全部读写操作，包含查询列表、查单条、批量新增、批量更新、批量删除、聚合统计6个Action，供平台各页面读写真实数据。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Bc9tbZLinanss7sszYAcKHfdnvf",
+    "tableID": "tbl5rbhdR3NtNHRe",
+    "fields": []
+  },
+  "createdAt": 1787797331027,
+  "updatedAt": 1787797331027,
+  "createdBy": 7673423658517318587
+}

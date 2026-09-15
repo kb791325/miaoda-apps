@@ -1,0 +1,28 @@
+{
+  "id": "catering_training_poster_generation_1",
+  "pluginKey": "@official-plugins/ai-text-to-image",
+  "pluginVersion": "1.0.21",
+  "name": "餐饮培训招生宣传图片生成",
+  "description": "根据餐饮培训招生内容的标题与正文描述，生成暖调美食摄影风格的3:4比例招生宣传图片，画面为中式餐食特写、自然侧光、木桌纹理、暖色调、干净构图，无文字无字母无符号。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "training_content": {
+        "description": "餐饮培训招生内容的标题与正文描述",
+        "type": "string"
+      }
+    },
+    "required": [
+      "training_content"
+    ]
+  },
+  "formValue": {
+    "prompt": "你是一位专业的美食摄影与餐饮宣传设计专家，请根据以下餐饮培训招生内容生成宣传图片：\n招生内容：{{input.training_content}}\n\n图片要求：\n1. 风格：暖调美食摄影风格，真实有食欲\n2. 画面主体：中式餐食特写，菜品新鲜诱人，摆盘精致\n3. 环境元素：自然侧光，木桌纹理背景，整体干净整洁\n4. 色调：暖色调，色彩饱和度适中，光影柔和\n5. 构图：干净简洁，主体突出，无多余杂物\n6. 特殊要求：图片中绝对不能出现任何文字、字母或符号\n\n质量要求：高清画质，细节丰富，色彩自然，符合餐饮宣传商业使用标准。",
+    "ratio": "3:4",
+    "watermark": false
+  },
+  "createdAt": 1788491972534,
+  "updatedAt": 1788491972534,
+  "createdBy": 7673423658517318587
+}

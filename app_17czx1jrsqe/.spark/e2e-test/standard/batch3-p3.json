@@ -1,0 +1,7 @@
+{"cases":[
+  {"id":11,"priority":"p0","description":"合同付款-费用与付款Tab：4张统计卡、付款计划表、登记付款后状态更新、付款记录时间线"},
+  {"id":12,"priority":"p0","description":"客户详情-新增联系人/跟进记录持久化、业务关联Tab按客户筛选、财务信息汇总"},
+  {"id":13,"priority":"p1","description":"广告提成-规则配置、选商务+月份自动计算、确认→发放→发放记录Tab"},
+  {"id":14,"priority":"p1","description":"视频提成-规则配置、自动计算、三态流转、发放记录"},
+  {"id":15,"priority":"p1","description":"回归-财务18页可访问不白屏、列显隐、CSV导出、采购审批流程"}
+]}

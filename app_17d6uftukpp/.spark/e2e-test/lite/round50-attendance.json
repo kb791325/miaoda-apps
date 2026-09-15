@@ -1,0 +1,8 @@
+{
+  "cases": [
+    { "id": 1, "priority": "p0", "description": "打开考勤页 /sub/attendance，确认页面加载完成，查看是否显示考勤记录（非空列表/非暂无数据）" },
+    { "id": 2, "priority": "p0", "description": "确认考勤列表表格中有记录行，且包含考勤日期、上班打卡时间、下班打卡时间、考勤状态等列" },
+    { "id": 3, "priority": "p1", "description": "确认上班打卡时间列显示格式为 yyyy-MM-dd HH:mm（如 2026-09-01 08:52）" },
+    { "id": 4, "priority": "p1", "description": "确认考勤状态列有多样化显示（正常/迟到/早退/请假/缺勤/加班），迟到早退缺勤为红色标签" }
+  ]
+}

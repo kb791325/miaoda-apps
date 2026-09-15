@@ -1,0 +1,258 @@
+{
+  "id": "feishu_multitable_crud_analysis_46",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldlTPfpNs",
+        "name": "筛选人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld8HE6tAW",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldzFPIEMs",
+        "name": "教育经历",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldUG2X9Ej",
+        "name": "工作年限",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldWCrMWEp",
+        "name": "应聘岗位",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务",
+          "优化师",
+          "项目经理",
+          "财务",
+          "HR",
+          "行政",
+          "导演",
+          "摄像师",
+          "剪辑师",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldV5oHqGa",
+        "name": "期望薪资",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldmUpqLWz",
+        "name": "学历",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "高中",
+          "大专",
+          "本科",
+          "硕士",
+          "博士"
+        ]
+      },
+      {
+        "id": "fldyWSRR3P",
+        "name": "筛选时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "flde75QIZU",
+        "name": "技能特长",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldWRpowLX",
+        "name": "简历状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "新简历",
+          "待筛选",
+          "已通过筛选",
+          "面试中",
+          "已录用",
+          "已拒绝",
+          "已入职"
+        ]
+      },
+      {
+        "id": "fldyACUwXt",
+        "name": "姓名",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldclQmTez",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldaQYsdiC",
+        "name": "筛选意见",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldi5SShvr",
+        "name": "简历附件",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldD9rw1eK",
+        "name": "电话",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldKwCFf4O",
+        "name": "自我评价",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldyCQKSDv",
+        "name": "简历来源",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "招聘网站",
+          "内部推荐",
+          "猎头",
+          "校园招聘",
+          "主动投递",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldMcdc1BP",
+        "name": "邮箱",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldBsUuMHI",
+        "name": "JL2编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldJW76LM5",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldSv5F6go",
+        "name": "年龄",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldtr752LR",
+        "name": "工作经历",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld3SIM7vd",
+        "name": "性别",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "男",
+          "女"
+        ]
+      },
+      {
+        "id": "fldeuyPdhv",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldBBfUNG5",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      }
+    ],
+    "tableID": "tbl1QEBq2pltrKqM",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

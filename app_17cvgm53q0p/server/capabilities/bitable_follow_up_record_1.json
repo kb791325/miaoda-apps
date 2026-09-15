@@ -1,0 +1,96 @@
+{
+  "id": "bitable_follow_up_record_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格「跟进记录表」读写实例",
+  "description": "用于服务端数据同步，支持searchRecords、getRecord、batchAddRecords、batchUpdateRecords、deleteRecords五个action，实现应用数据库跟进记录与多维表格双向同步",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblBIy9zMMHo539k",
+    "fields": [
+      {
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld0000001",
+        "name": "记录ID",
+        "type": 1
+      },
+      {
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld0000002",
+        "name": "客户名称",
+        "type": 1
+      },
+      {
+        "id": "fld0000003",
+        "name": "跟进人",
+        "type": 13,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld0000004",
+        "name": "跟进时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld0000005",
+        "name": "跟进内容",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "待跟进",
+          "跟进中",
+          "已完成",
+          "已放弃"
+        ],
+        "id": "fld0000006",
+        "name": "跟进状态",
+        "type": 3,
+        "bizType": "SingleSelect"
+      },
+      {
+        "name": "下次跟进时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld0000007"
+      },
+      {
+        "id": "fld0000008",
+        "name": "创建时间",
+        "type": 1005,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "name": "更新时间",
+        "type": 1006,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false,
+        "id": "fld0000009"
+      }
+    ]
+  },
+  "createdAt": 1789010546964,
+  "updatedAt": 1789010546964,
+  "createdBy": 7673423658517318587
+}

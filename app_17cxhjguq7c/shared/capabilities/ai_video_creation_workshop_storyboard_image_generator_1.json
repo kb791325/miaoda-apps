@@ -1,0 +1,32 @@
+{
+  "id": "ai_video_creation_workshop_storyboard_image_generator_1",
+  "pluginKey": "@official-plugins/ai-text-to-image",
+  "pluginVersion": "1.0.19",
+  "name": "AI视频创作工坊-分镜参考图生成",
+  "description": "根据分镜画面描述提示词与画面比例生成对应的分镜参考图，支持9:16竖屏等多种比例，用于任务详情页基于关联脚本分镜一键生成视频参考图的功能。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "storyboard_description": {
+        "description": "分镜画面的详细描述提示词，需要包含场景、人物、动作、道具、光线、风格等关键信息",
+        "type": "string"
+      },
+      "aspect_ratio": {
+        "type": "string",
+        "description": "生成图片的比例，支持的值：1:1、4:3、3:4、16:9、9:16、3:2、2:3，默认值为9:16竖屏"
+      }
+    },
+    "required": [
+      "storyboard_description"
+    ]
+  },
+  "formValue": {
+    "prompt": "你是一位专业的分镜美术设计师，擅长根据分镜描述生成符合影视制作标准的参考图。\n\n请根据以下分镜描述生成对应的高质量参考图：\n分镜描述：{{input.storyboard_description}}\n\n画面要求：\n1. 风格：写实影视分镜风格，具有电影级光影效果\n2. 构图：符合影视镜头语言，突出画面主体和叙事重点\n3. 细节：包含分镜描述中的所有关键元素，人物动作、场景布局准确\n4. 色彩：根据分镜内容呈现合适的色调和氛围\n5. 清晰度：画面清晰，细节丰富，适合作为视频拍摄参考\n\n输出要求：仅返回生成的图片，无需额外文字说明。",
+    "ratio": "{{input.aspect_ratio}}",
+    "watermark": false
+  },
+  "createdAt": 1787801090307,
+  "updatedAt": 1787801090307,
+  "createdBy": 7673423658517318587
+}

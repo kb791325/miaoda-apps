@@ -1,0 +1,273 @@
+{
+  "id": "feishu_multitable_crud_analysis_20",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldbxPvkgR",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldCXcZd9R",
+        "name": "下单日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldgeTDIDH",
+        "name": "订单名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld1FlEKcC",
+        "name": "视频类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "口播",
+          "剧情",
+          "产品展示",
+          "开箱测评",
+          "品牌宣传片",
+          "直播切片",
+          "动画",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldvmK2gsL",
+        "name": "客户反馈",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld9gezg9P",
+        "name": "订单金额",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldpDalDv5",
+        "name": "修改次数",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldTBJYXrC",
+        "name": "需求描述",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldaPMshfa",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldqLruK7I",
+        "name": "视频数量",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldTswRKVv",
+        "name": "视频时长",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "15秒",
+          "30秒",
+          "60秒",
+          "90秒",
+          "3分钟",
+          "5分钟以上"
+        ]
+      },
+      {
+        "id": "fldF74Rhmb",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldXhbpS6H",
+        "name": "项目经理",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldwYcsHZX",
+        "name": "实际交付日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld5oYpzqw",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldrPaoltC",
+        "name": "所属部门",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ]
+      },
+      {
+        "id": "fldN5GxdPB",
+        "name": "SP编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldmb657vb",
+        "name": "交付物",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldYqRVJ25",
+        "name": "要求交付日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldvZqCh0H",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldjBMKGHO",
+        "name": "参考素材",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldZ0Udh89",
+        "name": "订单状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "待确认",
+          "已确认",
+          "制作中",
+          "待审核",
+          "已通过",
+          "已驳回",
+          "已交付",
+          "已取消"
+        ]
+      },
+      {
+        "id": "fldyLxomiZ",
+        "name": "成本预算",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldn63wpHk",
+        "name": "所属视频项目",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldYjuSW0y",
+        "name": "所属合同",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fldoaRI4F0",
+        "name": "关联项目ID",
+        "readable": true,
+        "writeable": true,
+        "type": 1
+      },
+      {
+        "bizType": "Text",
+        "id": "fldCecPIK9",
+        "name": "关联合同ID",
+        "readable": true,
+        "writeable": true,
+        "type": 1
+      }
+    ],
+    "tableID": "tblZml0ix0OapGrK",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788399346018,
+  "createdBy": 7673423658517318587
+}

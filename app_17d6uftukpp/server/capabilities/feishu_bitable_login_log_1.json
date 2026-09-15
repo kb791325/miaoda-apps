@@ -1,0 +1,28 @@
+{
+  "id": "feishu_bitable_login_log_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      { "id": "fldxuBZE0V", "name": "DL编号", "type": 22, "bizType": "AutoNumber", "readable": true, "writeable": false },
+      { "id": "fldhRIy9HB", "name": "用户", "type": 11, "bizType": "User", "readable": true, "writeable": true },
+      { "id": "fldflDvY9X", "name": "登录时间", "type": 5, "bizType": "DateTime", "readable": true, "writeable": true },
+      { "id": "fldlx6s40N", "name": "登录状态", "type": 3, "bizType": "SingleSelect", "readable": true, "writeable": true, "enumValues": ["成功", "失败"] },
+      { "id": "fldlElsLTB", "name": "登录IP", "type": 1, "bizType": "Text", "readable": true, "writeable": true },
+      { "id": "fldBI098BB", "name": "浏览器", "type": 1, "bizType": "Text", "readable": true, "writeable": true },
+      { "id": "fldPS51bU2", "name": "失败原因", "type": 1, "bizType": "Text", "readable": true, "writeable": true },
+      { "id": "fldGpBhvhX", "name": "操作系统", "type": 1, "bizType": "Text", "readable": true, "writeable": true },
+      { "id": "fld7FpdhVq", "name": "登录设备", "type": 1, "bizType": "Text", "readable": true, "writeable": true },
+      { "id": "fldMt26YXk", "name": "备注", "type": 1, "bizType": "Text", "readable": true, "writeable": true }
+    ],
+    "tableID": "tblC8sY9Yf588Hop",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788342256454,
+  "updatedAt": 1788342256454,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,83 @@
+{
+  "id": "stock_query_text_to_json_1",
+  "pluginKey": "@official-plugins/ai-text-to-json",
+  "pluginVersion": "1.0.24",
+  "name": "库存查询文本解析",
+  "description": "将用户自然语言描述的库存查询需求转换为结构化的查询参数，支持模糊口语化查询的智能解析",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "query_text": {
+        "type": "string",
+        "description": "用户输入的自然语言库存查询文本"
+      }
+    },
+    "required": [
+      "query_text"
+    ]
+  },
+  "formValue": {
+    "modelID": "2015",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.3
+    },
+    "prompt": "你是一位专业的库存查询解析专家，擅长理解各种口语化、模糊的库存查询需求。请从以下用户输入的自然语言库存查询文本中提取结构化查询参数，支持同义词、省略表达、口语化表述的智能识别。\n\n查询文本：{{input.query_text}}\n\n【查询类型(queryType)识别规则】\n可选值：stock_comparison/price_comparison/warehouse_filter/sort_by/category_search/brand_search/keyword_search/list_all/warning/location_query/expiration_query/inbound_query/outbound_query/stock_transfer\n- stock_comparison：库存数量类查询（含\"有多少库存\"、\"剩多少\"、\"够不够\"、\"低于多少\"、\"高于多少\"、\"缺不缺货\"等相关表述）\n- price_comparison：价格类查询（含\"多少钱\"、\"价格多少\"、\"成本多少\"、\"最贵\"、\"最便宜\"等相关表述）\n- warehouse_filter：仓库筛选类查询（含\"哪个仓库\"、\"仓库库存\"、\"北京仓\"、\"上海仓\"等指定仓库的表述）\n- sort_by：排序类查询（含\"排序\"、\"从高到低\"、\"从低到高\"、\"最多\"、\"最少\"等相关表述）\n- category_search：品类搜索（含\"分类\"、\"品类\"、\"类别\"、\"电子产品类\"、\"服装类\"等品类相关表述）\n- brand_search：品牌搜索（含\"品牌\"、\"牌子\"、\"华为\"、\"小米\"等品牌相关表述）\n- keyword_search：关键词搜索（含模糊查找、特定商品名/型号/SKU等非品类非品牌的搜索）\n- list_all：全量查询（含\"所有商品\"、\"全部库存\"、\"全部列表\"等相关表述）\n- warning：预警查询（含\"预警\"、\"缺货提醒\"、\"低于安全库存\"、\"临期\"等相关表述）\n- location_query：库存位置查询（含\"放在哪里\"、\"哪个货位\"、\"存储位置\"等相关表述）\n- expiration_query：有效期查询（含\"保质期\"、\"有效期\"、\"临期\"、\"过期\"等相关表述）\n- inbound_query：入库查询（含\"入库记录\"、\"什么时候入库\"、\"入库多少\"等相关表述）\n- outbound_query：出库查询（含\"出库记录\"、\"什么时候出库\"、\"发了多少货\"等相关表述）\n- stock_transfer：调拨查询（含\"调拨\"、\"移库\"、\"从A仓调到B仓\"等相关表述）\n\n【字段提取规则】\n1. operator（比较运算符）：可选值为gt(大于)/lt(小于)/eq(等于)/gte(大于等于)/lte(小于等于)\n   - 识别口语化表述：\"超过\"→gt、\"低于\"→lt、\"等于\"→eq、\"不低于\"→gte、\"不高于\"→lte、\"至少\"→gte、\"最多\"→lte\n   - 无相关比较时填空字符串\n\n2. numericValue（数值阈值）：\n   - 提取所有数字类阈值，包括数量、价格、天数等，纯数字格式，如\"100\"、\"50.5\"、\"30\"\n   - 支持带单位的表述：\"100件\"→\"100\"、\"50元\"→\"50\"、\"30天\"→\"30\"\n   - 无相关数值时填空字符串\n\n3. warehouse（仓库名称）：\n   - 提取所有仓库相关名称，支持简称识别：\"北京仓\"→\"北京仓\"、\"上海仓库\"→\"上海仓\"、\"总仓\"→\"总仓\"\n   - 无相关仓库时填空字符串\n\n4. keyword（搜索关键词）：\n   - 提取商品名、型号、SKU、条码等非品类非品牌的搜索词，支持模糊匹配\n   - 如\"查询iPhone14库存\"→keyword=\"iPhone14\"\n   - 无相关关键词时填空字符串\n\n5. category（品类名称）：\n   - 提取品类/分类相关内容，支持同义词：\"手机类\"→\"手机\"、\"电子产品\"→\"电子产品\"、\"服装品类\"→\"服装\"\n   - 无相关品类时填空字符串\n\n6. brand（品牌名称）：\n   - 提取品牌相关内容，支持简称：\"华为手机\"→\"华为\"、\"阿迪达斯鞋子\"→\"阿迪达斯\"\n   - 无相关品牌时填空字符串\n\n7. sortField（排序字段）：可选值为quantity(数量)/price(价格)/value(价值)/expiration_date(有效期)/inbound_time(入库时间)\n   - 识别表述：\"按数量排序\"→quantity、\"按价格排序\"→price、\"按价值排序\"→value、\"按保质期排序\"→expiration_date、\"按入库时间排序\"→inbound_time\n   - 无相关排序时填空字符串\n\n8. sortOrder（排序方向）：可选值为asc(升序)/desc(降序)\n   - 识别表述：\"从低到高\"→asc、\"从高到低\"→desc、\"升序\"→asc、\"降序\"→desc、\"最多的排前面\"→desc、\"最早的排前面\"→asc\n   - 无相关排序时填空字符串\n\n9. limit（返回条数限制）：\n   - 提取返回条数限制，如\"前10条\"→\"10\"、\"最多返回5个\"→\"5\"\n   - 无相关限制时填空字符串\n\n【特殊场景处理规则】\n- 多意图识别：当用户查询包含多个意图时，优先匹配最核心的查询类型，其他参数尽可能完整提取\n- 模糊表述处理：对于\"有没有\"、\"查一下\"、\"帮我看看\"等无明确指向的表述，结合上下文提取对应参数\n- 省略表述处理：对于\"苹果的库存\"，自动识别brand=\"苹果\"，queryType=\"stock_comparison\"\n- 口语化表述处理：对于\"啥东西快过期了\"，自动识别queryType=\"expiration_query\"\n\n【模糊语义默认回退规则】\n当用户输入仅包含\"最多\"、\"最大\"、\"最高\"、\"最少\"、\"最小\"、\"最低\"等程度副词，但未明确指定具体衡量指标（如未说明是按数量、价格还是其他字段排序）时，触发以下默认回退逻辑：\n1. 排序字段(sortField)默认按库存数量(quantity)字段排序\n2. 排序方向(sortOrder)映射规则：\n   - \"最多\"、\"最大\"、\"最高\" → desc（降序，数值从大到小）\n   - \"最少\"、\"最小\"、\"最低\" → asc（升序，数值从小到大）\n3. 返回条数限制(limit)默认设置为\"10\"\n4. 如果用户明确指定了排序字段，则优先执行用户指定的精确逻辑，不触发上述回退规则\n\n注意：未找到的字段请填空字符串，确保输出的JSON结构完整，严格符合给定的字段定义。",
+    "jsonStructure": [
+      {
+        "paramDescription": "查询类型，可选值：stock_comparison/price_comparison/warehouse_filter/sort_by/category_search/brand_search/keyword_search/list_all/warning/location_query/expiration_query/inbound_query/outbound_query/stock_transfer",
+        "paramType": "String",
+        "name": "queryType"
+      },
+      {
+        "paramDescription": "比较运算符，可选值：gt/lt/eq/gte/lte，无相关内容时为空字符串",
+        "paramType": "String",
+        "name": "operator"
+      },
+      {
+        "name": "numericValue",
+        "paramDescription": "数值阈值，无相关内容时为空字符串",
+        "paramType": "String"
+      },
+      {
+        "paramDescription": "仓库名称，无相关内容时为空字符串",
+        "paramType": "String",
+        "name": "warehouse"
+      },
+      {
+        "name": "keyword",
+        "paramDescription": "搜索关键词，无相关内容时为空字符串",
+        "paramType": "String"
+      },
+      {
+        "name": "category",
+        "paramDescription": "品类名称，无相关内容时为空字符串",
+        "paramType": "String"
+      },
+      {
+        "name": "brand",
+        "paramDescription": "品牌名称，无相关内容时为空字符串",
+        "paramType": "String"
+      },
+      {
+        "paramType": "String",
+        "name": "sortField",
+        "paramDescription": "排序字段，可选值：quantity/price/value/expiration_date/inbound_time，无相关内容时为空字符串"
+      },
+      {
+        "name": "sortOrder",
+        "paramDescription": "排序方向，可选值：asc/desc，无相关内容时为空字符串",
+        "paramType": "String"
+      },
+      {
+        "paramType": "String",
+        "name": "limit",
+        "paramDescription": "返回条数限制，无相关内容时为空字符串"
+      }
+    ]
+  },
+  "createdAt": 1787033492289,
+  "updatedAt": 1787034442001,
+  "createdBy": 7673423658517318587
+}

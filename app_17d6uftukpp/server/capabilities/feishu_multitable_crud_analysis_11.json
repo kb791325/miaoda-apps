@@ -1,0 +1,286 @@
+{
+  "id": "feishu_multitable_crud_analysis_11",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldoUPy2Ey",
+        "name": "所属部门",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ]
+      },
+      {
+        "id": "flduzciWWp",
+        "name": "职位",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldfmek23E",
+        "name": "联系电话",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldwsJS7Uy",
+        "name": "联系人姓名",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldbhh6oc8",
+        "name": "微信",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldOci8s0I",
+        "name": "最后跟进时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldtgzbPCw",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldY5EVrgp",
+        "name": "GZ编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldIeWuaMz",
+        "name": "主体名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldtfjcvvT",
+        "name": "分配状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "待分配",
+          "已分配",
+          "已领取",
+          "已转化",
+          "已回收",
+          "无效"
+        ]
+      },
+      {
+        "id": "fldy4gKs8w",
+        "name": "客户需求",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldxpryPm0",
+        "name": "无效原因",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "空号",
+          "拒绝",
+          "已合作",
+          "无需求",
+          "非目标客户",
+          "其他"
+        ]
+      },
+      {
+        "id": "fld8O8naCp",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld6NcWUj1",
+        "name": "预计月消耗",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld9cslR8k",
+        "name": "调入公海时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "flduqmPUnR",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldsiZICZP",
+        "name": "领取时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld9xqiIus",
+        "name": "二级行业",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "女装",
+          "男装",
+          "美妆",
+          "食品",
+          "3C",
+          "家居",
+          "母婴",
+          "运动",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldpRaQcJ9",
+        "name": "客户简称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldTwAKHHE",
+        "name": "来源渠道",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "市场活动",
+          "转介绍",
+          "主动开发",
+          "官网咨询",
+          "广告投放",
+          "展会",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldCdNkJt3",
+        "name": "负责商务",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldBvu79li",
+        "name": "一级行业",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "电商",
+          "教育",
+          "金融",
+          "医疗",
+          "游戏",
+          "旅游",
+          "房产",
+          "汽车",
+          "美妆",
+          "服饰",
+          "食品",
+          "3C",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldmNPYFVw",
+        "name": "客资分层",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "A类（高价值）",
+          "B类（中价值）",
+          "C类（普通）",
+          "D类（低价值）"
+        ]
+      },
+      {
+        "id": "fldbOB3ijb",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldcPhjHXM",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      }
+    ],
+    "tableID": "tblhJT1QQepbWoNs",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

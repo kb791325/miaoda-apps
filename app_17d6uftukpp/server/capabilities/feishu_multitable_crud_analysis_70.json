@@ -1,0 +1,120 @@
+{
+  "id": "feishu_multitable_crud_analysis_70",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldZifo6hC",
+        "name": "任务名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldwaOXED8",
+        "name": "关联报表",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld8LnOEQW",
+        "name": "频率",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "每日",
+          "每周",
+          "每月"
+        ]
+      },
+      {
+        "id": "fld4H79BYI",
+        "name": "推送时间",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld8B2FXkp",
+        "name": "接收群",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldJgpLttW",
+        "name": "推送格式",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "卡片消息",
+          "文件附件",
+          "两者"
+        ]
+      },
+      {
+        "id": "fld3dk0Z8F",
+        "name": "At所有人",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "是",
+          "否"
+        ]
+      },
+      {
+        "id": "fldOoS9hVQ",
+        "name": "启用状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "启用",
+          "停用"
+        ]
+      },
+      {
+        "id": "fldfXnXW6E",
+        "name": "上次推送",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldVgEdfoK",
+        "name": "记录状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "正常",
+          "已删除"
+        ]
+      }
+    ],
+    "tableID": "tblmVPxXuQJCco7I",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788318401549,
+  "updatedAt": 1788318401549,
+  "createdBy": 7673423658517318587
+}

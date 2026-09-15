@@ -1,0 +1,316 @@
+{
+  "id": "feishu_multitable_crud_analysis_12",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldGm45APe",
+        "name": "意向产品",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "广告投放",
+          "视频制作",
+          "账户代运营",
+          "全案服务",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldQdgvyLT",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldLrVI16j",
+        "name": "邮箱",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldszHEqRr",
+        "name": "线索状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "新线索",
+          "跟进中",
+          "已转化",
+          "已无效",
+          "已流失"
+        ]
+      },
+      {
+        "id": "fldP6zc4Xw",
+        "name": "首次接触时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldHyalxq3",
+        "name": "转化时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldxjlvf91",
+        "name": "微信",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldL7ciwo4",
+        "name": "预计预算",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldoEqgZXo",
+        "name": "一级行业",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "电商",
+          "教育",
+          "金融",
+          "医疗",
+          "游戏",
+          "旅游",
+          "房产",
+          "汽车",
+          "美妆",
+          "服饰",
+          "食品",
+          "3C",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldcjaONxc",
+        "name": "XS编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldAipTsou",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldADB8ehG",
+        "name": "职位",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldCqJCZPX",
+        "name": "最后跟进时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldsikZ6rw",
+        "name": "负责商务",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldPwhwdSV",
+        "name": "二级行业",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "女装",
+          "男装",
+          "美妆",
+          "食品",
+          "3C",
+          "家居",
+          "母婴",
+          "运动",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldMa8xpfQ",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldyGYaWGv",
+        "name": "流失原因",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "价格过高",
+          "选择竞品",
+          "需求变化",
+          "无预算",
+          "联系不上",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldYiMXrlS",
+        "name": "所属部门",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ]
+      },
+      {
+        "id": "fld24eOIpR",
+        "name": "客户需求",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld3ZrVTyD",
+        "name": "线索名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldVScH980",
+        "name": "关联活动",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldygMWabh",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldtMRqi7G",
+        "name": "联系人",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldFq69N5e",
+        "name": "线索来源",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "市场活动",
+          "官网咨询",
+          "广告投放",
+          "转介绍",
+          "主动开发",
+          "展会",
+          "电话营销",
+          "其他"
+        ]
+      },
+      {
+        "id": "fld2xoiGJS",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld9TVC0p3",
+        "name": "线索等级",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "高",
+          "中",
+          "低"
+        ]
+      },
+      {
+        "id": "fld1YsmfCw",
+        "name": "联系电话",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldH1zm1mG",
+        "name": "公司名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      }
+    ],
+    "tableID": "tbl6yOtwnI6pSGZf",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

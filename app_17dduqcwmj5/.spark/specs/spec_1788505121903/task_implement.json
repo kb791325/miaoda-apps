@@ -1,0 +1,172 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "代码架构与共享骨架收尾检查",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "检查通用重试模块在服务端聚合模块的注册与路由可用性，缺失则补齐最小可运行注册",
+        "检查共享契约（同步状态类型、记录类型、重试请求、各列表响应扩展）与前端重试 hook 的完整性与引用一致",
+        "确认前后端整体编译通过，提交共享骨架相关变更"
+      ],
+      "requirements": [
+        "4.1"
+      ],
+      "write_scope": [
+        "server/app.module.ts",
+        "server/modules/bitable-retry/**",
+        "shared/bitable-sync.ts",
+        "client/src/hooks/use-bitable-retry.ts"
+      ],
+      "read_scope": [
+        "shared/bitable-sync.ts",
+        "server/modules/bitable-retry/bitable-retry.controller.ts",
+        "server/app.module.ts"
+      ],
+      "acceptance": "前后端编译通过，通用重试路由注册生效，共享契约被各页面与模块一致引用",
+      "dependencies": [],
+      "beginTime": 1788505480945,
+      "endTime": 1788505560907
+    },
+    {
+      "id": 2,
+      "name": "课程教学资料模块收尾（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 plugin-guide skill",
+        "收尾设备工具/工艺流程/配方详情三组服务端 CRUD 接口与回写映射，校验四个回写插件实例可用（缺失或 fields 为空时经 plugin_instance 补建修复）",
+        "集成三个表单弹窗到课程页对应区块，补齐新建/编辑/删除交互与表单校验、空状态",
+        "教学资料列表行展示同步状态标识并接入重新同步操作",
+        "提交本模块全部未提交变更"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "3.1",
+        "3.2"
+      ],
+      "write_scope": [
+        "server/modules/course/**",
+        "server/src/common/bitable-sync/**",
+        "client/src/pages/courses/**",
+        "shared/course.ts"
+      ],
+      "read_scope": [
+        "shared/course.ts",
+        "shared/bitable-sync.ts",
+        "server/src/common/bitable-sync/bitable-sync.mapper.ts",
+        "client/src/pages/courses/CourseListPage.tsx"
+      ],
+      "acceptance": "应用内新建一条教学资料本地落库成功并触发回写，列表同步状态可读回，编辑与删除行为正常",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788505561099,
+      "endTime": 1788506043955
+    },
+    {
+      "id": 3,
+      "name": "内容素材模块收尾（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 plugin-guide skill",
+        "收尾素材服务端 CRUD 接口与内容素材库回写映射，校验素材回写插件实例可用（缺失或 fields 为空时经 plugin_instance 补建修复）",
+        "内容中心素材库区块集成新建/编辑弹窗与删除操作，补齐表单校验与提交反馈",
+        "素材与营销内容列表行展示同步状态标识并接入重新同步操作",
+        "提交本模块全部未提交变更"
+      ],
+      "requirements": [
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "write_scope": [
+        "server/modules/content/**",
+        "server/src/common/bitable-sync/**",
+        "client/src/pages/content-center/**",
+        "shared/content.ts"
+      ],
+      "read_scope": [
+        "shared/content.ts",
+        "shared/bitable-sync.ts",
+        "server/src/common/bitable-sync/bitable-sync.mapper.ts",
+        "client/src/pages/content-center/ContentManageTab.tsx"
+      ],
+      "acceptance": "应用内新建素材本地落库成功并触发回写，素材与营销内容列表同步状态可读回，重试接口可用",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788505561099,
+      "endTime": 1788506272126
+    },
+    {
+      "id": 4,
+      "name": "咨询 FAQ 同步状态与重试收尾",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "FAQ 与未命中问题列表行展示同步状态标识，校验服务端列表响应已扩展同步状态",
+        "同步失败行接入重新同步操作并反馈结果，未配置多维表格时展示统一说明",
+        "提交本模块全部未提交变更"
+      ],
+      "requirements": [
+        "3.1",
+        "3.2",
+        "3.3"
+      ],
+      "write_scope": [
+        "client/src/pages/consultation/**",
+        "server/modules/consultation/**",
+        "shared/consultation.ts"
+      ],
+      "read_scope": [
+        "shared/consultation.ts",
+        "shared/bitable-sync.ts",
+        "client/src/pages/consultation/ConsultationPage.tsx"
+      ],
+      "acceptance": "FAQ 与未命中列表同步状态标识正确展示，失败行重试后状态可更新",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788505561099,
+      "endTime": 1788506466524
+    },
+    {
+      "id": 5,
+      "name": "收尾验收与发布就绪",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：对照代码架构收尾任务确认重试模块注册与共享契约被遵守；入口为课程管理页，入口不可用时停止全部验收仅记录阻塞；确认工作区无遗留未提交任务代码、发布流程无未提交警告"
+      ],
+      "requirements": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "1.1",
+        "2.1",
+        "3.2"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        ".spark/specs/spec_1788505121903/spec.md"
+      ],
+      "acceptance": "核心验收目标1：课程页新建教学资料、内容中心新建素材后列表出现记录且同步状态标识可读回（已同步或失败可重试）；核心验收目标2：同步失败行点击重新同步后标识更新并给出结果反馈；核心验收目标3：全部变更已提交，工作区干净具备发布条件；非核心降级：多维表格真实到账与字段内容质量不在阻塞范围",
+      "dependencies": [
+        2,
+        3,
+        4
+      ],
+      "beginTime": 1788506466678,
+      "endTime": 1788506632060
+    }
+  ]
+}

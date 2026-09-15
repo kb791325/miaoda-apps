@@ -1,0 +1,235 @@
+{
+  "id": "feishu_multitable_crud_analysis_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "bizType": "Text",
+        "id": "fld9R31B52",
+        "name": "账户ID",
+        "readable": true,
+        "writeable": true,
+        "type": 1
+      },
+      {
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld1xBtI6w",
+        "name": "账户名称",
+        "type": 1
+      },
+      {
+        "id": "fldiuIRfYy",
+        "name": "投放端口",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "巨量千川",
+          "巨量AD",
+          "快手磁力",
+          "小红书",
+          "腾讯广告",
+          "百度",
+          "其他"
+        ],
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "enumValues": [
+          "内部端口",
+          "外部端口",
+          "集团端口"
+        ],
+        "id": "fldPxW6k2O",
+        "name": "账户类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "正常",
+          "余额不足",
+          "暂停",
+          "封禁",
+          "已注销",
+          "待激活"
+        ],
+        "readable": true,
+        "writeable": true,
+        "id": "fldI6UhEls",
+        "name": "账户状态",
+        "type": 3
+      },
+      {
+        "bizType": "User",
+        "readable": true,
+        "writeable": true,
+        "id": "fldWkltpYV",
+        "name": "负责优化师",
+        "type": 11
+      },
+      {
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ],
+        "id": "fldC5284zS",
+        "readable": true,
+        "writeable": true,
+        "name": "所属部门",
+        "type": 3,
+        "bizType": "SingleSelect"
+      },
+      {
+        "id": "fld8WWKSJZ",
+        "name": "开户时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "name": "当前余额",
+        "type": 2,
+        "bizType": "Currency",
+        "id": "fldTBiCUMS"
+      },
+      {
+        "id": "fldtKw6i6p",
+        "name": "赠款余额",
+        "type": 2,
+        "bizType": "Currency",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Currency",
+        "readable": true,
+        "writeable": true,
+        "id": "fld32679Nn",
+        "name": "余额预警阈值",
+        "type": 2
+      },
+      {
+        "bizType": "Currency",
+        "id": "fldiGxhAg9",
+        "name": "累计充值",
+        "readable": true,
+        "writeable": true,
+        "type": 2
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "name": "累计消耗",
+        "type": 2,
+        "bizType": "Currency",
+        "id": "fldaG2IuPP"
+      },
+      {
+        "id": "fldfc2v153",
+        "name": "昨日消耗",
+        "readable": true,
+        "writeable": true,
+        "type": 2,
+        "bizType": "Currency"
+      },
+      {
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld4H3ZKxc",
+        "name": "账户密码"
+      },
+      {
+        "id": "fldK5DbX5t",
+        "readable": true,
+        "writeable": true,
+        "name": "账户链接",
+        "type": 15,
+        "bizType": "Url"
+      },
+      {
+        "id": "fldNqjYFP5",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "writeable": false,
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "id": "fldQ1ZOBN9",
+        "readable": true
+      },
+      {
+        "id": "fldd6I6vrW",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "ModifiedUser",
+        "id": "fld5HMc2Aa",
+        "readable": true,
+        "writeable": false,
+        "name": "修改人",
+        "type": 1004
+      },
+      {
+        "writeable": true,
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "id": "fld86KWltu",
+        "readable": true
+      },
+      {
+        "bizType": "SingleLink",
+        "readable": false,
+        "writeable": false,
+        "id": "fldWDBtNRs",
+        "name": "所属客户",
+        "type": 18
+      },
+      {
+        "id": "fldiEnGTmO",
+        "name": "关联客户ID",
+        "readable": true,
+        "writeable": true,
+        "type": 1,
+        "bizType": "Text"
+      }
+    ],
+    "tableID": "tblnqTA0Ec9B6glO",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788312389402,
+  "updatedAt": 1788414667763,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,17 @@
+{
+  "id": "feishu_bitable_asset_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格资产同步实例",
+  "description": "用于固定资产数据的双向同步，支持数据的创建、查询、更新、删除操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "GRQMbafkeaKeAjsZvN0c5SoYnYb",
+    "tableID": "tbla5xAVLV5WL9Nr",
+    "fields": []
+  },
+  "createdAt": 1787555607216,
+  "updatedAt": 1787555607216,
+  "createdBy": 7673423658517318587
+}

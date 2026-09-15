@@ -1,0 +1,7 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"导航到 /sub/competitor，确认竞品监控仪表盘页面渲染：包含KPI指标卡、横向柱状图、折线图、饼图、素材类型分布、TOP5排行、下方明细表格"},
+  {"id":2,"priority":"p0","description":"导航到 /sub/industryMarket，确认行业大盘仪表盘页面渲染：包含4个KPI指标卡、行业总消耗对比柱状图、流量成本趋势折线图、行业分布饼图、TOP5排行、下方明细表格"},
+  {"id":3,"priority":"p0","description":"导航到 /sub/industryRoi，确认行业ROI仪表盘页面渲染：包含4个KPI指标卡、ROI对比柱状图（含ROI基准2.5参考线）、ROI与转化率趋势折线图、下方明细表格"},
+  {"id":4,"priority":"p0","description":"导航到 /sub/costAccount，确认成本管理仪表盘页面渲染：包含4个KPI指标卡（总收入/总成本/总毛利/平均毛利率）、月度成本趋势折线图、成本构成饼图、核算状态分布柱状图、下方明细表格"},
+  {"id":5,"priority":"p0","description":"导航到 /sub/org，确认组织架构树形页面渲染：包含树形视图/列表视图切换、左侧部门树、右侧部门详情面板"}
+]}

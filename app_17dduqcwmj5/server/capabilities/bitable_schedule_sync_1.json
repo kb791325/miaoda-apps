@@ -1,0 +1,17 @@
+{
+  "id": "bitable_schedule_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "课程排期表回写",
+  "description": "服务端将应用内排期数据批量新增或更新回写到飞书多维表格课程排期表，支持batchAddRecords和batchUpdateRecords两个Action",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc",
+    "tableID": "tblYt2Txr3PKIkDm",
+    "fields": []
+  },
+  "createdAt": 1788494921001,
+  "updatedAt": 1788494921001,
+  "createdBy": 7673423658517318587
+}

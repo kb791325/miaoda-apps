@@ -1,0 +1,279 @@
+{
+  "id": "feishu_multitable_crud_analysis_21",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldQ8rPB8q",
+        "name": "粉丝量",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldghhxAvc",
+        "name": "报价(全天)",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldp136vSc",
+        "name": "报价(单条)",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldUY2gho2",
+        "name": "经纪人",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldx7XWaLp",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "flds69oNrJ",
+        "name": "联系电话",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldZvg98hz",
+        "name": "微信",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldxtPNINP",
+        "name": "经纪人电话",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld7t0sNoa",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld53nO9oc",
+        "name": "头像照片",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldReZLb5h",
+        "name": "外形标签",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "清纯",
+          "成熟",
+          "商务",
+          "运动",
+          "时尚",
+          "搞笑",
+          "邻家",
+          "御姐",
+          "正太",
+          "其他"
+        ]
+      },
+      {
+        "id": "fld6uybrdh",
+        "name": "性别",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "男",
+          "女"
+        ]
+      },
+      {
+        "id": "fldKnOjvTo",
+        "name": "平台账号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldAjhKnxw",
+        "name": "擅长风格",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "口播",
+          "剧情",
+          "带货",
+          "测评",
+          "舞蹈",
+          "唱歌",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldoSBf0aE",
+        "name": "年龄",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldK6civQE",
+        "name": "可用日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldPdH0u2t",
+        "name": "评级",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "S级",
+          "A级",
+          "B级",
+          "C级"
+        ]
+      },
+      {
+        "id": "fldGorSJ2G",
+        "name": "作品集",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldB6SjPHt",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldXT7ivLZ",
+        "name": "YY编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld3lZdElq",
+        "name": "类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "专业演员",
+          "达人",
+          "KOL",
+          "素人",
+          "模特",
+          "主持人"
+        ]
+      },
+      {
+        "id": "fldY5AYX6T",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld6HZ1crI",
+        "name": "身高(cm)",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld0EpJZW3",
+        "name": "合作评价",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldcLQ9osp",
+        "name": "档期状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "可预约",
+          "已预约",
+          "拍摄中",
+          "暂停合作"
+        ]
+      },
+      {
+        "id": "fldc7OGBvY",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld9xqtoDM",
+        "name": "姓名/艺名",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      }
+    ],
+    "tableID": "tblbT3IYynn59CRc",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

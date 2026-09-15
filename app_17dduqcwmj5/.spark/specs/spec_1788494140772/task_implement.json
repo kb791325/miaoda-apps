@@ -1,0 +1,220 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "多维表格回写代码架构设计",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill，确认服务端模块边界与 shared 契约组织方式",
+        "设计 shared 同步契约：同步状态枚举类型、多维表格配置读取方式（配置表或环境变量，禁止硬编码 appToken/tableID）",
+        "定义 BitableSyncService 接口骨架（按记录类型区分新增/更新、回写映射字段与同步状态的统一入口），放置于服务端共享目录并注册到相关模块",
+        "在学员与排期相关 server module 中预留同步服务注入点，保证提交时可编译运行"
+      ],
+      "requirements": [
+        "1.2",
+        "1.3",
+        "2.2",
+        "3.3"
+      ],
+      "write_scope": [
+        "shared/**",
+        "server/common/**",
+        "server/modules/student/**",
+        "server/modules/schedule/**"
+      ],
+      "read_scope": [
+        "server/database/schema.ts",
+        "server/modules/student",
+        "server/modules/schedule",
+        "server/app.module.ts"
+      ],
+      "acceptance": "shared 同步契约与 BitableSyncService 骨架已建立并可编译，多维表格配置通过配置读取而非硬编码",
+      "dependencies": [],
+      "beginTime": 1788494357318,
+      "endTime": 1788494527160
+    },
+    {
+      "id": 2,
+      "name": "既有同步表扩展同步映射字段",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 sql skill，确认既有表扩展规范（仅新增字段，不改表名字段名）",
+        "为学员表、排期表、考勤表分别新增多维表格记录 ID 字段与同步状态字段",
+        "对已由多维表格同步下来的存量记录，将其多维表格记录 ID 置为对应 base_record_id 并标记已同步；应用内新建的记录标记为未同步",
+        "补充前后端同步状态相关的接口类型定义"
+      ],
+      "requirements": [
+        "1.2",
+        "2.2",
+        "3.2"
+      ],
+      "write_scope": [
+        "server/database/**",
+        "shared/**"
+      ],
+      "read_scope": [
+        "server/database/schema.ts",
+        "shared"
+      ],
+      "acceptance": "三张表新增字段生效，存量同步记录已映射为已同步状态，应用内记录默认未同步",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788494527328,
+      "endTime": 1788494643192
+    },
+    {
+      "id": 3,
+      "name": "多维表格回写插件接入与同步服务实现",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 plugin-guide skill，确认 feishu-bitable 插件的 Action、服务端调用方式与失败处理规范",
+        "调用 plugin_instance 创建多维表格记录新增实例（batchAddRecords）与记录更新实例（batchUpdateRecords），目标数据表标识经 input 动态传入；执行阶段发现已有可复用实例则直接复用，缺少 appToken/tableID 配置时按规范转告用户补配置，禁止 mock 或手写授权",
+        "调用 get_plugin_ai_json 获取两个实例的运行时投影并输出 Schema 摘录卡",
+        "按 Schema 摘录卡在 BitableSyncService 中实现真实调用代码（服务端 CapabilityService），按记录有无多维表格记录 ID 选择新增或更新，成功后回写记录 ID 与同步状态，失败标记失败且不回滚本地数据",
+        "验证调用代码按 outputSchema 正确解析返回的记录 ID 与结果"
+      ],
+      "requirements": [
+        "1.1",
+        "1.4",
+        "2.1",
+        "3.1",
+        "3.2"
+      ],
+      "write_scope": [
+        "server/capabilities/**",
+        "server/common/**"
+      ],
+      "read_scope": [
+        "shared",
+        "server/capabilities"
+      ],
+      "acceptance": "两个多维表格插件实例创建完成且 BitableSyncService 按运行时投影真实调用新增/更新能力，同步状态与记录 ID 可回写",
+      "dependencies": [
+        1,
+        2
+      ],
+      "beginTime": 1788494643357,
+      "endTime": 1788495279862
+    },
+    {
+      "id": 4,
+      "name": "学员模块双向互通开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "服务端：在既有创建学员、编辑学员、录入缴费流程落库成功后调用同步服务回写多维表格（无记录 ID 走新增，已有走更新），回写失败仅标记失败状态",
+        "服务端：学员列表接口响应扩展同步状态字段，新增学员同步重试接口",
+        "前端：学员列表增加同步状态标识列，失败行提供「重新同步」操作并在成功后刷新标识；新增/编辑/缴费提交后回写失败给出非阻塞提示，未配置多维表格时展示统一说明"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "4.1",
+        "4.2",
+        "4.3"
+      ],
+      "write_scope": [
+        "server/modules/student/**",
+        "client/pages/**",
+        "client/services/**"
+      ],
+      "read_scope": [
+        "shared",
+        "server/common",
+        "server/modules/student",
+        "client/pages"
+      ],
+      "acceptance": "学员新增/编辑/缴费落库后触发真实多维表格回写并更新同步状态，列表可见同步标识且失败可重试",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788495283085,
+      "endTime": 1788496352559
+    },
+    {
+      "id": 5,
+      "name": "排期与考勤模块双向互通开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "服务端：在既有新增排期流程落库成功后调用同步服务回写多维表格；排期列表接口响应扩展同步状态字段，新增排期同步重试接口",
+        "服务端：在既有考勤保存流程落库成功后按记录有无多维表格记录 ID 分别走新增或更新回写，失败仅标记状态不影响本地保存",
+        "前端：排期列表增加同步状态标识，失败行提供「重新同步」操作；考勤保存后回写失败时保留本地结果并提示，未配置多维表格时展示统一说明"
+      ],
+      "requirements": [
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2",
+        "3.3",
+        "4.1",
+        "4.2"
+      ],
+      "write_scope": [
+        "server/modules/schedule/**",
+        "client/pages/**",
+        "client/services/**"
+      ],
+      "read_scope": [
+        "shared",
+        "server/common",
+        "server/modules/schedule",
+        "client/pages"
+      ],
+      "acceptance": "排期新增与考勤保存落库后触发真实多维表格回写并更新同步状态，排期列表可见同步标识且失败可重试",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1788495283085,
+      "endTime": 1788496352559
+    },
+    {
+      "id": 6,
+      "name": "多维表格双向互通验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：对照代码架构设计任务检查 shared 同步契约与同步服务是否被学员、排期模块正确复用；以学员管理页为应用入口，入口不可用（白屏/未就绪）时停止全部验收并仅记录阻塞问题",
+        "核心验收目标1：学员双向互通 —— 新增学员提交成功后列表出现该学员且同步状态标识正确展示；同步失败行点击「重新同步」后标识更新为已同步并有成功提示",
+        "核心验收目标2：排期与考勤双向互通 —— 新增排期提交成功后同步状态标识正确展示；考勤抽屉标记并保存后本地统计更新且同步失败时保留本地结果并给出提示",
+        "非核心降级范围：多维表格端记录内容与字段映射的逐项核对、真实多维表格的可见性（依赖用户配置的目标表），以应用内同步状态与提示反馈为准"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "3.1",
+        "4.1",
+        "4.2"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "shared",
+        "server/modules/student",
+        "server/modules/schedule",
+        "client/pages"
+      ],
+      "acceptance": "学员、排期、考勤三类数据在应用内完成写入后同步状态可查、失败可重试且本地数据不受回写失败影响",
+      "dependencies": [
+        4,
+        5
+      ],
+      "beginTime": 1788496352700,
+      "endTime": 1788496850387
+    }
+  ]
+}

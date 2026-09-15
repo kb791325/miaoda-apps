@@ -1,0 +1,30 @@
+{
+  "id": "marketing_material_doc_parser_1",
+  "pluginKey": "@official-plugins/ai-doc-parser",
+  "pluginVersion": "1.0.16",
+  "name": "营销材料文档解析",
+  "description": "将营销类PDF/DOC/DOCX/PPTX/XLSX/CSV/TXT/MARKDOWN/HTML文档解析为纯文本内容，输出作为招生文案创作的素材摘要。",
+  "icon": "",
+  "paramsSchema": {
+    "properties": {
+      "file": {
+        "type": "array",
+        "format": "plugin-file-url",
+        "description": "待解析的单个文档文件",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "file"
+    ],
+    "type": "object"
+  },
+  "formValue": {
+    "fileUrl": "{{input.file}}"
+  },
+  "createdAt": 1788493981231,
+  "updatedAt": 1788493981231,
+  "createdBy": 7673423658517318587
+}

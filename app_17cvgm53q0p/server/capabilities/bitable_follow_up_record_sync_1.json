@@ -1,0 +1,117 @@
+{
+  "id": "bitable_follow_up_record_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格「跟进记录表」同步实例",
+  "description": "飞书多维表格跟进记录表双向同步，支持搜索、查询、新增、更新、删除记录操作，用于应用数据库与多维表格数据同步",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "tblBIy9zMMHo539k",
+    "fields": [
+      {
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld1",
+        "name": "跟进编号"
+      },
+      {
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true,
+        "id": "fld2",
+        "name": "关联客户"
+      },
+      {
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true,
+        "id": "fld3",
+        "name": "跟进人"
+      },
+      {
+        "name": "跟进时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld4"
+      },
+      {
+        "id": "fld5",
+        "name": "跟进内容",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "enumValues": [],
+        "id": "fld6",
+        "name": "跟进方式",
+        "type": 3,
+        "bizType": "SingleSelect"
+      },
+      {
+        "writeable": true,
+        "enumValues": [],
+        "id": "fld7",
+        "name": "客户意向度",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true
+      },
+      {
+        "writeable": true,
+        "id": "fld8",
+        "name": "需求产品",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true
+      },
+      {
+        "id": "fld9",
+        "name": "预计预算",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "enumValues": [],
+        "id": "fld10",
+        "name": "阶段变化",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld11",
+        "name": "下次跟进时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld12",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      }
+    ],
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe"
+  },
+  "createdAt": 1789010657600,
+  "updatedAt": 1789010657600,
+  "createdBy": 7673423658517318587
+}

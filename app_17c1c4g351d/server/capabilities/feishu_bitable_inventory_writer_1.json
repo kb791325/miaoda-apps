@@ -1,0 +1,18 @@
+{
+  "id": "feishu_bitable_inventory_writer_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "商品库存表写入实例",
+  "description": "用于把应用内库存数据写入飞书多维表格，支持按SKU编码查重和批量新增库存记录",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "tblKI0DzkrXRYjpt",
+    "fields": [],
+    "tips": "支持的操作：searchRecords（按SKU编码查重）、batchAddRecords（批量新增库存记录，最多500条）",
+    "appToken": "TtUqb0FwVaSq7ssq6vacWbMCn9c"
+  },
+  "createdAt": 1789098318681,
+  "updatedAt": 1789098318681,
+  "createdBy": 7673423658517318587
+}

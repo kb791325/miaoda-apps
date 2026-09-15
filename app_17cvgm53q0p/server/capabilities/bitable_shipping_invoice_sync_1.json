@@ -1,0 +1,125 @@
+{
+  "id": "bitable_shipping_invoice_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格发货单表同步实例",
+  "description": "飞书多维表格发货单表同步实例，支持searchRecords、getRecord、batchAddRecords、batchUpdateRecords、deleteRecords五个action，用于应用数据库发货单双向同步。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tbluBL1QrKdtIJnh",
+    "fields": [
+      {
+        "writeable": true,
+        "id": "fld1",
+        "name": "发货单号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "id": "fld2",
+        "name": "关联订单",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld3",
+        "name": "发货状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": []
+      },
+      {
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [],
+        "id": "fld4",
+        "name": "物流公司",
+        "type": 3
+      },
+      {
+        "id": "fld5",
+        "name": "运单号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld6",
+        "name": "发货时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld7",
+        "name": "签收时间"
+      },
+      {
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true,
+        "id": "fld8",
+        "name": "发货人"
+      },
+      {
+        "id": "fld9",
+        "name": "型号核对结果",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": []
+      },
+      {
+        "id": "fld10",
+        "name": "核对异常说明",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld11",
+        "name": "备注",
+        "type": 1
+      },
+      {
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true,
+        "id": "fld12",
+        "name": "发货明细",
+        "type": 18
+      },
+      {
+        "id": "fld13",
+        "name": "创建时间",
+        "type": 101,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      }
+    ]
+  },
+  "createdAt": 1789010655465,
+  "updatedAt": 1789010655465,
+  "createdBy": 7673423658517318587
+}

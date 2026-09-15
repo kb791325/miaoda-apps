@@ -1,0 +1,92 @@
+@import '@lark-apaas/client-toolkit/lib/index.css';
+@import "tw-animate-css";
+@import "./tailwind-theme.css";
+@import "./typography.css";
+
+@source "../../node_modules/streamdown/dist/*.js";
+@config "../../tailwind.config.ts";
+
+/* ================= 适老化易用性全局规范 ================= */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.8;
+}
+
+/* 页面标题：20px 加粗，与内容区拉开间距 */
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* 表格：内容 15px、表头 16px 加粗、斑马纹增强行辨识 */
+.ant-table {
+  font-size: 15px;
+}
+.ant-table-thead > tr > th,
+.ant-table-thead > tr > td {
+  font-size: 16px;
+  font-weight: 600;
+}
+.ant-table-tbody > tr:nth-child(even) > td {
+  background: #fafafa;
+}
+
+/* 分页器：页码按钮高度 36px、字号 15px */
+.ant-pagination .ant-pagination-item,
+.ant-pagination .ant-pagination-prev,
+.ant-pagination .ant-pagination-next,
+.ant-pagination .ant-pagination-jump-prev,
+.ant-pagination .ant-pagination-jump-next {
+  min-width: 36px;
+  height: 36px;
+  line-height: 34px;
+}
+.ant-pagination .ant-pagination-item a {
+  font-size: 15px;
+}
+
+/* 表单标签：16px 加粗、左对齐 */
+[data-slot='form-label'],
+[data-slot='label'] {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+/* 下拉选项：高度 40px、字号 15px */
+[data-slot='select-item'] {
+  min-height: 40px;
+  font-size: 15px;
+}
+
+/* Toast：文字 16px、图标 24px */
+[data-sonner-toast] {
+  font-size: 16px;
+}
+[data-sonner-toast] [data-icon] svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 操作成功后新变更行高亮闪烁 3 秒 */
+@keyframes row-highlight-flash {
+  0% {
+    background-color: #fef9c3;
+  }
+  70% {
+    background-color: #fef9c3;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.row-highlight > td {
+  animation: row-highlight-flash 3s ease-out 1;
+}

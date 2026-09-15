@@ -1,0 +1,46 @@
+{
+  "id": "follow_up_reminder_notify_1",
+  "pluginKey": "@official-plugins/send-feishu-message",
+  "pluginVersion": "1.0.30",
+  "name": "客户跟进提醒通知",
+  "description": "用于客户跟进场景下，向负责销售发送飞书卡片提醒，接收人在调用时动态传入。",
+  "icon": "",
+  "paramsSchema": {
+    "properties": {
+      "receiverIds": {
+        "type": "array",
+        "description": "接收提醒的 miaoda 用户 ID 数组（负责销售）",
+        "items": {
+          "type": "string",
+          "description": "用户ID"
+        }
+      },
+      "title": {
+        "type": "string",
+        "description": "飞书卡片标题"
+      },
+      "content": {
+        "type": "string",
+        "description": "飞书卡片 markdown 正文"
+      }
+    },
+    "required": [
+      "receiverIds",
+      "title"
+    ],
+    "type": "object"
+  },
+  "formValue": {
+    "buttons": [],
+    "receiverGroupList": [],
+    "title": {
+      "title": "{{input.title}}"
+    },
+    "receiverUserList": "{{input.receiverIds}}",
+    "content": "{{input.content}}",
+    "sender": "bot"
+  },
+  "createdAt": 1789368449240,
+  "updatedAt": 1789368449240,
+  "createdBy": 7673423568767552691
+}

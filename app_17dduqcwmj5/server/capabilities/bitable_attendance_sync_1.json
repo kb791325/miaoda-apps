@@ -1,0 +1,17 @@
+{
+  "id": "bitable_attendance_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "考勤记录表回写",
+  "description": "服务端将应用内考勤数据批量新增或更新回写到飞书多维表格考勤记录表",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc",
+    "tableID": "tblgL9nSjq705hAU",
+    "fields": []
+  },
+  "createdAt": 1788494953871,
+  "updatedAt": 1788494953871,
+  "createdBy": 7673423658517318587
+}

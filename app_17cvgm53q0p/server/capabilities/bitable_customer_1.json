@@ -1,0 +1,102 @@
+{
+  "id": "bitable_customer_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格客户表实例",
+  "description": "客户表管理，支撑服务端CapabilityService执行客户数据的查询、新增、更新操作，提供客户列表、新建客户、编辑客户档案等能力。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tbl9qtdri9POmNkz",
+    "fields": [
+      {
+        "bizType": "Text",
+        "id": "",
+        "name": "客户姓名",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "",
+        "name": "联系电话",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "",
+        "name": "收货地址",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "bizType": "Text",
+        "id": "",
+        "name": "微信号",
+        "readable": true,
+        "type": 1
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "抖音",
+          "拼多多",
+          "京东",
+          "微信私域",
+          "老客推荐"
+        ],
+        "id": "",
+        "name": "客户来源",
+        "readable": true,
+        "type": 3
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "普通",
+          "VIP",
+          "至尊"
+        ],
+        "id": "",
+        "name": "客户等级",
+        "readable": true,
+        "type": 3
+      },
+      {
+        "bizType": "Text",
+        "id": "",
+        "name": "备注",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "type": 20,
+        "writeable": false,
+        "bizType": "Formula",
+        "id": "",
+        "name": "累计订单数"
+      },
+      {
+        "writeable": false,
+        "bizType": "Formula",
+        "id": "",
+        "name": "累计消费金额",
+        "readable": true,
+        "type": 20
+      }
+    ]
+  },
+  "createdAt": 1787712940663,
+  "updatedAt": 1787712940663,
+  "createdBy": 7677497422334987466
+}

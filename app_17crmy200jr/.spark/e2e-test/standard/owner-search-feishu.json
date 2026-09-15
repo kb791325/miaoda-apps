@@ -1,0 +1,1 @@
+{"cases": [{"id": 1, "priority": "p0", "description": "打开固定资产页面，页面加载后显示资产列表和统计卡片"}, {"id": 2, "priority": "p0", "description": "点击「新增资产」按钮，弹窗打开后包含归属人选择器"}, {"id": 3, "priority": "p1", "description": "点击归属人选择器展开下拉，显示搜索输入框和用户列表"}]}

@@ -1,0 +1,70 @@
+{
+  "id": "bitable_stock_change_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "库存变动表",
+  "description": "服务端CapabilityService执行searchRecords/batchAddRecords，支撑商品出入库流水写入与查询。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblUUaJHu1meaomM",
+    "fields": [
+      {
+        "id": "fld1",
+        "name": "变动编号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "id": "fld2",
+        "name": "商品",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true
+      },
+      {
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "入库",
+          "出库"
+        ],
+        "id": "fld3",
+        "name": "变动类型"
+      },
+      {
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true,
+        "id": "fld4",
+        "name": "变动数量"
+      },
+      {
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld5",
+        "name": "变动时间",
+        "type": 5
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "id": "fld6",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text"
+      }
+    ]
+  },
+  "createdAt": 1787713617187,
+  "updatedAt": 1787713617187,
+  "createdBy": 7677497422334987466
+}

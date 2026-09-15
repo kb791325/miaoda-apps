@@ -1,0 +1,57 @@
+{
+  "id": "bitable_attendance_sync_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "bitable-attendance-sync-2",
+  "description": "服务端把应用内考勤数据回写到考勤记录表多维表格数据表，支持批量新增和批量更新记录操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "writeable": true,
+        "bizType": "SingleLink",
+        "id": "fld1",
+        "name": "学员",
+        "type": 18,
+        "readable": true
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleLink",
+        "id": "fld2",
+        "name": "课程排期",
+        "type": 18,
+        "readable": true
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "出勤",
+          "请假",
+          "迟到",
+          "早退",
+          "旷课"
+        ],
+        "id": "fld3",
+        "name": "出勤状态",
+        "type": 3,
+        "readable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fld4",
+        "name": "备注",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      }
+    ],
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc",
+    "tableID": "tblgL9nSjq705hAU"
+  },
+  "createdAt": 1788496038496,
+  "updatedAt": 1788496038496,
+  "createdBy": 7673423658517318587
+}

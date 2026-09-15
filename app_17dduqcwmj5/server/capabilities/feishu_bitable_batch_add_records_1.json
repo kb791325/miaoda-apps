@@ -1,0 +1,17 @@
+{
+  "id": "feishu_bitable_batch_add_records_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "批量新增记录到飞书多维表格",
+  "description": "服务端将应用内新增的学员/排期/考勤记录批量回写到飞书多维表格，支持动态指定appToken和tableID",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "{{input.tableID}}",
+    "records": "{{input.recordsJson}}",
+    "appToken": "{{input.appToken}}"
+  },
+  "createdAt": 1788494811155,
+  "updatedAt": 1788494811155,
+  "createdBy": 7673423658517318587
+}

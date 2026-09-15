@@ -1,0 +1,17 @@
+{
+  "id": "data_review_bitable_writer_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "数据复盘表写入实例",
+  "description": "将应用内售后复盘统计数据写入飞书多维表格，支持按统计日期查重、批量新增和批量更新记录",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "TtUqb0FwVaSq7ssq6vacWbMCn9c",
+    "tableID": "tbl4b64Oq3aPN4zQ",
+    "fields": []
+  },
+  "createdAt": 1789098318329,
+  "updatedAt": 1789098318329,
+  "createdBy": 7673423658517318587
+}

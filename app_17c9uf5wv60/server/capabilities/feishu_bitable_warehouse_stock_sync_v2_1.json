@@ -1,0 +1,86 @@
+{
+  "id": "feishu_bitable_warehouse_stock_sync_v2_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格仓库库存同步插件实例 v2",
+  "description": "同步仓库库存数据到飞书多维表格仓库库存表，包含商品名称、SKU、仓库、当前库存、安全库存、库存状态、最后更新时间等字段",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "ZeHhbA4Mh8ZbLbHnqOcXHd2bnib",
+    "tableID": "tbls8rcPouNOstcM",
+    "fields": [
+      {
+        "bizType": "Text",
+        "id": "fld1",
+        "name": "商品名称",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld2",
+        "name": "SKU",
+        "readable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "上海仓",
+          "北京仓",
+          "广州仓",
+          "成都仓"
+        ],
+        "id": "fld3",
+        "name": "仓库",
+        "readable": true,
+        "type": 3,
+        "writeable": true
+      },
+      {
+        "id": "fld4",
+        "name": "当前库存",
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number"
+      },
+      {
+        "name": "安全库存",
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fld5"
+      },
+      {
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "正常",
+          "低库存",
+          "缺货",
+          "过剩"
+        ],
+        "id": "fld6",
+        "name": "库存状态"
+      },
+      {
+        "type": 5,
+        "writeable": true,
+        "bizType": "DateTime",
+        "id": "fld7",
+        "name": "最后更新时间",
+        "readable": true
+      }
+    ]
+  },
+  "createdAt": 1787365631386,
+  "updatedAt": 1787365631386,
+  "createdBy": 7673423658517318587
+}

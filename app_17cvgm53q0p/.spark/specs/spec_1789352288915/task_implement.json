@@ -1,0 +1,105 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "认证服务端飞书登录自动绑定与覆盖绑定改造（含 shared 类型）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 user-identity/contacts-service skill，确认服务端经 AuthNPaasService 获取当前飞书用户手机号/姓名的可用字段与调用方式",
+        "扩展 shared/auth.ts 的 LoginResponse 增加 autoBound 可选字段",
+        "改造 feishuLogin：未命中绑定时按手机号→姓名顺序唯一匹配启用中且未绑定飞书的账号，命中则写入绑定并签发会话（autoBound 为真），通讯录不可用或匹配不唯一保持 409 未绑定兜底",
+        "改造 feishuBind：密码与状态校验通过后覆盖两侧旧绑定（先解除占用同一飞书 ID 的旧账号再写入，唯一索引冲突兜底提示），移除原两处 409 死锁拦截",
+        "代码级自查：auth 模块编译通过，异常分支返回文案与错误码与前端取值约定一致"
+      ],
+      "requirements": [
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "write_scope": [
+        "server/modules/auth/**",
+        "shared/auth.ts"
+      ],
+      "read_scope": [
+        "server/modules/auth/auth.service.ts",
+        "server/modules/auth/auth.controller.ts",
+        "server/modules/auth/auth.module.ts",
+        "shared/auth.ts"
+      ],
+      "acceptance": "匹配规则命中时 feishu-login 返回会话且 autoBound 为真、用户列表可回查飞书已绑定；feishu-bind 在账号已绑其他飞书账号时凭正确密码可覆盖绑定成功、密码错误返回 401",
+      "dependencies": [],
+      "beginTime": 1789352622174,
+      "endTime": 1789353508067
+    },
+    {
+      "id": 2,
+      "name": "登录页前端体验改造（自动绑定提示与过期提示去误报）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "登录页飞书登录成功且 autoBound 为真时 toast「已自动绑定当前飞书账号」后跳转首页",
+        "AuthProvider 401 事件处理仅在本会话曾存在用户态时弹「登录已过期」toast，首次带过期 token 进入登录页静默清理",
+        "自查登录页加载态/错误展示/绑定模式切换交互保持完整"
+      ],
+      "requirements": [
+        "1.1",
+        "1.4",
+        "3.1",
+        "3.2"
+      ],
+      "write_scope": [
+        "client/src/pages/Login/**",
+        "client/src/hooks/use-auth.tsx"
+      ],
+      "read_scope": [
+        "client/src/pages/Login/LoginPage.tsx",
+        "client/src/hooks/use-auth.tsx",
+        "client/src/utils/auth-events.ts",
+        "shared/auth.ts"
+      ],
+      "acceptance": "首次带过期 token 访问登录页不再弹出过期提示；飞书自动绑定成功路径跳转首页并展示自动绑定提示",
+      "dependencies": [
+        1
+      ],
+      "endTime": 1789353508067
+    },
+    {
+      "id": 3,
+      "name": "验收测试（飞书一键登录与绑定覆盖）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：入口为 /login 登录页，入口不可用（白屏/Page not found）时停止全部验收仅记录阻塞问题",
+        "核心验收目标1：飞书一键登录——点击「飞书登录」后进入首页且顶部用户身份正确，自动绑定路径出现「已自动绑定」提示",
+        "核心验收目标2：绑定覆盖——在账号已绑其他飞书账号场景下绑定表单输正确密码提示绑定成功并进入首页，输错误密码表单内展示错误",
+        "非核心降级范围：平台通讯录手机号/姓名字段可用性导致的自动匹配命中率、AI 无关内容质量"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1",
+        "2.2",
+        "3.1",
+        "3.2"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "client/src/pages/Login/LoginPage.tsx",
+        "server/modules/auth/auth.service.ts"
+      ],
+      "acceptance": "飞书登录点击后可进入首页且身份正确；绑定覆盖场景密码正确成功、密码错误有表单内错误反馈",
+      "dependencies": [
+        1,
+        2
+      ],
+      "beginTime": 1789353508653,
+      "endTime": 1789353818795
+    }
+  ]
+}

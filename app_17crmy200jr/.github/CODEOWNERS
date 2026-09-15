@@ -1,0 +1,15 @@
+# 全局默认审查者
+* @team/backend
+
+# 前端代码
+/client/src/ @team/frontend
+
+# 后端代码
+/server/ @team/backend
+
+# 文档
+/docs/ @team/tech-writer
+
+# 配置文件
+*.config.* @team/devops
+.github/ @team/devops

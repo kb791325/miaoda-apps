@@ -1,0 +1,126 @@
+{
+  "id": "bitable_admission_content_writeback_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "招生内容表回写实例",
+  "description": "将应用内营销内容数据批量新增/更新/删除回写到飞书多维表格「招生内容」表，支持batchAddRecords、batchUpdateRecords、deleteRecords三个action",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "tblzmhWDRrHSqBPe",
+    "fields": [
+      {
+        "bizType": "Text",
+        "id": "fld1",
+        "name": "内容标题",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "招生文案",
+          "短视频脚本",
+          "朋友圈",
+          "海报文案"
+        ],
+        "id": "fld2",
+        "name": "内容类型",
+        "readable": true,
+        "type": 3,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fld3",
+        "name": "正文",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "待审核",
+          "可用",
+          "已使用",
+          "已驳回"
+        ],
+        "id": "fld4",
+        "name": "状态",
+        "readable": true,
+        "type": 3
+      },
+      {
+        "writeable": true,
+        "bizType": "DateTime",
+        "id": "fld5",
+        "name": "计划发布日期",
+        "readable": true,
+        "type": 5
+      },
+      {
+        "id": "fld6",
+        "name": "发布平台",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "bizType": "Number",
+        "id": "fld7",
+        "name": "点赞数",
+        "readable": true,
+        "type": 2,
+        "writeable": true
+      },
+      {
+        "bizType": "Number",
+        "id": "fld8",
+        "name": "转化数",
+        "readable": true,
+        "type": 2,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld9",
+        "name": "海报图"
+      },
+      {
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld10",
+        "name": "附件清单",
+        "readable": true,
+        "type": 1
+      },
+      {
+        "bizType": "Text",
+        "id": "fld11",
+        "name": "驳回原因",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "name": "关联课程",
+        "readable": true,
+        "type": 15,
+        "writeable": true,
+        "bizType": "SingleLink",
+        "id": "fld12"
+      }
+    ],
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc"
+  },
+  "createdAt": 1788591082401,
+  "updatedAt": 1788591082401,
+  "createdBy": 7673423658517318587
+}

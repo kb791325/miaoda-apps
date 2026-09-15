@@ -1,0 +1,169 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "代码架构设计（提醒功能模块边界与共享契约）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "划定服务端 reminder 新模块边界与权限复用方案（customer:manage / customer:view，复用 AppAuthGuard）",
+        "新建 shared/reminder.ts 共享契约：占位符约定、默认模板、渲染函数与提醒相关 API 类型",
+        "明确前端落点：CustomersPage 集成入口、CustomersTable 行操作扩展、两个弹窗组件文件命名",
+        "声明并行修改边界：后续任务只写各自目录，共享骨架仅本任务改动"
+      ],
+      "requirements": [
+        "1.1",
+        "2.2"
+      ],
+      "write_scope": [
+        "shared/reminder.ts"
+      ],
+      "read_scope": [
+        "client/src/pages/Customers/CustomersPage.tsx",
+        "client/src/pages/Customers/CustomersTable.tsx",
+        "server/modules/auth/auth.constants.ts",
+        "shared/customer.ts"
+      ],
+      "acceptance": "shared/reminder.ts 契约落盘且模块边界明确，后续任务可按边界并行开发不冲突",
+      "dependencies": [],
+      "beginTime": 1789368016810,
+      "endTime": 1789368124900
+    },
+    {
+      "id": 2,
+      "name": "数据库服务创建（提醒记录表与提醒设置表）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取数据库相关 skill",
+        "规划建表顺序并逐表创建 follow_up_reminder 与 reminder_setting",
+        "检查两张表创建结果（设置表无需预置数据，服务端无配置行时回退默认模板）",
+        "补齐两张表的服务端 schema 定义与类型导出"
+      ],
+      "requirements": [
+        "1.2",
+        "2.1"
+      ],
+      "write_scope": [
+        "server/database/schema.ts"
+      ],
+      "read_scope": [
+        "shared/reminder.ts",
+        "server/database/schema.ts"
+      ],
+      "acceptance": "两张表创建成功且服务端可正常读写",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1789368125300,
+      "endTime": 1789368846175
+    },
+    {
+      "id": 3,
+      "name": "一方插件开发（跟进提醒飞书消息实例）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 plugin-guide skill",
+        "调 plugin_instance 创建 send-feishu-message 实例 follow_up_reminder_notify_1（requirementsSummary 写明 formValue 结构：title 为对象内层键名 title 映射 {{input.title}}、receiverUserList 透传 {{input.receiverIds}}、content 映射 {{input.content}}）",
+        "调 get_plugin_ai_json 获取运行时投影并输出 Schema 摘录卡",
+        "按投影生成服务端调用骨架封装于 server/modules/reminder/feishu-notifier.ts（入参出参严格按摘录卡）",
+        "真实调用验证一次发送链路（失败含最小错误日志）"
+      ],
+      "requirements": [
+        "1.2"
+      ],
+      "write_scope": [
+        "server/capabilities/follow_up_reminder_notify_1.json",
+        "server/modules/reminder/feishu-notifier.ts"
+      ],
+      "read_scope": [
+        "shared/reminder.ts"
+      ],
+      "acceptance": "插件实例创建成功且 notifier 真实调用发送飞书消息一次成功",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1789368125300,
+      "endTime": 1789368846175
+    },
+    {
+      "id": 4,
+      "name": "提醒模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "服务端 reminder 模块：模板读取/保存、发送提醒（解析负责销售飞书身份、渲染模板、调 feishu-notifier、写提醒日志、未绑定飞书返回 400、发送失败写 failed 日志并报错）、最近提醒批量查询",
+        "前端 api 层 client/src/api/reminder.ts 对接四个接口",
+        "并行开发「表格提醒操作与已提醒徽标」「提醒弹窗」「提醒设置弹窗」页面区块并集成进 CustomersPage 待跟进视图",
+        "发送成功/失败 toast 反馈与行高亮、无负责销售禁用提示等状态处理"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "write_scope": [
+        "server/modules/reminder/**",
+        "client/src/api/reminder.ts",
+        "client/src/pages/Customers/**"
+      ],
+      "read_scope": [
+        "shared/reminder.ts",
+        "server/modules/reminder/feishu-notifier.ts",
+        "server/database/schema.ts",
+        "client/src/pages/Customers/CustomersPage.tsx",
+        "client/src/pages/Customers/CustomersTable.tsx"
+      ],
+      "acceptance": "待跟进行点击提醒后销售真实收到飞书消息、follow_up_reminder 可回查 sent 记录，修改模板保存后新弹窗按新模板生成内容",
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "beginTime": 1789368846643,
+      "endTime": 1789369736664
+    },
+    {
+      "id": 5,
+      "name": "验收测试（跟进提醒与模板设置）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：对照代码架构设计任务检查结构遵守情况；入口为客户管理页待跟进视图，入口不可用时停止验收仅记录阻塞",
+        "核心验收目标1：待跟进提醒发送 —— 待跟进行点击提醒跟进，弹窗展示销售与可编辑消息，确认后出现成功提示且行内展示已提醒时间；销售未绑定飞书时出现阻断提示",
+        "核心验收目标2：模板自定义 —— 提醒设置中修改模板保存后重开提醒弹窗，默认内容按新模板渲染且占位符正确替换",
+        "非核心降级范围：飞书卡片样式与真实外部送达时效、提醒文案质量"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "shared/reminder.ts",
+        "client/src/pages/Customers/CustomersPage.tsx"
+      ],
+      "acceptance": "两个核心验收目标在应用内可判定通过，阻塞问题已记录",
+      "dependencies": [
+        2,
+        3,
+        4
+      ],
+      "beginTime": 1789369736863,
+      "endTime": 1789371193995
+    }
+  ]
+}

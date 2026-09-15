@@ -1,0 +1,26 @@
+{
+  "id": "bitable_customer_reverse_link_maintain_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "客户表反向关联维护实例",
+  "description": "维护客户表与跟进记录表的反向关联字段，在推送/拉取/删除跟进记录时，读取并更新客户的「跟进记录」关联列表",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "writeable": true,
+        "bizType": "SingleLink",
+        "id": "fldFollowUpRecord",
+        "name": "跟进记录",
+        "readable": true,
+        "type": 19
+      }
+    ],
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tbl9qtdri9POmNkz"
+  },
+  "createdAt": 1789028628828,
+  "updatedAt": 1789028628828,
+  "createdBy": 7673423658517318587
+}

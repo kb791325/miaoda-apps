@@ -1,0 +1,117 @@
+{
+  "id": "feishu_bitable_management_crud_analysis_72",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldGtREYv0",
+        "name": "角色编号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "name": "角色名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld0KpAovZ"
+      },
+      {
+        "id": "fld981olf8",
+        "name": "角色描述",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "name": "菜单权限",
+        "type": 1,
+        "bizType": "Text",
+        "id": "fldihscTwS",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "全部",
+          "本部门",
+          "本部门及下级",
+          "仅本人",
+          "自定义"
+        ],
+        "id": "fld0CmO4RT",
+        "readable": true,
+        "writeable": true,
+        "name": "数据权限范围",
+        "type": 3
+      },
+      {
+        "name": "状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "启用",
+          "停用"
+        ],
+        "readable": true,
+        "writeable": true,
+        "id": "fld4dgUQWG"
+      },
+      {
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "id": "flddD7sZLN",
+        "name": "创建时间",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "ModifiedTime",
+        "id": "fldnGa5YzC",
+        "name": "修改时间",
+        "type": 1002,
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false,
+        "id": "fldPw8wGAC",
+        "name": "创建人",
+        "type": 1003
+      },
+      {
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "id": "fldzD4xRB9",
+        "name": "修改人",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "type": 1,
+        "bizType": "Text",
+        "id": "fldqFwInhu",
+        "name": "备注"
+      }
+    ],
+    "tableID": "tblgwOGNNtn2XiiF",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788348452526,
+  "updatedAt": 1788348547675,
+  "createdBy": 7673423658517318587
+}

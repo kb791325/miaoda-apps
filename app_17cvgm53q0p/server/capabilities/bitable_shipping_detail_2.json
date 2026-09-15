@@ -1,0 +1,92 @@
+{
+  "id": "bitable_shipping_detail_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格发货明细表同步实例",
+  "description": "飞书多维表格发货明细表双向同步实例，支持搜索、查询、新增、更新、删除发货明细记录，用于应用数据库与飞书多维表格的数据同步。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblhB0yTogllKFpK",
+    "fields": [
+      {
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld1",
+        "name": "明细编号",
+        "readable": true,
+        "type": 1
+      },
+      {
+        "name": "关联发货单",
+        "readable": true,
+        "type": 18,
+        "writeable": true,
+        "bizType": "SingleLink",
+        "id": "fld2"
+      },
+      {
+        "type": 18,
+        "writeable": true,
+        "bizType": "SingleLink",
+        "id": "fld3",
+        "name": "关联商品",
+        "readable": true
+      },
+      {
+        "name": "订单要求型号",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld4"
+      },
+      {
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld5",
+        "name": "实际发货型号"
+      },
+      {
+        "bizType": "Number",
+        "id": "fld6",
+        "name": "发货数量",
+        "readable": true,
+        "type": 2,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "id": "fld7",
+        "name": "型号是否一致",
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "enumValues": []
+      },
+      {
+        "bizType": "SingleSelect",
+        "id": "fld8",
+        "name": "库存扣减状态",
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "enumValues": []
+      },
+      {
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld9",
+        "name": "备注",
+        "readable": true
+      }
+    ]
+  },
+  "createdAt": 1789010660456,
+  "updatedAt": 1789010660456,
+  "createdBy": 7673423658517318587
+}

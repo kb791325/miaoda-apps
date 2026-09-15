@@ -1,0 +1,46 @@
+{
+  "id": "prompt_template_effect_evaluation_1",
+  "pluginKey": "@official-plugins/ai-categorization",
+  "pluginVersion": "1.0.19",
+  "name": "提示词模板效果等级分类评估",
+  "description": "输入提示词模板内容、变量说明与历史使用记录，自动分类评估模板的效果等级（优秀/良好/一般/待优化），用于提示词模板库的平均效果评分更新。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "prompt_template_info": {
+        "description": "提示词模板的完整信息，包含模板内容、变量说明、历史使用次数、生成结果摘要等",
+        "type": "string"
+      }
+    },
+    "required": [
+      "prompt_template_info"
+    ]
+  },
+  "formValue": {
+    "modelID": "2015",
+    "modelParams": {
+      "temperature": 0.5,
+      "maxTokens": 8192
+    },
+    "textToBeCategorized": "{{input.prompt_template_info}}",
+    "categories": [
+      {
+        "name": "优秀"
+      },
+      {
+        "name": "良好"
+      },
+      {
+        "name": "一般"
+      },
+      {
+        "name": "待优化"
+      }
+    ],
+    "customRequirements": "你是专业的AI提示词评估专家，请基于提供的提示词模板信息，从以下维度综合评估效果等级：1. 模板结构完整性：指令清晰性、角色设定明确度、输出要求具体性；2. 历史表现：使用次数、生成结果质量稳定性、用户反馈（如有）；3. 可复用性：变量设计合理性、适用场景广度。评估规则：优秀（结构完整清晰、历史生成结果质量高且稳定、复用性强）；良好（结构较完整、历史生成结果质量较好、复用性较好）；一般（结构基本完整、历史生成结果质量一般、复用性一般）；待优化（结构不完整、历史生成结果质量差、需要大幅调整）。最终仅返回对应的等级名称即可。"
+  },
+  "createdAt": 1787795719289,
+  "updatedAt": 1787795719289,
+  "createdBy": 7673423658517318587
+}

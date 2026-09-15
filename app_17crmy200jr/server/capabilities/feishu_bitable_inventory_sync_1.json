@@ -1,0 +1,17 @@
+{
+  "id": "feishu_bitable_inventory_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格资产盘点同步实例",
+  "description": "用于资产盘点记录数据的双向同步（CRUD），支持多维表格数据的创建、查询、更新、删除操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "tblkZZwu8huJu9E8",
+    "fields": [],
+    "appToken": "GRQMbafkeaKeAjsZvN0c5SoYnYb"
+  },
+  "createdAt": 1787555703428,
+  "updatedAt": 1787555703428,
+  "createdBy": 7673423658517318587
+}

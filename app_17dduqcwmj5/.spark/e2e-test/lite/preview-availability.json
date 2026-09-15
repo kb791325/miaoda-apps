@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"打开应用首页，预期不出现 502 Bad Gateway / 404 / 白屏错误页，页面渲染出应用布局（侧边导航或工作台内容可见）"},{"id":2,"priority":"p1","description":"首页加载完成后截图，预期页面包含业务内容区块（如 KPI 卡片、列表或菜单项），无错误兜底 UI"}]}

@@ -1,0 +1,317 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "type": "app_init",
+      "name": "应用初始化任务",
+      "status": "completed",
+      "subtasks": [
+        "初始化布局导航文件Layout",
+        "初始化主题文件",
+        "初始化占位页面和路由",
+        "本任务以编译与日志检查为界，日志确认无错即提交；运行时核验统一由验收测试任务承担"
+      ],
+      "endTime": 1786962468743
+    },
+    {
+      "id": 2,
+      "name": "代码架构设计",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 了解项目结构与规范",
+        "规划前端路由配置与导航Layout，注册5个页面路由（看板/操作/AI工具/记录/新增商品）并创建占位页",
+        "规划服务端模块边界：dashboard模块、product模块、warehouse模块、inventory模块、stock-record模块、transfer-record模块、stock-check模块",
+        "定义 shared 类型契约（商品、仓库、库存、出入库记录、调拨记录、盘点记录的请求响应类型）",
+        "规划数据库表创建顺序与关联关系"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "2.1",
+        "2.2",
+        "2.3",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6",
+        "4.1",
+        "4.2",
+        "4.3",
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "write_scope": [
+        "shared/**",
+        "client/App.tsx",
+        "client/router/**",
+        "server/modules/**"
+      ],
+      "read_scope": [
+        ".agent/skills/steering/nestjs-react-fullstack/coding-guide/SKILL.md"
+      ],
+      "acceptance": "前端5个页面路由可达，服务端模块结构注册完成，shared类型契约定义完毕，项目可编译运行",
+      "dependencies": [],
+      "endTime": 1786962468743
+    },
+    {
+      "id": 3,
+      "name": "数据库服务创建",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 了解数据库操作规范",
+        "按依赖顺序创建6张表：warehouse → product → inventory → stock_record → transfer_record → stock_check",
+        "向warehouse表插入4条预置仓库数据（上海仓/北京仓/广州仓/成都仓）",
+        "向product表插入6条示例商品数据，覆盖不同品类",
+        "向inventory表插入示例库存数据，覆盖各商品在各仓库的库存",
+        "编写前后端接口类型定义（如有补充）"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "5.1",
+        "5.2"
+      ],
+      "write_scope": [
+        "server/database/**",
+        "server/modules/**"
+      ],
+      "read_scope": [
+        ".agent/skills/steering/nestjs-react-fullstack/coding-guide/SKILL.md",
+        "shared/**"
+      ],
+      "acceptance": "6张表创建成功，仓库预置4条数据，商品预置6条数据，库存数据覆盖各仓库",
+      "dependencies": [
+        2
+      ],
+      "endTime": 1786962468743
+    },
+    {
+      "id": 4,
+      "name": "插件开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 plugin-guide skill 了解插件集成规范",
+        "调用 plugin_instance 创建6个插件实例：ai-replenishment、ai-nl-query、ai-sales-forecast、ai-health-score、ai-transfer-advice、ai-anomaly-detect",
+        "调用 get_plugin_ai_json 获取每个插件实例的运行时投影，输出Schema摘录卡",
+        "按Schema摘录卡生成前端调用代码骨架，入参出参严格按投影定义",
+        "验证6个插件的调用代码可正常运行"
+      ],
+      "requirements": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6"
+      ],
+      "write_scope": [
+        "client/plugins/**",
+        "client/pages/ai-tools/**"
+      ],
+      "read_scope": [
+        ".agent/skills/steering/nestjs-react-fullstack/plugin-guide/SKILL.md"
+      ],
+      "acceptance": "6个AI插件实例创建完成，前端调用代码骨架生成并验证可调通",
+      "dependencies": [
+        2
+      ],
+      "endTime": 1786962468743
+    },
+    {
+      "id": 5,
+      "name": "商品与仓库模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现服务端 product 模块：CRUD Service + Controller，支持分页/筛选/搜索/导出CSV",
+        "实现服务端 warehouse 模块：列表查询 Service + Controller",
+        "实现新增商品页面：路由接入检查、商品信息表单（编码/名称/品类/品牌/规格/单位/安全库存/单价）、必填校验、提交保存成功后跳转回看板",
+        "实现库存看板页面：全局预警横幅、4张KPI概览卡片、品类与状态筛选栏、商品库存数据表格（含分页/状态标签/导出CSV）、新增商品快捷入口",
+        "集成看板图表区：仓库库存分布柱状图、品类周转率柱状图、预警清单表格、近7天出入库趋势折线图、库存金额分布饼图、库存金额TOP10表格"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5",
+        "1.6",
+        "1.7",
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "write_scope": [
+        "server/modules/product/**",
+        "server/modules/warehouse/**",
+        "client/pages/dashboard/**",
+        "client/pages/product/**"
+      ],
+      "read_scope": [
+        "shared/**",
+        "server/modules/product/**",
+        "server/modules/warehouse/**"
+      ],
+      "acceptance": "新增商品可保存入库，看板页面KPI卡片、筛选、表格、图表均可正常展示数据",
+      "dependencies": [
+        3
+      ],
+      "endTime": 1786962468743
+    },
+    {
+      "id": 6,
+      "name": "库存操作模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现服务端 inventory 模块：查询商品在指定仓库的库存 Service + Controller",
+        "实现服务端 stock-record 模块：入库/出库 Service + Controller，入库时更新库存，出库时校验库存并更新",
+        "实现服务端 transfer-record 模块：调拨 Service + Controller，同时更新源仓库和目标仓库库存",
+        "实现库存操作页面：三个标签页切换（入库/出库/调拨），各表单字段、自动计算库存、必填校验、出库安全库存告警弹窗、提交成功提示"
+      ],
+      "requirements": [
+        "2.1",
+        "2.2",
+        "2.3"
+      ],
+      "write_scope": [
+        "server/modules/inventory/**",
+        "server/modules/stock-record/**",
+        "server/modules/transfer-record/**",
+        "client/pages/operations/**"
+      ],
+      "read_scope": [
+        "shared/**",
+        "server/modules/inventory/**",
+        "server/modules/stock-record/**",
+        "server/modules/transfer-record/**"
+      ],
+      "acceptance": "入库/出库/调拨操作提交成功后库存数据正确更新，出库低于安全库存时弹出告警",
+      "dependencies": [
+        3
+      ],
+      "endTime": 1786962468743
+    },
+    {
+      "id": 7,
+      "name": "记录管理模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现服务端 stock-record 查询与导出接口（列表分页、类型筛选、CSV导出）",
+        "实现服务端 stock-check 模块：创建盘点单（读取仓库库存生成盘点项）、提交盘点结果并更新库存差异",
+        "实现记录管理页面：出入库记录表格（类型筛选/分页/导出）、库存盘点区（选仓库创建盘点/录入实盘数量/自动计算差异/提交）、最近调拨记录表格"
+      ],
+      "requirements": [
+        "4.1",
+        "4.2",
+        "4.3"
+      ],
+      "write_scope": [
+        "server/modules/stock-check/**",
+        "client/pages/records/**"
+      ],
+      "read_scope": [
+        "shared/**",
+        "server/modules/stock-record/**",
+        "server/modules/stock-check/**",
+        "server/modules/transfer-record/**"
+      ],
+      "acceptance": "出入库记录可筛选查看和导出，盘点单可创建并提交且库存差异自动更新，调拨记录可查看",
+      "dependencies": [
+        3
+      ],
+      "endTime": 1786962468743
+    },
+    {
+      "id": 8,
+      "name": "AI工具模块开发（含前端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现AI工具页面框架：六个标签页切换布局",
+        "实现AI智能补货建议标签页：选择商品生成建议、全商品补货建议表格、加载状态，集成ai-replenishment插件",
+        "实现自然语言查询标签页：查询输入框、示例标签快速填入、查询结果表格，集成ai-nl-query插件",
+        "实现AI销售预测标签页：7天/30天周期切换、预测结果表格含风险颜色标记，集成ai-sales-forecast插件",
+        "实现AI库存健康度评分标签页：三级统计卡片、详情表格含颜色等级标签、重新评估按钮，集成ai-health-score插件",
+        "实现AI智能调拨建议标签页：生成建议按钮、调拨方案表格、加载状态，集成ai-transfer-advice插件",
+        "实现AI异常检测标签页：开始检测按钮、异常结果列表（类型/商品/严重程度/说明）、进度提示，集成ai-anomaly-detect插件"
+      ],
+      "requirements": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4",
+        "3.5",
+        "3.6"
+      ],
+      "write_scope": [
+        "client/pages/ai-tools/**"
+      ],
+      "read_scope": [
+        "shared/**",
+        "client/plugins/**"
+      ],
+      "acceptance": "6个AI工具标签页均可触发对应插件调用并展示流式结果",
+      "dependencies": [
+        4,
+        5,
+        6
+      ],
+      "beginTime": 1786962468915,
+      "endTime": 1786962517741
+    },
+    {
+      "id": 9,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：对照代码架构设计检查目录结构，确认看板页面为入口可正常访问，不可用时停止验收仅记录阻塞问题",
+        "核心验收目标1：[库存看板] —— KPI卡片显示真实数据、筛选条件可过滤商品列表、图表展示对应数据、预警横幅在有预警商品时显示",
+        "核心验收目标2：[库存操作] —— 入库/出库/调拨表单提交成功后库存数据正确更新，出库低于安全库存弹出告警",
+        "核心验收目标3：[AI工具] —— 至少一个AI工具标签页可触发插件调用并展示流式生成结果",
+        "非核心降级范围：AI生成内容的质量与准确性、导出CSV文件内容正确性、图表视觉细节"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "2.1",
+        "2.2",
+        "2.3",
+        "3.1"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "shared/**"
+      ],
+      "acceptance": "入口页面可达，核心库存看板数据展示正确，库存操作表单提交成功且库存更新，AI工具至少一个可触发插件调用",
+      "dependencies": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "beginTime": 1786962517889,
+      "endTime": 1786962955875
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "id": "feishu_multitable_crud_analysis_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "tableID": "tblBeTsnl4bMi1D0",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc",
+    "fields": [
+      {
+        "bizType": "AutoNumber",
+        "id": "fld3YsxXAW",
+        "name": "KH编号",
+        "type": 1005,
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldrl7XMjT",
+        "name": "客户名称",
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fldVR8tlXf",
+        "name": "客户简称"
+      },
+      {
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fldRxqIvb8",
+        "name": "主体名称"
+      },
+      {
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "潜在",
+          "试用",
+          "合作中",
+          "暂停",
+          "流失",
+          "黑名单"
+        ],
+        "readable": true,
+        "writeable": true,
+        "id": "fldU9buwTT",
+        "name": "客户状态"
+      },
+      {
+        "id": "fldxpOWEpy",
+        "name": "客户等级",
+        "readable": true,
+        "writeable": true,
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "VIP客户",
+          "A类",
+          "B类",
+          "C类"
+        ]
+      },
+      {
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "电商",
+          "教育",
+          "金融",
+          "医疗",
+          "游戏",
+          "旅游",
+          "房产",
+          "汽车",
+          "美妆",
+          "服饰",
+          "食品",
+          "3C",
+          "其他"
+        ],
+        "id": "fldMPmAs84",
+        "readable": true,
+        "writeable": true,
+        "name": "一级行业"
+      },
+      {
+        "enumValues": [
+          "女装",
+          "男装",
+          "美妆",
+          "食品",
+          "3C",
+          "家居",
+          "母婴",
+          "运动",
+          "其他"
+        ],
+        "id": "fldMFsLmEb",
+        "name": "二级行业",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "enumValues": [
+          "高消耗",
+          "账期客户",
+          "视频客户",
+          "重点维护",
+          "新客户"
+        ],
+        "id": "fld3xzNhzZ",
+        "name": "客户标签",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 11,
+        "bizType": "User",
+        "id": "fldNtMRwCi",
+        "readable": true,
+        "writeable": true,
+        "name": "负责商务"
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "商务一部",
+          "商务二部",
+          "商务三部",
+          "运营部",
+          "视频部",
+          "财务部",
+          "人事部",
+          "行政部",
+          "管理层"
+        ],
+        "id": "fldQGCmm0H",
+        "name": "所属部门",
+        "type": 3,
+        "readable": true
+      },
+      {
+        "name": "协作商务",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true,
+        "id": "flddvmfTYc"
+      },
+      {
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "公海领取",
+          "线索转化",
+          "转介绍",
+          "主动开发",
+          "市场活动",
+          "其他"
+        ],
+        "id": "fldh5hWHNf",
+        "name": "客户来源",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldiQ9BKmQ",
+        "name": "签约日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "id": "fldC79t29I",
+        "name": "开票抬头",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "type": 1,
+        "bizType": "Text",
+        "id": "fldyuvw1wg",
+        "name": "税号",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "id": "fldMvikgID",
+        "name": "开户银行",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "type": 1,
+        "bizType": "Text",
+        "id": "fldaIgJkFn",
+        "name": "银行账号"
+      },
+      {
+        "id": "fldth9XcL5",
+        "name": "注册地址",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 15,
+        "bizType": "Url",
+        "readable": true,
+        "writeable": true,
+        "id": "fldJehVRhg",
+        "name": "客户官网"
+      },
+      {
+        "name": "客户简介",
+        "readable": true,
+        "writeable": true,
+        "type": 1,
+        "bizType": "Text",
+        "id": "fldqbELqvR"
+      },
+      {
+        "bizType": "Attachment",
+        "id": "fldb7MUgeF",
+        "readable": true,
+        "writeable": false,
+        "name": "营业执照",
+        "type": 17
+      },
+      {
+        "writeable": false,
+        "id": "fldTCU3Hgq",
+        "name": "其他资质",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true
+      },
+      {
+        "writeable": false,
+        "id": "fldDbaV4tm",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true
+      },
+      {
+        "name": "修改时间",
+        "type": 1002,
+        "readable": true,
+        "writeable": false,
+        "bizType": "ModifiedTime",
+        "id": "fldBl0mfOi"
+      },
+      {
+        "id": "fldbQMNCZo",
+        "name": "创建人",
+        "type": 1003,
+        "readable": true,
+        "writeable": false,
+        "bizType": "CreatedUser"
+      },
+      {
+        "id": "fldRaVSe5f",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldDFSyDl1",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      }
+    ]
+  },
+  "createdAt": 1788177141728,
+  "updatedAt": 1788311994807,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,27 @@
+{
+  "id": "douyin_video_parsing_proxy_fallback_crawler_1",
+  "pluginKey": "@official-plugins/web-crawler",
+  "pluginVersion": "1.0.10",
+  "name": "抖音视频解析兜底爬虫",
+  "description": "作为douyin.wtf API全部失效时的兜底方案，直接爬取抖音视频分享页面HTML，通过内置AI提取视频标题、作者、点赞数、评论数、分享数等核心信息。",
+  "icon": "",
+  "paramsSchema": {
+    "required": [
+      "douyin_share_url"
+    ],
+    "type": "object",
+    "properties": {
+      "douyin_share_url": {
+        "type": "string",
+        "description": "抖音视频分享页面链接"
+      }
+    }
+  },
+  "formValue": {
+    "processMode": "extract_info",
+    "url": "{{input.douyin_share_url}}"
+  },
+  "createdAt": 1787820026426,
+  "updatedAt": 1787820026426,
+  "createdBy": 7673423658517318587
+}

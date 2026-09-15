@@ -1,0 +1,116 @@
+{
+  "id": "bitable_schedule_sync_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "课程排期表同步",
+  "description": "将应用内的课程排期数据同步写入飞书多维表格的课程排期表，支持批量新增和更新排期记录",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc",
+    "tableID": "tblYt2Txr3PKIkDm",
+    "fields": [
+      {
+        "id": "fldScheduleName",
+        "name": "排期名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true,
+        "id": "fldCourseName",
+        "name": "课程名称"
+      },
+      {
+        "id": "fldClassDate",
+        "name": "上课日期",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldStartTime",
+        "name": "开始时间",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldEndTime",
+        "name": "结束时间",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "id": "fldLecturer",
+        "name": "授课讲师",
+        "type": 13,
+        "bizType": "User",
+        "readable": true
+      },
+      {
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [],
+        "id": "fldClassroom",
+        "name": "教室场地"
+      },
+      {
+        "id": "fldCapacity",
+        "name": "招生容量",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldEnrolledCount",
+        "name": "已报名人数",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "id": "fldRemainingQuota",
+        "name": "剩余名额",
+        "type": 2,
+        "bizType": "Number"
+      },
+      {
+        "id": "fldRegisteredStudents",
+        "name": "报名学员",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [],
+        "id": "fldStatus",
+        "name": "状态"
+      }
+    ]
+  },
+  "createdAt": 1788496127426,
+  "updatedAt": 1788496127426,
+  "createdBy": 7673423658517318587
+}

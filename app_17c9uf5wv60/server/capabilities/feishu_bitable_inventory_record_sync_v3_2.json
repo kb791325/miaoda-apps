@@ -1,0 +1,94 @@
+{
+  "id": "feishu_bitable_inventory_record_sync_v3_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格盘点记录同步插件实例 v3",
+  "description": "同步盘点记录数据到飞书多维表格，包含盘点单号、盘点人、仓库、状态、盘点时间、商品数、差异数、备注等字段",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "CLtnbD9DMa9uUhs38dxcI7hbnoH",
+    "tableID": "tblJA3Pr9wfRTga5",
+    "fields": [
+      {
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld1",
+        "name": "盘点单号",
+        "type": 1
+      },
+      {
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld2",
+        "name": "盘点人"
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "上海仓",
+          "北京仓",
+          "广州仓",
+          "成都仓"
+        ],
+        "id": "fld3",
+        "name": "仓库",
+        "type": 3,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "待开始",
+          "进行中",
+          "已完成",
+          "已取消"
+        ],
+        "id": "fld4",
+        "name": "状态",
+        "type": 3,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 5,
+        "readable": true,
+        "writeable": true,
+        "bizType": "DateTime",
+        "id": "fld5",
+        "name": "盘点时间"
+      },
+      {
+        "bizType": "Number",
+        "id": "fld6",
+        "name": "商品数",
+        "type": 2,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Number",
+        "id": "fld7",
+        "name": "差异数",
+        "type": 2,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fld8",
+        "name": "备注",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      }
+    ]
+  },
+  "createdAt": 1787367000724,
+  "updatedAt": 1787367000724,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,17 @@
+{
+  "id": "feishu_bitable_category_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格类目同步实例",
+  "description": "用于类目对照数据的双向同步，支持数据的创建、查询、更新、删除全操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "GRQMbafkeaKeAjsZvN0c5SoYnYb",
+    "tableID": "tblUIioGHldzYaGe",
+    "fields": []
+  },
+  "createdAt": 1787555608451,
+  "updatedAt": 1787555608451,
+  "createdBy": 7673423658517318587
+}

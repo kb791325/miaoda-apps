@@ -1,0 +1,7 @@
+{"cases": [
+  {"id": 1, "priority": "p0", "description": "打开广告提成表 /sub/adCommission，确认提成比例列显示为百分比格式（如78%、21%）而非小数"},
+  {"id": 2, "priority": "p0", "description": "打开行业ROI表 /sub/industryRoi，确认转化率列显示为百分比格式（如23%、66%）而非小数"},
+  {"id": 3, "priority": "p0", "description": "打开库存表 /sub/stock，确认库存不足状态标签显示为红色而非灰色"},
+  {"id": 4, "priority": "p0", "description": "打开考勤表 /sub/attendance，确认上班打卡时间和下班打卡时间列显示到分钟（如09:01 08:52）"},
+  {"id": 5, "priority": "p1", "description": "打开竞品监控分析页 /analytics/competitor，确认逐竞品明细对比表的ROI和素材数量列不再全为0"}
+]}

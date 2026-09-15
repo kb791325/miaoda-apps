@@ -1,0 +1,17 @@
+{
+  "id": "feishu_bitable_inventory_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格出入库记录同步",
+  "description": "实现出入库记录数据与飞书多维表格的双向同步，支持数据的增删改查操作。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "CLtnbD9DMa9uUhs38dxcI7hbnoH",
+    "tableID": "tblOVxelVDUrOTAj",
+    "fields": []
+  },
+  "createdAt": 1787306222020,
+  "updatedAt": 1787306222020,
+  "createdBy": 7673423658517318587
+}

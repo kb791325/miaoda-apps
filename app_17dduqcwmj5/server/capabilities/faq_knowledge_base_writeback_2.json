@@ -1,0 +1,83 @@
+{
+  "id": "faq_knowledge_base_writeback_2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "FAQ知识库回写 v2",
+  "description": "服务端把应用内FAQ知识库数据批量新增/更新/删除回写到多维表格",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Ai8JbwddTaK8fPsFQAccnpMVnIc",
+    "tableID": "tblK5Z0jddRo0fSJ",
+    "fields": [
+      {
+        "bizType": "Text",
+        "id": "fldQuestion",
+        "name": "问题",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fldStandardAnswer",
+        "name": "标准答案",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "id": "fldCategory",
+        "name": "分类",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "bizType": "MultiSelect",
+        "enumValues": [],
+        "id": "fldKeywords",
+        "name": "关键词",
+        "readable": true,
+        "type": 4,
+        "writeable": true
+      },
+      {
+        "id": "fldSimilarQuestions",
+        "name": "相似问法",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldStatus",
+        "name": "状态",
+        "readable": true
+      },
+      {
+        "bizType": "DateTime",
+        "id": "fldUpdateTime",
+        "name": "更新时间",
+        "readable": true,
+        "type": 5,
+        "writeable": true
+      },
+      {
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fldHitCount",
+        "name": "命中次数",
+        "readable": true
+      }
+    ]
+  },
+  "createdAt": 1788509810238,
+  "updatedAt": 1788509810238,
+  "createdBy": 7673423658517318587
+}

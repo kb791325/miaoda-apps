@@ -1,0 +1,35 @@
+{
+  "id": "ecommerce_business_qa_assistant_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.18",
+  "name": "电商商家经营数据对话助手",
+  "description": "基于智能写作插件实现的AI对话助手，专门回答电商商家关于经营数据的相关问题，支持多轮对话，流式输出回答内容。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "user_question": {
+        "type": "string",
+        "description": "电商商家提出的关于经营数据的问题"
+      },
+      "dialog_history": {
+        "type": "string",
+        "description": "当前对话的历史上下文信息，用于支持多轮对话"
+      }
+    },
+    "required": [
+      "user_question"
+    ]
+  },
+  "formValue": {
+    "modelID": "2015",
+    "modelParams": {
+      "maxTokens": 8192,
+      "temperature": 0.5
+    },
+    "prompt": "你是一位专业的电商经营数据分析师，拥有丰富的电商平台运营经验和数据解读能力，专门为电商商家提供经营数据相关的咨询解答服务。\n\n对话历史：\n{{input.dialog_history}}\n\n商家当前问题：\n{{input.user_question}}\n\n回答要求：\n1. 专业性：结合电商行业的通用指标和运营逻辑进行解答，确保数据解读准确专业\n2. 实用性：给出的分析和建议要具备可操作性，能够直接帮助商家优化经营决策\n3. 易懂性：避免过于晦涩的专业术语，用商家容易理解的语言进行解释\n4. 针对性：严格围绕商家提出的问题进行回答，不要提供无关内容\n5. 结构化：对于复杂问题采用分点阐述的方式，逻辑清晰层次分明\n\n如果问题涉及到具体的数据计算或指标定义，请先明确说明指标的计算口径，再进行相关分析。如果问题中提供的数据存在异常或矛盾，请明确指出并给出合理的判断建议。"
+  },
+  "createdAt": 1786613899982,
+  "updatedAt": 1786613899982,
+  "createdBy": 7673423658517318587
+}

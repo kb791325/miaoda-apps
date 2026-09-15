@@ -1,0 +1,6 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"打开 /dashboard/workbench，页面应显示「工作台」标题，5 个 KPI 卡片（昨日消耗/昨日赠款/本周消耗/本月消耗/本月新开单）区域可见"},
+  {"id":2,"priority":"p0","description":"KPI 卡片展示数值：昨日消耗应显示非 0 数值（¥486,320.42 或类似），本周消耗显示 0 或 ¥0.00"},
+  {"id":3,"priority":"p0","description":"今日实时消耗区域可见，含内部端口/外部端口/集团三个分类"},
+  {"id":4,"priority":"p1","description":"图表区可见，饼图/柱状图渲染，无明显的白屏或空环占位"}
+]}

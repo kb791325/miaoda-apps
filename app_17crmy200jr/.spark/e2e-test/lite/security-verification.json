@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "priority": "p0",
+      "description": "打开首页 /dashboard，页面正常渲染，无白屏或报错"
+    },
+    {
+      "id": 2,
+      "priority": "p0",
+      "description": "导航到支出管理 /expenses，列表正常加载"
+    },
+    {
+      "id": 3,
+      "priority": "p0",
+      "description": "导航到固定资产 /fixed-assets，列表正常加载"
+    },
+    {
+      "id": 4,
+      "priority": "p1",
+      "description": "导航到报表分析 /reports，图表正常渲染"
+    }
+  ]
+}

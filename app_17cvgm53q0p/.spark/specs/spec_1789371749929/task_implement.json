@@ -1,0 +1,105 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "服务端提醒阻断码与改派负责销售接口开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "在 shared 提醒类型中为草稿响应新增阻断码字段",
+        "提醒服务在负责销售缺失、信息异常、账号不存在、未关联飞书四个阻断分支填充对应阻断码",
+        "客户服务新增改派负责销售方法：校验目标为合法系统用户后更新客户表负责销售并复用既有同步推送",
+        "客户控制器新增改派负责销售接口，守卫客户管理权限",
+        "编译级自查服务端与 shared 类型一致"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.4"
+      ],
+      "write_scope": [
+        "shared/reminder.ts",
+        "server/modules/reminder/**",
+        "server/modules/customer/**"
+      ],
+      "read_scope": [
+        "shared/reminder.ts",
+        "server/modules/reminder/reminder.service.ts",
+        "server/modules/customer/customer.service.ts",
+        "server/modules/customer/customer.controller.ts",
+        "server/database/schema.ts"
+      ],
+      "acceptance": "无负责销售或负责销售异常的客户调用提醒草稿接口返回对应阻断码；改派接口校验合法系统用户后更新成功，改派已关联飞书的销售后草稿阻断解除",
+      "dependencies": [],
+      "beginTime": 1789372240372,
+      "endTime": 1789372729303
+    },
+    {
+      "id": 2,
+      "name": "前端提醒弹窗改派交互与列表联动开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "客户 API 层新增改派负责销售请求函数",
+        "提醒弹窗在负责销售类阻断态展示改派负责销售下拉（复用系统用户下拉数据源与跟进弹窗既有模式，禁平台 UserSelect），仅客户管理权限可见，保存后重拉草稿并按新销售重新渲染提醒内容",
+        "弹窗新增改派成功回调，客户页据此刷新列表负责销售列",
+        "加载与失败态兜底：下拉空态、保存失败提示、改派后仍阻断时保留提示可继续改选"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4"
+      ],
+      "write_scope": [
+        "client/src/pages/Customers/**",
+        "client/src/api/customer.ts"
+      ],
+      "read_scope": [
+        "client/src/pages/Customers/ReminderDialog.tsx",
+        "client/src/pages/Customers/CustomersPage.tsx",
+        "client/src/pages/FollowUps/FollowUpFormDialog.tsx",
+        "client/src/api/auth.ts",
+        "shared/reminder.ts"
+      ],
+      "acceptance": "阻断态弹窗选择新销售保存后阻断解除、提醒内容按新销售姓名重渲染；改派后列表负责销售列同步更新",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1789372729516,
+      "endTime": 1789372977417
+    },
+    {
+      "id": 3,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：对照任务 1/2 检查 shared 阻断码与改派接口落地，入口为客户页，入口不可用时停止验收仅记录阻塞",
+        "核心验收目标1：提醒改派发送闭环——无负责销售客户打开提醒弹窗出现改派下拉，选已关联飞书的销售保存后阻断解除、提醒内容重渲染，确认发送成功且行内出现已提醒徽标与行高亮、列表负责销售列更新",
+        "核心验收目标2：改派校验——选择未关联飞书的销售保存后重拉草稿仍阻断并提示，可继续改选",
+        "非核心降级范围：飞书消息真实送达与卡片内容质量、改派后 Base 侧同步的最终一致性"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        ".spark/specs/spec_1789371749929/spec.md"
+      ],
+      "acceptance": "两条核心验收目标在浏览器内通过：改派后阻断解除并发送成功、行徽标与列表列更新可回查",
+      "dependencies": [
+        1,
+        2
+      ],
+      "beginTime": 1789372977927,
+      "endTime": 1789373796224
+    }
+  ]
+}

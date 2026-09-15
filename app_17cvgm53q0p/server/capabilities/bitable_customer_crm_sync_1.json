@@ -1,0 +1,117 @@
+{
+  "id": "bitable_customer_crm_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格客户表CRM扩展字段同步实例",
+  "description": "将应用数据库客户CRM扩展数据同步到飞书多维表格客户表，支持查询记录、获取单条记录、批量更新记录操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tbl9qtdri9POmNkz",
+    "fields": [
+      {
+        "id": "fld_customer_name",
+        "name": "客户姓名",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [],
+        "id": "fld_customer_level",
+        "name": "客户等级",
+        "type": 3
+      },
+      {
+        "id": "fld_customer_source",
+        "name": "客户来源",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": []
+      },
+      {
+        "id": "fld_contact_phone",
+        "name": "联系电话",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld_wechat_id",
+        "name": "微信号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "id": "fld_shipping_address",
+        "name": "收货地址",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "id": "fld_remark",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "id": "fld_responsible_sales",
+        "name": "负责销售",
+        "type": 11,
+        "bizType": "User"
+      },
+      {
+        "writeable": true,
+        "enumValues": [],
+        "id": "fld_sales_stage",
+        "name": "销售阶段",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true
+      },
+      {
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld_first_contact_time",
+        "name": "首次接触时间"
+      },
+      {
+        "name": "预计成交时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld_estimated_deal_time"
+      },
+      {
+        "name": "下次跟进时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld_next_follow_up_time"
+      }
+    ]
+  },
+  "createdAt": 1789010661336,
+  "updatedAt": 1789010661336,
+  "createdBy": 7673423658517318587
+}

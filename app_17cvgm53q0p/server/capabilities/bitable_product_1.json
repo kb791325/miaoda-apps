@@ -1,0 +1,144 @@
+{
+  "id": "bitable_product_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "商品库存表",
+  "description": "基于飞书多维表格实现的商品库存管理表，支持商品列表查询、库存预警、出入库库存更新与仪表盘预警统计，提供searchRecords/getRecord/batchUpdateRecords/aggregateQuery等操作能力",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "name": "商品名称",
+        "type": 1,
+        "bizType": "Text",
+        "id": "fldizUIpal",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldSdHUVrA",
+        "name": "SKU编码",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "name": "商品分类",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "厨房小电",
+          "生活电器"
+        ],
+        "id": "fldUIygIgz",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "name": "品牌",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fld1D2stGg"
+      },
+      {
+        "writeable": true,
+        "id": "fldfPET9jQ",
+        "name": "规格型号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "name": "采购单价",
+        "type": 2,
+        "bizType": "Number",
+        "id": "fldj2BDtrz"
+      },
+      {
+        "bizType": "Number",
+        "readable": true,
+        "writeable": true,
+        "id": "fldZ2fUXNg",
+        "name": "销售单价",
+        "type": 2
+      },
+      {
+        "name": "总库存数量",
+        "type": 2,
+        "bizType": "Number",
+        "id": "fld3OOLODu",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 2,
+        "bizType": "Number",
+        "id": "fldtNuT3w9",
+        "name": "安全库存预警值",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldoDVtRzH",
+        "name": "供应商",
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "name": "仓库位置",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fldnmQOxd8"
+      },
+      {
+        "writeable": true,
+        "id": "fldjxcr8Ex",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "type": 20,
+        "bizType": "Formula",
+        "id": "fldlDsay9R",
+        "name": "待发货占用",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "Formula",
+        "id": "fldDg8rNca",
+        "name": "可用库存",
+        "type": 20,
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "name": "库存状态",
+        "type": 20,
+        "bizType": "Formula",
+        "readable": true,
+        "writeable": false,
+        "id": "fldCYUNoln"
+      }
+    ],
+    "owner": "",
+    "tips": "支持searchRecords/getRecord/batchUpdateRecords/aggregateQuery操作，用于商品列表查询、库存预警、出入库库存更新与仪表盘统计",
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblJuRMDpSpNCc27"
+  },
+  "createdAt": 1787712893202,
+  "updatedAt": 1787723415393,
+  "createdBy": 7677497422334987466
+}

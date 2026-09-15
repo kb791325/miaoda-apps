@@ -1,0 +1,134 @@
+{
+  "id": "feishu_bitable_management_crud_analysis_71",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "name": "DL编号",
+        "type": 1005,
+        "readable": true,
+        "writeable": false,
+        "bizType": "AutoNumber",
+        "id": "fldxuBZE0V"
+      },
+      {
+        "writeable": true,
+        "type": 11,
+        "bizType": "User",
+        "id": "fldhRIy9HB",
+        "name": "用户",
+        "readable": true
+      },
+      {
+        "id": "fldflDvY9X",
+        "name": "登录时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fldlElsLTB",
+        "name": "登录IP",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 1,
+        "bizType": "Text",
+        "id": "fld7FpdhVq",
+        "name": "登录设备",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "成功",
+          "失败"
+        ],
+        "id": "fldlx6s40N",
+        "name": "登录状态",
+        "type": 3,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "id": "fldPS51bU2",
+        "name": "失败原因",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fldBI098BB",
+        "name": "浏览器",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldGpBhvhX",
+        "name": "操作系统",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld2JPckeb",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "id": "flddWeXe8t",
+        "name": "修改时间",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false,
+        "id": "fldoF3jIZs",
+        "name": "创建人",
+        "type": 1003
+      },
+      {
+        "id": "fldvxxlGCJ",
+        "name": "修改人",
+        "readable": true,
+        "writeable": false,
+        "type": 1004,
+        "bizType": "ModifiedUser"
+      },
+      {
+        "type": 1,
+        "bizType": "Text",
+        "id": "fldMt26YXk",
+        "readable": true,
+        "writeable": true,
+        "name": "备注"
+      }
+    ],
+    "tableID": "tblC8sY9Yf588Hop",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788348349028,
+  "updatedAt": 1788348407095,
+  "createdBy": 7673423658517318587
+}

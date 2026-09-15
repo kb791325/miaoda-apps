@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"导航到 /finance/banks，确认页面渲染至少4行数据，且银行名称/账户名称/账户类型/余额/状态/更新时间列有值或显示-"},{"id":2,"priority":"p0","description":"导航到 /finance/ports，确认页面渲染至少7行数据，且端口名称/端口类型/账户余额/累计充值/累计消耗/状态列有值或显示-"}]}

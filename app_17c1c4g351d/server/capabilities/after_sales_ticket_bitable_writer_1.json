@@ -1,0 +1,17 @@
+{
+  "id": "after_sales_ticket_bitable_writer_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "售后工单表写入实例",
+  "description": "用于把应用内售后工单数据写入飞书多维表格，支持按工单编号查重和批量新增工单记录",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "TtUqb0FwVaSq7ssq6vacWbMCn9c",
+    "tableID": "tbla6DiGEgZ2zBph",
+    "fields": []
+  },
+  "createdAt": 1789098316090,
+  "updatedAt": 1789098316090,
+  "createdBy": 7673423658517318587
+}

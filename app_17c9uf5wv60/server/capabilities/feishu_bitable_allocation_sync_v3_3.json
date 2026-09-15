@@ -1,0 +1,78 @@
+{
+  "id": "feishu_bitable_allocation_sync_v3_3",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格调拨记录同步插件实例 v3",
+  "description": "用于把本地调拨记录数据双向同步到飞书多维表格",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "CLtnbD9DMa9uUhs38dxcI7hbnoH",
+    "tableID": "tblzvb0Sx448APo7",
+    "fields": [
+      {
+        "name": "调拨单号",
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld1"
+      },
+      {
+        "bizType": "Text",
+        "id": "fld2",
+        "name": "商品名",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fld3",
+        "name": "源仓库",
+        "type": 3,
+        "readable": true,
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "上海仓",
+          "北京仓",
+          "广州仓",
+          "成都仓"
+        ]
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "上海仓",
+          "北京仓",
+          "广州仓",
+          "成都仓"
+        ],
+        "id": "fld4",
+        "name": "目标仓库",
+        "type": 3,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 2,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fld5",
+        "name": "数量"
+      },
+      {
+        "bizType": "DateTime",
+        "id": "fld6",
+        "name": "调拨时间",
+        "type": 5,
+        "readable": true,
+        "writeable": true
+      }
+    ]
+  },
+  "createdAt": 1787366954739,
+  "updatedAt": 1787366954739,
+  "createdBy": 7673423658517318587
+}

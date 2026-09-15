@@ -1,0 +1,43 @@
+{
+  "id": "feishu_inventory_alert_push_1",
+  "pluginKey": "@official-plugins/send-feishu-message",
+  "pluginVersion": "1.0.29",
+  "name": "库存预警自动推送飞书消息",
+  "description": "当商品缺货、低于安全库存或严重积压时，向仓库管理员/主管角色的用户推送预警消息",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "receiverIds": {
+        "type": "array",
+        "description": "接收人妙搭用户ID列表",
+        "items": {
+          "type": "string",
+          "description": "单个用户ID"
+        }
+      },
+      "content": {
+        "type": "string",
+        "description": "消息正文内容，支持markdown格式"
+      }
+    },
+    "required": [
+      "receiverIds",
+      "content"
+    ]
+  },
+  "formValue": {
+    "receiverUserList": "{{input.receiverIds}}",
+    "sender": "bot",
+    "title": {
+      "title": "库存预警通知",
+      "titleColor": "wathet"
+    },
+    "buttons": [],
+    "content": "{{input.content}}",
+    "receiverGroupList": []
+  },
+  "createdAt": 1787652507428,
+  "updatedAt": 1787652507428,
+  "createdBy": 7673423658517318587
+}

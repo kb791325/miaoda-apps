@@ -1,0 +1,17 @@
+{
+  "id": "ai_video_workshop_character_asset_base_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "AI视频创作工坊-角色资产库表",
+  "description": "AI视频创作工坊的角色资产数据底座，绑定飞书多维表格（角色资产库），支持searchRecords、getRecord、batchAddRecords、batchUpdateRecords、deleteRecords、aggregateQuery全部6个Action，用于角色资产数据的查询、新增、更新、删除与聚合分析。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [],
+    "appToken": "Bc9tbZLinanss7sszYAcKHfdnvf",
+    "tableID": "tbly51InIoPRQkOb"
+  },
+  "createdAt": 1787797516889,
+  "updatedAt": 1787797516889,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,17 @@
+{
+  "id": "bitable_invoice_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "发货单表读写实例",
+  "description": "飞书多维表格发货单表读写实例，支持数据增删改查操作，用于服务端发货单数据双向同步",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [],
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tbluBL1QrKdtIJnh"
+  },
+  "createdAt": 1789010537735,
+  "updatedAt": 1789010537735,
+  "createdBy": 7673423658517318587
+}

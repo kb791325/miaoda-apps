@@ -1,0 +1,16 @@
+{
+  "id": "bitable_record_add_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "批量新增多维表格记录",
+  "description": "基于飞书多维表格插件的批量新增记录实例，用于服务端回写应用数据到多维表格，支持最多500条记录批量新增。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "{{input.appToken}}",
+    "tableID": "{{input.tableID}}"
+  },
+  "createdAt": 1788494860278,
+  "updatedAt": 1788494860278,
+  "createdBy": 7673423658517318587
+}

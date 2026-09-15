@@ -1,0 +1,424 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/app/app_17czx1jrsqe/api/sdk_innerapi/permission/user-points": {
+      "get": {
+        "operationId": "PlatformPermissionController_getUserPoints",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/__platform__/http-forward": {
+      "get": {
+        "operationId": "HttpForwarderController_forward_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "HttpForwarderController_forward_post",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "HttpForwarderController_forward_put",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "HttpForwarderController_forward_delete",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "patch": {
+        "operationId": "HttpForwarderController_forward_patch",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "options": {
+        "operationId": "HttpForwarderController_forward_options",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "head": {
+        "operationId": "HttpForwarderController_forward_head",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "search": {
+        "operationId": "HttpForwarderController_forward_search",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/health": {
+      "get": {
+        "operationId": "HealthController_health",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/bitable/health": {
+      "get": {
+        "operationId": "HealthController_bitableHealth",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/entity/{tableKey}": {
+      "get": {
+        "operationId": "BitableEntityController_list",
+        "parameters": [
+          {
+            "name": "tableKey",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyword",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "operationId": "BitableEntityController_create",
+        "parameters": [
+          {
+            "name": "tableKey",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/entity/{tableKey}/{id}": {
+      "get": {
+        "operationId": "BitableEntityController_get",
+        "parameters": [
+          {
+            "name": "tableKey",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "operationId": "BitableEntityController_update",
+        "parameters": [
+          {
+            "name": "tableKey",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "operationId": "BitableEntityController_delete",
+        "parameters": [
+          {
+            "name": "tableKey",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/entity/{tableKey}/batch-delete": {
+      "post": {
+        "operationId": "BitableEntityController_batchDelete",
+        "parameters": [
+          {
+            "name": "tableKey",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/dashboard/summary": {
+      "get": {
+        "operationId": "BitableDashboardController_getSummary",
+        "parameters": [
+          {
+            "name": "range",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/dashboard/realtime": {
+      "get": {
+        "operationId": "BitableDashboardController_getRealtime",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/dashboard/charts": {
+      "get": {
+        "operationId": "BitableDashboardController_getCharts",
+        "parameters": [
+          {
+            "name": "time_dim",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/dashboard/rankings": {
+      "get": {
+        "operationId": "BitableDashboardController_getRankings",
+        "parameters": [
+          {
+            "name": "port",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "time_dim",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/dashboard/targets": {
+      "get": {
+        "operationId": "BitableDashboardController_getTargets",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/api/dashboard/performance": {
+      "get": {
+        "operationId": "BitableDashboardController_getPerformance",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe": {
+      "get": {
+        "operationId": "ViewController_render",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/app/app_17czx1jrsqe/*": {
+      "get": {
+        "operationId": "ViewController_render",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "NestJS Fullstack API",
+    "description": "",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {}
+  }
+}

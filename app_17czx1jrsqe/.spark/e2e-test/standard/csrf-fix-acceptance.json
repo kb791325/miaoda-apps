@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"导航到人资-简历库页面，确认列表正常加载"},{"id":2,"priority":"p0","description":"找到[QA]DOCX预览验证记录，点击操作列预览简历，弹窗出现，确认弹窗内渲染出DOCX文档内容"},{"id":3,"priority":"p0","description":"关闭DOCX预览弹窗，找到李华JL76620记录，点击预览简历，确认PDF预览正常渲染"},{"id":4,"priority":"p1","description":"在预览弹窗内点击下载按钮，确认文件可下载"},{"id":5,"priority":"p1","description":"在简历列表页点击新增简历，填写信息后保存，确认新增成功"}]}

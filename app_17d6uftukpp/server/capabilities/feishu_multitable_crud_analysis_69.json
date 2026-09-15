@@ -1,0 +1,128 @@
+{
+  "id": "feishu_multitable_crud_analysis_69",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldI3b0WQP",
+        "name": "模板名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldiYeJZpq",
+        "name": "分类",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "flduXELgXT",
+        "name": "可见范围",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "个人",
+          "部门",
+          "全员",
+          "管理层"
+        ]
+      },
+      {
+        "id": "fld1xgL24p",
+        "name": "数据源",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldyfFXd7F",
+        "name": "分组维度",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldJidbmV6",
+        "name": "统计指标",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldevlPpfH",
+        "name": "图表类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "柱状图",
+          "条形图",
+          "饼图",
+          "折线图",
+          "数据表",
+          "指标卡"
+        ]
+      },
+      {
+        "id": "fldQ31XLII",
+        "name": "TopN",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldBRHRT6E",
+        "name": "排序",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldMXZZdBY",
+        "name": "状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "启用",
+          "停用"
+        ]
+      },
+      {
+        "id": "fldkNyXI84",
+        "name": "记录状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "正常",
+          "已删除"
+        ]
+      }
+    ],
+    "tableID": "tblk8x1UF4aMoAGl",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788318401549,
+  "updatedAt": 1788318401549,
+  "createdBy": 7673423658517318587
+}

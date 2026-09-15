@@ -1,0 +1,280 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "type": "app_init",
+      "name": "应用初始化任务",
+      "status": "completed",
+      "subtasks": [
+        "初始化布局导航文件Layout",
+        "初始化主题文件",
+        "初始化占位页面和路由",
+        "本任务以编译与日志检查为界，日志确认无错即提交；运行时核验统一由验收测试任务承担"
+      ],
+      "beginTime": 1787712188063,
+      "endTime": 1787712363977
+    },
+    {
+      "id": 2,
+      "name": "代码架构设计",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill，确认项目结构与前后端编码规范",
+        "规划前端目录：四个页面路由（/、/orders、/inventory、/customers）与左侧侧边栏 Layout，全局路由与导航在本任务一次性完成并保证可运行",
+        "规划服务端模块边界：order、product、customer、dashboard 四个业务模块及各自 Controller/Service 职责，避免并行任务修改同一模块注册文件",
+        "规划 shared 契约：订单、商品、客户、仪表盘相关类型定义的统一出口文件，与 spec 中 API 类型对齐",
+        "规划插件实例 id 常量的统一管理位置，供各模块服务端 CapabilityService 调用引用"
+      ],
+      "requirements": [],
+      "write_scope": [
+        "client/app/**",
+        "client/pages/**",
+        "client/components/layout/**",
+        "server/modules/**",
+        "shared/**"
+      ],
+      "read_scope": [
+        "shared/**",
+        "client/app/**",
+        "server/modules/**"
+      ],
+      "acceptance": "前端四个页面路由与侧边栏导航骨架就绪可渲染占位页，服务端四个模块目录与注册结构就绪可编译，shared 类型出口文件已建立",
+      "dependencies": [],
+      "beginTime": 1787712364525,
+      "endTime": 1787712511436
+    },
+    {
+      "id": 3,
+      "name": "多维表格插件实例创建",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 plugin-guide skill 及 table.md 规范，确认 feishu-bitable 各 action 用法与字段读写格式",
+        "调用 plugin_instance 创建订单表实例 bitable_order（appToken 与订单表 tableID 由用户提供；配置缺失时原样转告平台返回的配置指引，等待用户在插件配置页完成配置后重新调用，禁止 mock）",
+        "调用 plugin_instance 创建商品表实例 bitable_product、客户表实例 bitable_customer、库存变动表实例 bitable_stock_change",
+        "对每个实例调用 get_plugin_ai_json 获取运行时投影，输出包含 actions/inputSchema/outputSchema 的 Schema 摘录卡",
+        "按各实例投影生成服务端 CapabilityService 调用代码骨架（入参出参严格按摘录卡，禁止从 spec 抄字段），并验证调用代码可编译",
+        "整理四个实例 id 清单写入代码架构设计规划的常量位置，供后续模块直接引用；编码阶段若发现缺实例必须调用 plugin_instance 补建，禁止拿 pluginKey 当 instanceId"
+      ],
+      "requirements": [],
+      "write_scope": [
+        "server/capabilities/**",
+        "server/common/**",
+        "shared/**"
+      ],
+      "read_scope": [
+        "server/capabilities/**",
+        ".spark/specs/spec_1787711894682/spec.md"
+      ],
+      "acceptance": "四个 feishu-bitable 插件实例创建完成，每个实例均获取到运行时投影并产出 Schema 摘录卡，服务端调用代码骨架就绪",
+      "dependencies": [
+        2
+      ],
+      "beginTime": 1787712511732,
+      "endTime": 1787713238912
+    },
+    {
+      "id": 4,
+      "name": "订单管理模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 确认本模块编码规范",
+        "实现订单服务端：列表查询（状态/客户名称/日期范围筛选、下单时间倒序、游标分页）、新增、编辑、发货（记录发货时间）、取消（状态流转校验）五个接口，经 bitable_order 实例真实调用多维表格",
+        "实现订单管理前端页面：筛选区、订单列表表格（状态彩色标签、行操作按状态显隐）、取消二次确认弹窗",
+        "并行实现并集成页面组件区块：新增/编辑共用订单表单弹窗（客户与商品下拉、必填校验、提交 toast 与列表刷新），客户/商品下拉数据调真实接口",
+        "支持从仪表盘与客户画像跳转带入的 URL 预筛选参数（status、customerId）"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4",
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4"
+      ],
+      "write_scope": [
+        "client/pages/orders/**",
+        "server/modules/order/**",
+        "shared/order.ts"
+      ],
+      "read_scope": [
+        "shared/order.ts",
+        "shared/customer.ts",
+        "shared/product.ts",
+        "server/modules/order/**"
+      ],
+      "acceptance": "新增订单真实写入多维表格订单表可回查，发货/取消后订单表状态与发货时间字段同步更新，前端状态标签即时刷新",
+      "dependencies": [
+        2,
+        3
+      ],
+      "beginTime": 1787713239238,
+      "endTime": 1787715469936
+    },
+    {
+      "id": 5,
+      "name": "库存管理模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 确认本模块编码规范",
+        "实现商品服务端：商品列表查询（关键字/分类/仅看预警筛选）、商品信息与预警阈值维护、库存变动登记（正整数校验、出库不超当前库存校验，更新商品表库存并写入库存变动表流水）、库存变动流水查询，经 bitable_product 与 bitable_stock_change 实例真实调用",
+        "实现库存管理前端页面：预警汇总条与「仅看预警」快捷筛选、商品列表表格（低于预警阈值库存数标红附预警标识）",
+        "并行实现并集成页面组件区块：入库/出库登记弹窗（数量与备注、校验提示、提交 toast 与库存即时刷新）、商品信息编辑入口（含预警阈值维护）"
+      ],
+      "requirements": [
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "6.1",
+        "6.2",
+        "6.3",
+        "6.4"
+      ],
+      "write_scope": [
+        "client/pages/inventory/**",
+        "server/modules/product/**",
+        "shared/product.ts"
+      ],
+      "read_scope": [
+        "shared/product.ts",
+        "server/modules/product/**"
+      ],
+      "acceptance": "入库/出库提交后商品表当前库存真实更新且库存变动表新增流水可回查，出库超量被拦截提示，库存回升后预警标识消失",
+      "dependencies": [
+        2,
+        3
+      ],
+      "beginTime": 1787713239238,
+      "endTime": 1787715469936
+    },
+    {
+      "id": 6,
+      "name": "客户管理模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 确认本模块编码规范",
+        "实现客户服务端：客户列表（姓名/手机号搜索、累计消费与订单数经 bitable_order 聚合计算）、新建、编辑、消费画像接口（累计消费/订单数/客单价/最近下单时间聚合，常购商品 TOP5 排行，最近 5 条订单），经 bitable_customer 与 bitable_order 实例真实调用",
+        "实现客户管理前端页面：搜索区、客户列表表格（累计消费金额突出展示）",
+        "并行实现并集成页面组件区块：新建/编辑客户档案表单弹窗（回填、必填校验、toast 与刷新）、消费画像详情弹窗（统计卡片、常购商品横向条形排行、最近订单列表、「查看他的订单」跳转订单页预筛选）"
+      ],
+      "requirements": [
+        "7.1",
+        "7.2",
+        "7.3",
+        "7.4",
+        "8.1",
+        "8.2",
+        "8.3",
+        "8.4"
+      ],
+      "write_scope": [
+        "client/pages/customers/**",
+        "server/modules/customer/**",
+        "shared/customer.ts"
+      ],
+      "read_scope": [
+        "shared/customer.ts",
+        "shared/order.ts",
+        "server/modules/customer/**"
+      ],
+      "acceptance": "新建客户真实写入多维表格客户表可回查，打开画像弹窗展示由订单数据聚合出的累计消费、订单数、常购商品排行与最近订单，并可跳转到该客户的订单筛选结果",
+      "dependencies": [
+        2,
+        3
+      ],
+      "beginTime": 1787713239238,
+      "endTime": 1787715469936
+    },
+    {
+      "id": 7,
+      "name": "数据仪表盘模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 确认本模块编码规范",
+        "实现仪表盘服务端：统计卡片汇总（本月订单数/待发货数/本月销售额/预警商品数）、近30天趋势、订单状态分布、商品销量排行四个接口，统计经 bitable_order 与 bitable_product 实例 aggregateQuery 真实聚合（禁止全量拉取内存计算）",
+        "实现仪表盘前端页面：四张统计卡片区（点击待发货卡片跳转订单页按待发货预筛选，存在预警时预警卡片警示高亮）",
+        "并行实现并集成页面区块：近30天订单量与销售额双折线图、订单状态分布环形图、商品销量排行柱状图，进入页面即加载并含加载与空状态"
+      ],
+      "requirements": [
+        "9.1",
+        "9.2",
+        "9.3",
+        "9.4",
+        "9.5"
+      ],
+      "write_scope": [
+        "client/pages/dashboard/**",
+        "server/modules/dashboard/**",
+        "shared/dashboard.ts"
+      ],
+      "read_scope": [
+        "shared/dashboard.ts",
+        "shared/order.ts",
+        "shared/product.ts",
+        "server/modules/dashboard/**"
+      ],
+      "acceptance": "进入仪表盘页四张统计卡片与三类图表均展示由后端聚合接口返回的真实多维表格数据，待发货卡片可跳转订单页并预筛选",
+      "dependencies": [
+        2,
+        3
+      ],
+      "beginTime": 1787713239238,
+      "endTime": 1787715469936
+    },
+    {
+      "id": 8,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill 并派发 E2E 验收",
+        "架构与入口检查：对照代码架构设计任务检查四页面路由、侧边栏导航与服务端模块结构；应用入口为数据仪表盘页（/），若入口不可用（Page not found/白屏/未就绪）则停止全部验收仅记录阻塞问题",
+        "核心验收目标1：[订单管理] —— 新增订单提交成功后列表刷新出现新记录，点发货后状态标签翻转为已发货并出现成功提示，取消订单经二次确认后状态变已取消且发货入口不再可用",
+        "核心验收目标2：[库存管理] —— 出库数量超过当前库存时被拦截提示不允许提交；提交入库后库存数字即时刷新，低于阈值的红色预警在库存回升后消失",
+        "核心验收目标3：[数据仪表盘] —— 进入首页四张统计卡片与三类图表加载出真实数据，点击待发货卡片跳转订单管理页且列表已按待发货状态筛选；客户画像弹窗展示聚合统计数据并可跳转该客户订单",
+        "非核心降级范围：图表配色与视觉细节、聚合数值与多维表格后台人工逐条核对的全量一致性、示例数据覆盖度"
+      ],
+      "requirements": [
+        "1.1",
+        "2.1",
+        "3.1",
+        "5.2",
+        "6.1",
+        "8.1",
+        "9.1",
+        "9.5"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "client/pages/**",
+        "server/modules/**",
+        "shared/**"
+      ],
+      "acceptance": "三个核心验收目标在浏览器内全部通过，阻塞问题为零，降级项仅记录不阻塞",
+      "dependencies": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "beginTime": 1787715470201,
+      "endTime": 1787716145881
+    }
+  ]
+}

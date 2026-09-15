@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"打开 /sub/invoice 发票记录列表页，预期页面不白屏、不显示'加载失败'错误，表格渲染出至少 1 行数据"},{"id":2,"priority":"p0","description":"检查导航栏中发票记录模块入口可见，侧边栏正常展示"},{"id":3,"priority":"p1","description":"检查表格列头包含发票类型、发票状态、开票金额等关键字段，状态列有 Badge 标签"},{"id":4,"priority":"p1","description":"检查新建发票按钮存在，页面底部有分页控件"}]}

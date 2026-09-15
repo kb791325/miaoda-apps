@@ -1,0 +1,5 @@
+{"cases":[
+  {"id":1,"priority":"p0","description":"打开审批中心 /approval，预期页面标题为「审批中心」且顶部计数不为0"},
+  {"id":2,"priority":"p0","description":"打开我的待办 /special/my-todo，预期左侧导航「待审批」计数不为0"},
+  {"id":3,"priority":"p1","description":"打开后返记录表 /sub/rebate，预期返点比例列数值不含¥符号且显示为百分比格式"}
+]}

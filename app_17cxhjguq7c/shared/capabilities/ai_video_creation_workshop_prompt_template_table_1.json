@@ -1,0 +1,17 @@
+{
+  "id": "ai_video_creation_workshop_prompt_template_table_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "AI视频创作工坊-提示词模板库表",
+  "description": "飞书多维表格插件实例，用于提示词模板库页面的模板CRUD与效果评估数据读写，支持searchRecords、getRecord、batchAddRecords、batchUpdateRecords、deleteRecords、aggregateQuery全部6个Action",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Bc9tbZLinanss7sszYAcKHfdnvf",
+    "tableID": "tblWkhXslcn1JhTk",
+    "fields": []
+  },
+  "createdAt": 1787797398487,
+  "updatedAt": 1787797398487,
+  "createdBy": 7673423658517318587
+}

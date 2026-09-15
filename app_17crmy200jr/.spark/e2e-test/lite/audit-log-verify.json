@@ -1,0 +1,3 @@
+{"cases":[
+  {"id":4,"priority":"p0","description":"AuditLogListPage审计列表（路由/audit-logs）：统计卡片含图标、操作类型标签颜色区分（CREATE=绿色、UPDATE=蓝色、DELETE=红色）、详情按钮为图标按钮"}
+]}

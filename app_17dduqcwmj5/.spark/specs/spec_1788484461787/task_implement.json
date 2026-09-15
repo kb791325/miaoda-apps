@@ -1,0 +1,387 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "type": "app_init",
+      "name": "应用初始化任务",
+      "status": "completed",
+      "subtasks": [
+        "初始化布局导航文件Layout",
+        "初始化主题文件",
+        "初始化占位页面和路由",
+        "本任务以编译与日志检查为界，日志确认无错即提交；运行时核验统一由验收测试任务承担"
+      ],
+      "beginTime": 1788484928995,
+      "endTime": 1788485180806
+    },
+    {
+      "id": 2,
+      "name": "代码架构设计",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 authz-guide skill，确认项目结构、路由导航与权限点位规范",
+        "规划并创建前端七个页面的目录结构与全局左侧边栏 Layout，完成全部路由注册与导航菜单按角色过滤渲染（使用平台内置服务：权限服务）",
+        "规划服务端模块边界（仪表盘/内容/咨询/课程/学员/排期）与 shared 类型契约，创建 shared 类型定义入口文件",
+        "为每个页面创建最小可渲染占位页、为每个服务端模块创建可编译最小模块并完成注册，配置无权限路由提示页，保证提交时可运行"
+      ],
+      "requirements": [
+        "14.1",
+        "14.2",
+        "14.3",
+        "14.4"
+      ],
+      "write_scope": [
+        "client/src/**",
+        "server/src/**",
+        "shared/**"
+      ],
+      "read_scope": [
+        "AGENTS.md",
+        ".agent/skills/steering/nestjs-react-fullstack/skills/coding-guide/SKILL.md",
+        ".agent/skills/steering/nestjs-react-fullstack/skills/authz-guide/SKILL.md",
+        "server/database/schema.ts"
+      ],
+      "acceptance": "六个导航项按角色过滤展示、七个路由占位页均可访问且服务端模块编译通过",
+      "dependencies": [],
+      "beginTime": 1788485180996,
+      "endTime": 1788485404157
+    },
+    {
+      "id": 3,
+      "name": "数据库服务创建",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 确认数据库操作规范",
+        "规划建表顺序并创建招生内容表、FAQ 未命中问题表，为学员登记表扩展学管师人员字段，不改动任何同步表既有字段",
+        "检查招生内容表与未命中问题表数据（保持为空即可，同步表已有数据无需补录）",
+        "编写前后端共享的数据库实体与接口类型定义"
+      ],
+      "requirements": [
+        "2.3",
+        "6.3",
+        "10.2"
+      ],
+      "write_scope": [
+        "server/database/**",
+        "shared/**"
+      ],
+      "read_scope": [
+        "server/database/schema.ts",
+        ".agent/skills/steering/nestjs-react-fullstack/skills/coding-guide/SKILL.md"
+      ],
+      "acceptance": "两张新表与学员表扩展字段创建成功且可通过查询回验结构",
+      "dependencies": [],
+      "beginTime": 1788485180996,
+      "endTime": 1788486381080
+    },
+    {
+      "id": 4,
+      "name": "一方插件开发",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 plugin-guide skill 确认插件实例与调用规范",
+        "调用 plugin_instance 创建 ai-text-generate 插件实例，调用 get_plugin_ai_json 获取运行时投影并输出 Schema 摘录卡",
+        "调用 plugin_instance 创建 send-feishu-message 插件实例，调用 get_plugin_ai_json 获取运行时投影并输出 Schema 摘录卡",
+        "按投影生成前端 AI 生文调用骨架与服务端飞书消息发送调用骨架（入参出参严格按 Schema 摘录卡）并验证编译通过"
+      ],
+      "requirements": [
+        "2.2",
+        "10.4",
+        "11.3",
+        "11.4"
+      ],
+      "write_scope": [
+        "client/src/services/**",
+        "server/src/common/**"
+      ],
+      "read_scope": [
+        ".agent/skills/steering/nestjs-react-fullstack/skills/plugin-guide/SKILL.md"
+      ],
+      "acceptance": "两个插件实例创建完成，前端与服务端调用骨架按投影 Schema 生成且编译通过；编码阶段发现缺实例必须补建，禁止跳过",
+      "dependencies": [],
+      "beginTime": 1788485180996,
+      "endTime": 1788486381080
+    },
+    {
+      "id": 5,
+      "name": "工作台模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill 确认服务端与前端规范",
+        "实现仪表盘聚合服务与控制器：KPI 指标、待办计数、按报名日期的招生趋势、来源渠道分布四个聚合查询接口",
+        "实现工作台页面并接入真实接口：角色化欢迎语、KPI 指标卡区、招生趋势与渠道分布图表区、待办快捷入口卡片（点击跳转对应页面），空数据展示空状态"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4"
+      ],
+      "write_scope": [
+        "client/src/pages/workbench/**",
+        "server/src/modules/dashboard/**",
+        "shared/dashboard.ts"
+      ],
+      "read_scope": [
+        "shared/dashboard.ts",
+        "server/database/schema.ts",
+        "client/src/layouts/**"
+      ],
+      "acceptance": "工作台指标、趋势与渠道数据均来自真实聚合接口并可回查与数据库一致，待办计数可跳转对应页面",
+      "dependencies": [
+        2,
+        3
+      ],
+      "beginTime": 1788486381366,
+      "endTime": 1788488338582
+    },
+    {
+      "id": 6,
+      "name": "课程模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 authz-guide skill",
+        "实现课程服务与控制器：课程分页筛选搜索、课程基本信息、配方明细（含食材搜索与角色点位控制）、工艺流程按步骤排序、设备工具、关联排期查询接口",
+        "实现课程列表页：筛选搜索栏与课程卡片列表，点击卡片跳转详情页",
+        "实现课程详情页：基本信息区、配方明细表格、制作流程区（关键控制点突出、操作视频入口）、设备工具清单与关联排期（跳转课程排期页），配方与流程区块按角色控制显隐"
+      ],
+      "requirements": [
+        "8.1",
+        "8.2",
+        "8.3",
+        "9.1",
+        "9.2",
+        "9.3",
+        "9.4",
+        "14.3"
+      ],
+      "write_scope": [
+        "client/src/pages/courses/**",
+        "server/src/modules/course/**",
+        "shared/course.ts"
+      ],
+      "read_scope": [
+        "shared/course.ts",
+        "server/database/schema.ts",
+        "client/src/layouts/**"
+      ],
+      "acceptance": "课程列表筛选搜索与详情页配方、流程、设备、排期数据均来自真实接口，学员角色请求配方与流程接口返回无权限",
+      "dependencies": [
+        2
+      ],
+      "beginTime": 1788485404349,
+      "endTime": 1788488338582
+    },
+    {
+      "id": 7,
+      "name": "学员管理模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 plugin-guide skill",
+        "实现学员服务与控制器：分页筛选搜索、学员详情（报名课程与考勤记录）、新增学员报名登记（保存后经服务端调用飞书消息插件提醒学管师）、录入缴费接口",
+        "实现学员管理页并接入真实接口：筛选搜索栏、学员列表（欠费状态醒目标签）、新增学员报名表单弹窗（学管师用人员选择器）、学员详情抽屉（含报名课程、考勤记录与录入缴费操作）"
+      ],
+      "requirements": [
+        "10.1",
+        "10.2",
+        "10.3",
+        "10.4",
+        "13.1",
+        "13.2",
+        "13.3"
+      ],
+      "write_scope": [
+        "client/src/pages/students/**",
+        "server/src/modules/student/**",
+        "shared/student.ts"
+      ],
+      "read_scope": [
+        "shared/student.ts",
+        "server/database/schema.ts",
+        "client/src/layouts/**",
+        ".agent/skills/steering/nestjs-react-fullstack/skills/contacts-service/SKILL.md"
+      ],
+      "acceptance": "新增学员与录入缴费真实落库可回查，报名保存链路真实调用飞书消息插件并返回发送结果标识",
+      "dependencies": [
+        2,
+        3,
+        4
+      ],
+      "beginTime": 1788486381366,
+      "endTime": 1788488338582
+    },
+    {
+      "id": 8,
+      "name": "课程排期模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 trigger-guide skill",
+        "实现排期服务与控制器：分页筛选、新增排期（讲师/教室时间冲突检测阻止提交、报名进度与剩余名额计算、满员时经服务端调用飞书消息插件预警讲师）、场次考勤查询统计与批量保存接口",
+        "实现开课前一天提醒自动化任务：每日定时触发扫描次日排期并向讲师发送飞书开课提醒",
+        "实现课程排期页并接入真实接口：筛选栏、新增排期表单弹窗（讲师人员选择器、报名学员选择）、排期列表（临满/满员醒目高亮）、考勤抽屉（逐人标记状态备注、保存后出勤统计即时更新）"
+      ],
+      "requirements": [
+        "11.1",
+        "11.2",
+        "11.3",
+        "11.4",
+        "11.5",
+        "12.1",
+        "12.2",
+        "12.3"
+      ],
+      "write_scope": [
+        "client/src/pages/schedules/**",
+        "server/src/modules/schedule/**",
+        "shared/schedule.ts"
+      ],
+      "read_scope": [
+        "shared/schedule.ts",
+        "server/database/schema.ts",
+        "client/src/layouts/**"
+      ],
+      "acceptance": "新增排期冲突时接口阻止提交，考勤批量保存真实落库且统计数据可回查，满员保存链路真实调用飞书消息插件，定时任务按触发器规范注册",
+      "dependencies": [
+        2,
+        3,
+        4
+      ],
+      "beginTime": 1788486381366,
+      "endTime": 1788488338582
+    },
+    {
+      "id": 9,
+      "name": "招生内容模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide 与 plugin-guide skill",
+        "实现内容服务与控制器：内容分页筛选搜索、保存创作内容、审核通过与驳回、标记已使用、录入效果、按月发布日历、素材库分页筛选查询接口",
+        "实现招生内容中心页并接入真实接口：工具栏与内容列表（待审核审核通过/驳回、可用标记已使用、录入效果弹窗）、发布日历视图、素材库标签页（筛选搜索与展开全文）",
+        "实现 AI 创作弹窗：选择关联课程与内容类型，前端调用 ai-text-generate 插件生成内容（含加载状态），支持编辑与设置计划发布日期后保存为待审核"
+      ],
+      "requirements": [
+        "2.1",
+        "2.2",
+        "2.3",
+        "3.1",
+        "3.2",
+        "3.3",
+        "4.1",
+        "4.2",
+        "4.3",
+        "5.1",
+        "5.2",
+        "5.3"
+      ],
+      "write_scope": [
+        "client/src/pages/content-center/**",
+        "server/src/modules/content/**",
+        "shared/content.ts"
+      ],
+      "read_scope": [
+        "shared/content.ts",
+        "server/database/schema.ts",
+        "client/src/layouts/**"
+      ],
+      "acceptance": "AI 创作真实调用插件生成内容并以待审核状态落库可回查，审核与效果操作后状态字段真实更新，素材列表来自真实接口",
+      "dependencies": [
+        2,
+        3,
+        4
+      ],
+      "beginTime": 1788486381366,
+      "endTime": 1788488338582
+    },
+    {
+      "id": 10,
+      "name": "智能咨询模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "实现咨询服务与控制器：问题匹配接口（匹配问题、相似问法与关键词，命中返回标准答案并累计命中次数，未命中写入未命中问题表并返回转人工话术）、FAQ 分页筛选搜索与新增编辑停用、未命中问题列表与一键转新 FAQ 接口",
+        "实现智能咨询页并接入真实接口：对话式问答区（多轮展示、命中答案与转人工引导）、FAQ 知识库列表（命中次数降序、展开答案、新增弹窗、编辑与停用）、待补充列表（未匹配问题与一键转新 FAQ）"
+      ],
+      "requirements": [
+        "6.1",
+        "6.2",
+        "6.3",
+        "6.4",
+        "7.1",
+        "7.2",
+        "7.3",
+        "7.4"
+      ],
+      "write_scope": [
+        "client/src/pages/consultation/**",
+        "server/src/modules/consultation/**",
+        "shared/consultation.ts"
+      ],
+      "read_scope": [
+        "shared/consultation.ts",
+        "server/database/schema.ts",
+        "client/src/layouts/**"
+      ],
+      "acceptance": "匹配命中后标准答案来自知识库且命中次数真实加 1 可回查，未命中问题真实写入待补充列表并可一键转为新 FAQ",
+      "dependencies": [
+        2,
+        3
+      ],
+      "beginTime": 1788486381366,
+      "endTime": 1788488338582
+    },
+    {
+      "id": 11,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill，按其规范执行验收",
+        "架构与入口检查：对照代码架构设计任务检查导航按角色过滤、路由注册与服务端模块边界是否被遵守；应用入口为工作台页（/），入口不可用（Page not found/白屏/未就绪）时停止全部验收并仅记录阻塞问题",
+        "核心验收目标1：工作台与课程查阅链路 —— 工作台 KPI 与图表展示真实聚合数据且待办卡片可跳转，课程列表筛选搜索后进入详情页可查看配方、流程、设备与排期数据",
+        "核心验收目标2：招生内容与咨询链路 —— AI 创作弹窗真实生成内容并保存为待审核、审核操作后状态流转有提示，智能问答命中返回标准答案且未命中进入待补充列表",
+        "核心验收目标3：教务链路 —— 新增排期时间冲突被阻止并提示，考勤标记保存后出勤统计即时更新，新增学员与录入缴费保存成功并有提示",
+        "非核心降级范围：飞书消息真实外部送达、AI 生成文案内容质量、日历视图与图表的视觉细节不作为阻塞项，但消息发送结果标识与错误反馈仍需在应用内可见"
+      ],
+      "requirements": [
+        "1.1",
+        "2.2",
+        "3.2",
+        "6.1",
+        "8.2",
+        "9.2",
+        "10.2",
+        "11.2",
+        "12.2",
+        "13.1"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "AGENTS.md",
+        ".spark/specs/spec_1788484461787/spec.md"
+      ],
+      "acceptance": "三个核心验收目标在应用内全部通过或阻塞问题已记录，入口页可正常访问",
+      "dependencies": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "beginTime": 1788488338795,
+      "endTime": 1788489338553
+    }
+  ]
+}

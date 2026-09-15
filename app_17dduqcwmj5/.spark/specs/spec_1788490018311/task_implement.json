@@ -1,0 +1,137 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "代码架构设计（智能咨询 AI 答复共享契约与链路边界）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "扩展 shared/consultation 的匹配响应契约，新增命中问题引用字段",
+        "明确服务端 matchFaq 的 AI 串联流程与降级边界（识别异常降级关键词匹配、生成失败降级标准答案）",
+        "明确前端聊天面板引用展示与加载态的改造点"
+      ],
+      "requirements": [
+        "1.1",
+        "2.1"
+      ],
+      "write_scope": [
+        "shared/consultation.ts"
+      ],
+      "read_scope": [
+        "shared/consultation.ts",
+        "server/modules/consultation/consultation.service.ts",
+        "client/src/pages/consultation/ConsultationChatPanel.tsx"
+      ],
+      "acceptance": "shared 契约包含命中引用字段，服务端与前端均按统一契约编译通过",
+      "dependencies": [],
+      "beginTime": 1788490325811,
+      "endTime": 1788490487286
+    },
+    {
+      "id": 2,
+      "name": "一方插件开发（FAQ 意图识别 + 知识库答复生成）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 plugin-guide skill",
+        "调 plugin_instance 创建 FAQ 意图识别实例（ai-text-to-json）",
+        "调 get_plugin_ai_json 获取意图识别实例运行时投影并输出 Schema 摘录卡",
+        "调 plugin_instance 创建知识库答复生成实例（ai-search-summary）",
+        "调 get_plugin_ai_json 获取答复生成实例运行时投影并输出 Schema 摘录卡",
+        "按两份 Schema 摘录卡生成服务端调用代码骨架（入参出参严禁从 spec 抄字段）",
+        "验证两个插件调用代码可编译、参数类型与投影一致"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2"
+      ],
+      "write_scope": [
+        "server/capabilities/**",
+        "shared/plugin-types.ts"
+      ],
+      "read_scope": [
+        "shared/plugin-types.ts",
+        "server/modules/consultation/consultation.service.ts"
+      ],
+      "acceptance": "两个插件实例创建成功，按投影真实调用分别拿到结构化识别结果与生成文本",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788490487523,
+      "endTime": 1788490662674
+    },
+    {
+      "id": 3,
+      "name": "智能咨询 AI 答复模块开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "ConsultationService 匹配流程改造：启用 FAQ 检索 → 意图识别插件 → 命中计数累加 → 答复生成插件 → 未命中记入 faq_miss",
+        "实现降级逻辑：识别插件异常回退关键词包含匹配，答复生成失败返回标准答案原文",
+        "Controller/DTO 对齐扩展后的响应契约",
+        "前端聊天面板改造：AI 识别加载态、答复渲染、命中引用展示、未命中与错误提示"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2"
+      ],
+      "write_scope": [
+        "server/modules/consultation/**",
+        "client/src/pages/consultation/**"
+      ],
+      "read_scope": [
+        "shared/consultation.ts",
+        "shared/plugin-types.ts",
+        "server/modules/consultation/consultation.service.ts",
+        "server/modules/consultation/consultation.controller.ts",
+        "client/src/pages/consultation/ConsultationChatPanel.tsx",
+        "client/src/pages/consultation/consultation.api.ts"
+      ],
+      "acceptance": "matchFaq 完成识别、计数、生成、未命中落库四条分支且降级路径完备，前端按契约渲染答复、引用与各类状态，前后端编译通过",
+      "dependencies": [
+        1,
+        2
+      ],
+      "beginTime": 1788490663050,
+      "endTime": 1788491081673
+    },
+    {
+      "id": 4,
+      "name": "验收测试（智能咨询 AI 答复）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：对照代码架构设计任务核对共享契约与降级边界是否被遵守；入口为智能咨询页，入口不可用时停止全部验收仅记录阻塞问题",
+        "核心验收目标1：AI 咨询答复 —— 用换说法的问题（如学下来大概要花多少钱）提问，会话流出现基于知识库的答复与参考引用，知识库Tab中对应条目命中次数增加",
+        "核心验收目标2：未命中记录 —— 提问超出知识库范围的问题，返回兜底答复且待补充Tab出现该问题记录",
+        "非核心降级范围：AI 答复措辞质量、极端口语化表述的识别准确率"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "2.1"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "shared/consultation.ts",
+        "server/modules/consultation/consultation.service.ts",
+        "client/src/pages/consultation/ConsultationChatPanel.tsx"
+      ],
+      "acceptance": "换说法提问可拿到带引用的知识库答复且命中次数可回查，超范围提问进入待补充列表",
+      "dependencies": [
+        2,
+        3
+      ],
+      "beginTime": 1788491081877,
+      "endTime": 1788491380701
+    }
+  ]
+}

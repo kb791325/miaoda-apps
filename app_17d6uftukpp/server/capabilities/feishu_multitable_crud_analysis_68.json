@@ -1,0 +1,178 @@
+{
+  "id": "feishu_multitable_crud_analysis_68",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格",
+  "description": "管理飞书多维表格，支持数据的创建、查询、更新、删除、聚合分析",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/bitable.svg",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "id": "fldoW0nkeh",
+        "name": "上传时间",
+        "type": 5,
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldt2WeyLx",
+        "name": "修改时间",
+        "type": 1002,
+        "bizType": "ModifiedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "flddCEswMp",
+        "name": "修改人",
+        "type": 1004,
+        "bizType": "ModifiedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldSyi8Yd4",
+        "name": "上传人",
+        "type": 11,
+        "bizType": "User",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldKKKTX3G",
+        "name": "行业标签",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "电商",
+          "教育",
+          "金融",
+          "医疗",
+          "游戏",
+          "旅游",
+          "房产",
+          "汽车",
+          "美妆",
+          "服饰",
+          "食品",
+          "3C",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldZEtDutY",
+        "name": "状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "使用中",
+          "已归档",
+          "已下架"
+        ]
+      },
+      {
+        "id": "fldfYC08w8",
+        "name": "素材文件",
+        "type": 17,
+        "bizType": "Attachment",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldnznIAHa",
+        "name": "素材名称",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldinsJo72",
+        "name": "创建时间",
+        "type": 1001,
+        "bizType": "CreatedTime",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fld7QmZMxa",
+        "name": "备注",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldYKno4lF",
+        "name": "投放端口标签",
+        "type": 4,
+        "bizType": "MultiSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "巨量千川",
+          "巨量AD",
+          "快手磁力",
+          "小红书",
+          "腾讯广告",
+          "百度",
+          "其他"
+        ]
+      },
+      {
+        "id": "fldrunVtVa",
+        "name": "效果数据",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "id": "fldAiqVRIa",
+        "name": "创建人",
+        "type": 1003,
+        "bizType": "CreatedUser",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldzg4z1VE",
+        "name": "SC编号",
+        "type": 1005,
+        "bizType": "AutoNumber",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "id": "fldngDpRpe",
+        "name": "素材类型",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "口播",
+          "剧情",
+          "产品展示",
+          "开箱测评",
+          "品牌宣传片",
+          "直播切片",
+          "动画",
+          "图文",
+          "其他"
+        ]
+      }
+    ],
+    "tableID": "tblNLk4DNKkIEHQR",
+    "appToken": "VrVNbdrnOafcItsR5h9caW7knZc"
+  },
+  "createdAt": 1788314722789,
+  "updatedAt": 1788314722789,
+  "createdBy": 7673423658517318587
+}

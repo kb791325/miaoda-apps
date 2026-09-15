@@ -1,0 +1,72 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "学员信息编辑功能开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "在 shared/student.ts 新增编辑学员请求与响应类型",
+        "服务端 StudentService 新增学员信息更新方法，Controller 新增 PATCH 路由并做必填校验与角色控制",
+        "前端 student.api.ts 新增编辑学员调用函数",
+        "新建 StudentEditDialog 编辑弹窗组件，支持信息回填、必填校验与提交反馈",
+        "详情抽屉基本信息区增加编辑入口并集成弹窗，保存成功后刷新详情与列表"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4"
+      ],
+      "write_scope": [
+        "shared/student.ts",
+        "server/modules/student/**",
+        "client/src/pages/students/**"
+      ],
+      "read_scope": [
+        "shared/student.ts",
+        "server/modules/student/student.controller.ts",
+        "server/modules/student/student.service.ts",
+        "client/src/pages/students/StudentsPage.tsx",
+        "client/src/pages/students/StudentDetailSheet.tsx",
+        "client/src/pages/students/StudentCreateDialog.tsx",
+        "client/src/pages/students/student.api.ts"
+      ],
+      "acceptance": "编辑弹窗提交后 PATCH /api/students/:id 成功落库，详情与列表均可回查修改后的新值",
+      "dependencies": [],
+      "beginTime": 1788490335125,
+      "endTime": 1788490664486
+    },
+    {
+      "id": 2,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：入口为学员管理页，入口不可用时停止验收仅记录阻塞问题",
+        "核心验收目标1：学员信息编辑闭环 —— 列表打开学员详情点编辑，回填与当前信息一致，修改姓名/电话/学习进度提交后出现成功提示，详情与列表展示新值",
+        "核心验收目标2：编辑校验反馈 —— 清空姓名提交时表单项下方出现错误提示且数据不变",
+        "非核心降级范围：弹窗动效、间距等低风险视觉细节"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        "client/src/pages/students/StudentsPage.tsx",
+        "client/src/pages/students/StudentDetailSheet.tsx"
+      ],
+      "acceptance": "编辑闭环与校验反馈两条核心目标在浏览器内验收通过",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1788490664917,
+      "endTime": 1788491659373
+    }
+  ]
+}

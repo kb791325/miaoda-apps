@@ -1,0 +1,1 @@
+{"cases":[{"id":1,"priority":"p0","description":"打开首页，验证 Dashboard 能正常渲染、无白屏"},{"id":2,"priority":"p0","description":"打开资产列表页，验证表格有数据"},{"id":3,"priority":"p0","description":"打开支出列表页，验证页面正常加载"},{"id":4,"priority":"p0","description":"打开库存概览页，验证看板图表与数据正常"},{"id":5,"priority":"p0","description":"打开盘点执行页，验证列表正常加载"}]}

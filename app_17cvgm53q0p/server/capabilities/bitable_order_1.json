@@ -1,0 +1,144 @@
+{
+  "id": "bitable_order_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "订单表实例 bitable_order",
+  "description": "服务端 CapabilityService 执行 searchRecords/getRecord/batchAddRecords/batchUpdateRecords/aggregateQuery，支撑订单列表、新增编辑、发货取消与仪表盘统计。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblmZOhwiqkVmpEY",
+    "fields": [
+      {
+        "bizType": "DateTime",
+        "id": "fldOrderTime",
+        "name": "下单时间",
+        "type": 5,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldOrderNo",
+        "name": "订单号"
+      },
+      {
+        "bizType": "Number",
+        "id": "fldQuantity",
+        "name": "数量",
+        "type": 2,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "待发货",
+          "已发货",
+          "已取消",
+          "已完成"
+        ],
+        "id": "fldOrderStatus",
+        "name": "订单状态",
+        "type": 3,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "id": "fldPayStatus",
+        "name": "支付状态",
+        "type": 3
+      },
+      {
+        "id": "fldRemark",
+        "name": "备注",
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text"
+      },
+      {
+        "name": "收货地址",
+        "type": 1,
+        "readable": true,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldAddress"
+      },
+      {
+        "bizType": "Text",
+        "id": "fldExpressNo",
+        "name": "快递单号",
+        "type": 1,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "writeable": true,
+        "bizType": "SingleLink",
+        "id": "fldGoodsLink",
+        "name": "商品",
+        "type": 18,
+        "readable": true
+      },
+      {
+        "bizType": "SingleLink",
+        "id": "fldCustomerLink",
+        "name": "客户",
+        "type": 18,
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "name": "商品名称",
+        "type": 20,
+        "readable": true,
+        "writeable": false,
+        "bizType": "Formula",
+        "id": "fldGoodsName"
+      },
+      {
+        "bizType": "Formula",
+        "id": "fldOrderAmount",
+        "name": "订单金额",
+        "type": 20,
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "type": 20,
+        "readable": true,
+        "writeable": false,
+        "bizType": "Formula",
+        "id": "fldUnitPrice",
+        "name": "销售单价"
+      },
+      {
+        "writeable": false,
+        "bizType": "Formula",
+        "id": "fldSkuCode",
+        "name": "SKU编码",
+        "type": 20,
+        "readable": true
+      },
+      {
+        "writeable": false,
+        "bizType": "Formula",
+        "id": "fldCustomerPhone",
+        "name": "客户电话",
+        "type": 20,
+        "readable": true
+      }
+    ]
+  },
+  "createdAt": 1787712814518,
+  "updatedAt": 1787712814518,
+  "createdBy": 7677497422334987466
+}

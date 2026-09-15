@@ -1,0 +1,17 @@
+{
+  "id": "bitable_shipping_detail_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "飞书多维表格发货明细表读写实例",
+  "description": "用于服务端数据同步，支持发货明细数据的查询、新增、更新、删除操作，实现应用数据库与飞书多维表格的双向数据同步。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblhB0yTogllKFpK",
+    "fields": []
+  },
+  "createdAt": 1789010545922,
+  "updatedAt": 1789010545922,
+  "createdBy": 7673423658517318587
+}

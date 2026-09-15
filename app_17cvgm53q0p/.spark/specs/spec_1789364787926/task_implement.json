@@ -1,0 +1,69 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "账号删除功能开发（含前后端）",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 coding-guide skill",
+        "服务端 deleteUser 增加禁止删除当前登录账号保护（控制器将登录账号传入 service 比对）",
+        "前端 auth API 补充 deleteUser 请求方法",
+        "用户管理页操作栏新增删除按钮并实现二次确认弹窗，当前登录账号行不展示删除入口",
+        "确认删除后调用接口，成功 toast 并刷新列表，失败展示后端错误文案"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5"
+      ],
+      "write_scope": [
+        "server/modules/auth/**",
+        "client/src/pages/UserManagement/**",
+        "client/src/api/auth.ts"
+      ],
+      "read_scope": [
+        "server/modules/auth/auth.controller.ts",
+        "server/modules/auth/auth.service.ts",
+        "client/src/pages/UserManagement/UserManagementPage.tsx",
+        "client/src/api/auth.ts"
+      ],
+      "acceptance": "用户管理页经确认弹窗删除普通账号后列表不再包含该账号；删除内置管理员或删除自身时展示错误提示且列表不变",
+      "dependencies": [],
+      "beginTime": 1789364952290,
+      "endTime": 1789365544766
+    },
+    {
+      "id": 2,
+      "name": "验收测试",
+      "type": "normal",
+      "status": "completed",
+      "subtasks": [
+        "读取 testing-guide skill",
+        "架构与入口检查：核对账号删除改动落在 auth 模块与用户管理页，入口为用户管理页，入口不可用时停止验收仅记录阻塞",
+        "核心验收目标1：账号删除流程——删除非当前账号经二次确认后成功提示且该行从列表消失",
+        "核心验收目标2：删除保护——当前登录账号行无删除入口，删除内置管理员账号出现错误提示且列表不变",
+        "非核心降级范围：历史关联数据（订单归属/跟进记录）残留展示降级，不阻塞验收"
+      ],
+      "requirements": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "1.5"
+      ],
+      "write_scope": [],
+      "read_scope": [
+        ".spark/specs/spec_1789364787926/spec.md"
+      ],
+      "acceptance": "删除成功与两类保护场景均在应用内得到可判定的结果反馈",
+      "dependencies": [
+        1
+      ],
+      "beginTime": 1789365544959,
+      "endTime": 1789366444768
+    }
+  ]
+}

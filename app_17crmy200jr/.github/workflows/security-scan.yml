@@ -1,0 +1,80 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [main, sprint/*]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 8 * * 1'  # 每周一早上8点
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  secret-scan:
+    name: Secret Detection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for .env files
+        run: |
+          if git ls-files --error-unmatch .env 2>/dev/null; then
+            echo "❌ .env file is tracked by git!"
+            exit 1
+          fi
+          echo "✅ No .env file tracked"
+      - name: Scan for hardcoded secrets
+        run: |
+          PATTERNS=(
+            "FEISHU_APP_SECRET=[a-zA-Z0-9_-]{20,}"
+            "JWT_SECRET=[a-zA-Z0-9_-]{20,}"
+            "DATABASE_URL=postgresql://[^@]+@"
+            "password[:=]\s*['\"][^'\"]+['\"]"
+          )
+          FAILED=0
+          for pattern in "${PATTERNS[@]}"; do
+            if grep -rE "$pattern" --include="*.ts" --include="*.js" --include="*.json" --exclude-dir=node_modules --exclude-dir=dist --exclude-dir=.git .; then
+              echo "⚠️  Found potential hardcoded secret matching: $pattern"
+              FAILED=1
+            fi
+          done
+          if [ $FAILED -eq 0 ]; then
+            echo "✅ No hardcoded secrets found"
+          else
+            echo "❌ Hardcoded secrets detected!"
+            exit 1
+          fi
+
+  dependency-audit:
+    name: Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Run npm audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+      - name: Check for outdated packages
+        run: npm outdated --long || true
+
+  env-validation:
+    name: Environment Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Run env validation
+        run: npx tsx scripts/validate-env.ts
+        continue-on-error: true
+      - name: Check .env.example consistency
+        run: |
+          if [ ! -f .env.example ]; then
+            echo "❌ .env.example is missing"
+            exit 1
+          fi
+          echo "✅ .env.example exists"

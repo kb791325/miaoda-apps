@@ -1,0 +1,16 @@
+export * as products from './products';
+export * as inventory from './inventory';
+export * as operations from './operations';
+export * as records from './records';
+export * as categories from './categories';
+export * as sync from './sync';
+export * as aiTools from './ai-tools';
+export * as suppliers from './suppliers';
+export * as salesOrders from './sales-orders';
+export * as notifications from './notifications';
+export * as auditLogs from './audit-logs';
+export * as userManagement from './user-management';
+export * as purchaseOrders from './purchase-orders';
+export * as globalSearch from './global-search';
+export * as undo from './undo';
+export * as backup from './backup';

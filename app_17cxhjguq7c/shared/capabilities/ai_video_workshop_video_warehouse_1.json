@@ -1,0 +1,17 @@
+{
+  "id": "ai_video_workshop_video_warehouse_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "AI视频创作工坊-视频成品库表",
+  "description": "视频成品库页面的成品视频CRUD与发布状态管理数据读写，支持全部6个Action：searchRecords、getRecord、batchAddRecords、batchUpdateRecords、deleteRecords、aggregateQuery",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "Bc9tbZLinanss7sszYAcKHfdnvf",
+    "tableID": "tblFb5d6x19VuBpm",
+    "fields": []
+  },
+  "createdAt": 1787797472762,
+  "updatedAt": 1787797472762,
+  "createdBy": 7673423658517318587
+}

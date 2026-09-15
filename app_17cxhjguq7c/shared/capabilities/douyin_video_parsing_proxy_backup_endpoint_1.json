@@ -1,0 +1,27 @@
+{
+  "id": "douyin_video_parsing_proxy_backup_endpoint_1",
+  "pluginKey": "@official-plugins/web-crawler",
+  "pluginVersion": "1.0.10",
+  "name": "抖音视频解析代理-备用端点",
+  "description": "基于官方 web-crawler 插件，在服务端抓取备用抖音视频解析 API 返回的 JSON 数据，作为主解析端点 api.douyin.wtf 失败时的容错备份，用于爆款素材库自动获取视频标题、作者、点赞数、评论数、分享数真实数据。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "douyin_video_url": {
+        "description": "待解析的抖音视频链接",
+        "type": "string"
+      }
+    },
+    "required": [
+      "douyin_video_url"
+    ]
+  },
+  "formValue": {
+    "processMode": "你是专业的抖音视频数据提取专家，请从以下API返回的JSON数据中精准提取指定字段，输出标准JSON格式。\n\n提取字段要求：\n1. title：视频标题\n2. author_nickname：作者昵称\n3. like_count：点赞数（数字类型）\n4. comment_count：评论数（数字类型）\n5. share_count：分享数（数字类型）\n\n输出要求：\n- 严格按照上述字段名输出\n- 确保数值类型正确\n- 未找到的字段填null\n- 仅输出JSON，无任何额外说明\n\nAPI返回数据：{{crawled_content}}",
+    "url": "https://douyin.wtf/api/hybrid/video_data?url={{input.douyin_video_url}}&minimal=true"
+  },
+  "createdAt": 1787812234767,
+  "updatedAt": 1787817765562,
+  "createdBy": 7673423658517318587
+}

@@ -1,0 +1,129 @@
+{
+  "id": "after_sales_ticket_bitable_writer_3",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "售后工单表写入实例v3",
+  "description": "飞书多维表格售后工单数据写入实例，支持工单查询、批量新增操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "TtUqb0FwVaSq7ssq6vacWbMCn9c",
+    "tableID": "tbla6DiGEgZ2zBph",
+    "fields": [
+      {
+        "name": "工单编号",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld_work_order_no"
+      },
+      {
+        "bizType": "Text",
+        "id": "fld_order_no",
+        "name": "订单号",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "bizType": "Text",
+        "id": "fld_sku",
+        "name": "商品SKU",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld_problem_desc",
+        "name": "问题描述",
+        "readable": true
+      },
+      {
+        "name": "售后类型",
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld_after_sales_type"
+      },
+      {
+        "readable": true,
+        "type": 1,
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fld_process_suggestion",
+        "name": "处理建议"
+      },
+      {
+        "name": "处理状态",
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "待审核",
+          "处理中",
+          "已完成",
+          "已关闭"
+        ],
+        "id": "fld_process_status"
+      },
+      {
+        "enumValues": [
+          "退款",
+          "换货",
+          "补发",
+          "补偿",
+          "驳回",
+          "其他"
+        ],
+        "id": "fld_process_solution",
+        "name": "处理方案",
+        "readable": true,
+        "type": 3,
+        "writeable": true,
+        "bizType": "SingleSelect"
+      },
+      {
+        "readable": true,
+        "type": 2,
+        "writeable": true,
+        "bizType": "Number",
+        "id": "fld_refund_amount",
+        "name": "退款金额"
+      },
+      {
+        "id": "fld_is_negative_review",
+        "name": "是否差评",
+        "readable": true,
+        "type": 7,
+        "writeable": true,
+        "bizType": "Checkbox"
+      },
+      {
+        "bizType": "Text",
+        "id": "fld_remark",
+        "name": "备注",
+        "readable": true,
+        "type": 1,
+        "writeable": true
+      },
+      {
+        "name": "完成时间",
+        "readable": true,
+        "type": 5,
+        "writeable": true,
+        "bizType": "DateTime",
+        "id": "fld_complete_time"
+      }
+    ],
+    "tips": "支持的操作：searchRecords(工单搜索)、batchAddRecords(批量新增工单)"
+  },
+  "createdAt": 1789099029590,
+  "updatedAt": 1789099029590,
+  "createdBy": 7673423658517318587
+}

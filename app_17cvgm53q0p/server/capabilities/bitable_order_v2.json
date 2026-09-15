@@ -1,0 +1,187 @@
+{
+  "id": "bitable_order_v2",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "订单表实例v2",
+  "description": "订单表新增了发货时间字段后的新实例，支持服务端执行searchRecords/getRecord/batchAddRecords/batchUpdateRecords/aggregateQuery操作，支撑订单列表、新增编辑、发货（写入发货时间）取消与仪表盘统计功能。",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "fields": [
+      {
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fldPRxMk50",
+        "name": "订单号"
+      },
+      {
+        "readable": true,
+        "writeable": true,
+        "id": "fld45zrJ1y",
+        "name": "下单时间",
+        "type": 5,
+        "bizType": "DateTime"
+      },
+      {
+        "writeable": true,
+        "id": "fldGevipmn",
+        "name": "数量",
+        "type": 2,
+        "bizType": "Number",
+        "readable": true
+      },
+      {
+        "id": "fldF0kuQAC",
+        "name": "订单状态",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "待发货",
+          "已发货",
+          "已取消",
+          "已完成"
+        ],
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "未支付",
+          "已支付",
+          "已退款"
+        ],
+        "readable": true,
+        "writeable": true,
+        "id": "flds3wsT3y",
+        "name": "支付状态"
+      },
+      {
+        "name": "来源平台",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "readable": true,
+        "writeable": true,
+        "enumValues": [
+          "抖音",
+          "拼多多",
+          "京东",
+          "微信私域"
+        ],
+        "id": "fldv0e4r2u"
+      },
+      {
+        "writeable": true,
+        "id": "fldkjVZRw9",
+        "name": "物流公司",
+        "type": 3,
+        "bizType": "SingleSelect",
+        "enumValues": [
+          "顺丰",
+          "京东物流",
+          "中通",
+          "圆通",
+          "韵达",
+          "其他"
+        ],
+        "readable": true
+      },
+      {
+        "id": "fld6mQvcvl",
+        "name": "快递单号",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true
+      },
+      {
+        "name": "收货地址",
+        "type": 1,
+        "bizType": "Text",
+        "readable": true,
+        "writeable": true,
+        "id": "fldANQLGUg"
+      },
+      {
+        "writeable": true,
+        "bizType": "Text",
+        "id": "fldMqQGT23",
+        "name": "备注",
+        "type": 1,
+        "readable": true
+      },
+      {
+        "id": "fldQ7shYsW",
+        "name": "客户",
+        "type": 18,
+        "bizType": "SingleLink",
+        "readable": false,
+        "writeable": false
+      },
+      {
+        "readable": false,
+        "writeable": false,
+        "type": 18,
+        "bizType": "SingleLink",
+        "id": "fldiV6rQxu",
+        "name": "商品"
+      },
+      {
+        "name": "客户电话",
+        "type": 20,
+        "bizType": "Formula",
+        "readable": true,
+        "writeable": false,
+        "id": "fldgyqYaWa"
+      },
+      {
+        "writeable": false,
+        "bizType": "Formula",
+        "id": "fldBRTbLw8",
+        "name": "商品名称",
+        "type": 20,
+        "readable": true
+      },
+      {
+        "bizType": "Formula",
+        "readable": true,
+        "writeable": false,
+        "id": "fldTRccucD",
+        "name": "SKU编码",
+        "type": 20
+      },
+      {
+        "readable": true,
+        "writeable": false,
+        "id": "fldbtUKF2V",
+        "name": "销售单价",
+        "type": 20,
+        "bizType": "Formula"
+      },
+      {
+        "id": "fldSrTTqx0",
+        "name": "订单金额",
+        "type": 20,
+        "bizType": "Formula",
+        "readable": true,
+        "writeable": false
+      },
+      {
+        "bizType": "DateTime",
+        "readable": true,
+        "writeable": true,
+        "id": "fld0FRs03y",
+        "name": "发货时间",
+        "type": 5
+      }
+    ],
+    "appToken": "Xz5cb7g4xah3AvslcbdcBuZznMe",
+    "tableID": "tblmZOhwiqkVmpEY"
+  },
+  "createdAt": 1787713816987,
+  "updatedAt": 1787723390614,
+  "createdBy": 7677497422334987466
+}

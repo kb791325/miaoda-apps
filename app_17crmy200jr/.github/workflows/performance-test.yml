@@ -1,0 +1,43 @@
+name: Performance Tests
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 9 * * 1'  # 每周一早上9点
+  workflow_dispatch:
+
+jobs:
+  performance:
+    name: Run Performance Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Start application
+        run: |
+          npm run dev &
+          npx wait-on http://localhost:8001/api/health
+      - name: Run API performance tests
+        run: npx jest test/performance/api-performance.spec.ts --forceExit --verbose
+        continue-on-error: true
+      - name: Run database performance tests
+        run: npx jest test/performance/database-performance.spec.ts --forceExit --verbose
+        continue-on-error: true
+      - name: Compare with baseline
+        run: npx tsx scripts/run-performance-tests.ts
+      - name: Upload performance report
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: test/performance/benchmarks/
+      - name: Check degradation
+        run: |
+          if [ -f test/performance/benchmarks/degradation-report.md ]; then
+            echo "⚠️ Performance degradation detected!"
+            cat test/performance/benchmarks/degradation-report.md
+          fi

@@ -1,0 +1,47 @@
+{
+  "id": "send_feishu_notification_1",
+  "pluginKey": "@official-plugins/send-feishu-message",
+  "pluginVersion": "1.0.30",
+  "name": "发送飞书业务通知",
+  "description": "用于新学员报名提醒学管师跟进、课程排期满员预警讲师、开课前提醒讲师等场景，接收人、标题、内容动态传入，发送人固定为bot。",
+  "icon": "",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "receiverIds": {
+        "items": {
+          "type": "string",
+          "description": "单个用户ID"
+        },
+        "type": "array",
+        "description": "接收人用户ID列表"
+      },
+      "title": {
+        "type": "string",
+        "description": "飞书消息标题，1-50字符"
+      },
+      "content": {
+        "type": "string",
+        "description": "飞书消息正文，支持markdown格式，不超过5000字符"
+      }
+    },
+    "required": [
+      "receiverIds",
+      "title",
+      "content"
+    ]
+  },
+  "formValue": {
+    "buttons": [],
+    "content": "{{input.content}}",
+    "receiverGroupList": [],
+    "receiverUserList": "{{input.receiverIds}}",
+    "sender": "bot",
+    "title": {
+      "title": "{{input.title}}"
+    }
+  },
+  "createdAt": 1788485514146,
+  "updatedAt": 1788485514146,
+  "createdBy": 7673423658517318587
+}
